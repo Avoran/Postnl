@@ -4,9 +4,9 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class ProductOption extends BaseType
 {
-    protected string $Characteristic;
+    protected ?string $Characteristic = null;
 
-    protected string $Option;
+    protected ?string $Option = null;
 
     public function __construct(string $Characteristic, string $Option)
     {
@@ -14,7 +14,7 @@ class ProductOption extends BaseType
         $this->setOption($Option);
     }
 
-    public function getCharacteristic(): string
+    public function getCharacteristic(): ?string
     {
         return $this->Characteristic;
     }
@@ -26,7 +26,7 @@ class ProductOption extends BaseType
         return $this;
     }
 
-    public function getOption(): string
+    public function getOption(): ?string
     {
         return $this->Option;
     }

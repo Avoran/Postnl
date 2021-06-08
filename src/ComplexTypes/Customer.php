@@ -4,11 +4,11 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class Customer extends BaseType
 {
-    protected string $CustomerNumber;
+    protected ?string $CustomerNumber = null;
 
-    protected string $CustomerCode;
+    protected ?string $CustomerCode = null;
 
-    protected string $CollectionLocation;
+    protected ?string $CollectionLocation = null;
 
     protected ?string $ContactPerson = null;
 
@@ -48,7 +48,7 @@ class Customer extends BaseType
         return $this;
     }
 
-    public function getCollectionLocation(): string
+    public function getCollectionLocation(): ?string
     {
         return $this->CollectionLocation;
     }
@@ -72,7 +72,7 @@ class Customer extends BaseType
         return $this;
     }
 
-    public function getCustomerCode(): string
+    public function getCustomerCode(): ?string
     {
         return $this->CustomerCode;
     }
@@ -84,7 +84,7 @@ class Customer extends BaseType
         return $this;
     }
 
-    public function getCustomerNumber(): string
+    public function getCustomerNumber(): ?string
     {
         return $this->CustomerNumber;
     }

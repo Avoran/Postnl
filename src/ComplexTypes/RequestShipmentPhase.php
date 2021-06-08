@@ -4,11 +4,11 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class RequestShipmentPhase extends BaseType
 {
-    protected string $PhaseCode;
+    protected ?string $PhaseCode = null;
 
-    protected string $DateFrom;
+    protected ?string $DateFrom = null;
 
-    protected string $DateTo;
+    protected ?string $DateTo = null;
 
     public function __construct(string $PhaseCode, string $DateFrom, string $DateTo)
     {
@@ -17,7 +17,7 @@ class RequestShipmentPhase extends BaseType
         $this->setDateTo($DateTo);
     }
 
-    public function getPhaseCode(): string
+    public function getPhaseCode(): ?string
     {
         return $this->PhaseCode;
     }
@@ -29,7 +29,7 @@ class RequestShipmentPhase extends BaseType
         return $this;
     }
 
-    public function getDateFrom(): string
+    public function getDateFrom(): ?string
     {
         return $this->DateFrom;
     }
@@ -41,7 +41,7 @@ class RequestShipmentPhase extends BaseType
         return $this;
     }
 
-    public function getDateTo(): string
+    public function getDateTo(): ?string
     {
         return $this->DateTo;
     }

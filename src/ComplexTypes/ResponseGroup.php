@@ -4,13 +4,13 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class ResponseGroup extends BaseType
 {
-    protected string $GroupType;
+    protected ?string $GroupType = null;
 
-    protected string $MainBarcode;
+    protected ?string $MainBarcode = null;
 
-    protected string $ShipmentAmount;
+    protected ?string $ShipmentAmount = null;
 
-    protected string $ShipmentCounter;
+    protected ?string $ShipmentCounter = null;
 
     public function __construct(
         string $GroupType,
@@ -24,7 +24,7 @@ class ResponseGroup extends BaseType
         $this->setShipmentCounter($ShipmentCounter);
     }
 
-    public function getGroupType(): string
+    public function getGroupType(): ?string
     {
         return $this->GroupType;
     }
@@ -36,7 +36,7 @@ class ResponseGroup extends BaseType
         return $this;
     }
 
-    public function getMainBarcode(): string
+    public function getMainBarcode(): ?string
     {
         return $this->MainBarcode;
     }
@@ -48,7 +48,7 @@ class ResponseGroup extends BaseType
         return $this;
     }
 
-    public function getShipmentAmount(): string
+    public function getShipmentAmount(): ?string
     {
         return $this->ShipmentAmount;
     }
@@ -60,7 +60,7 @@ class ResponseGroup extends BaseType
         return $this;
     }
 
-    public function getShipmentCounter(): string
+    public function getShipmentCounter(): ?string
     {
         return $this->ShipmentCounter;
     }

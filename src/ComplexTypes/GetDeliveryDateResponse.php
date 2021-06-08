@@ -4,7 +4,7 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class GetDeliveryDateResponse extends BaseType
 {
-    protected string $DeliveryDate;
+    protected ?string $DeliveryDate = null;
 
     protected array $Options;
 
@@ -14,7 +14,7 @@ class GetDeliveryDateResponse extends BaseType
         $this->setOptions($Options);
     }
 
-    public function getDeliveryDate(): string
+    public function getDeliveryDate(): ?string
     {
         return $this->DeliveryDate;
     }

@@ -4,17 +4,17 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class ResponseShipment extends BaseType
 {
-    protected string $Barcode;
+    protected ?string $Barcode = null;
 
-    protected string $DownPartnerBarcode;
+    protected ?string $DownPartnerBarcode = null;
 
-    protected string $DownPartnerID;
+    protected ?string $DownPartnerID = null;
 
-    protected string $DownPartnerLocation;
+    protected ?string $DownPartnerLocation = null;
 
     protected ArrayOfLabel $Labels;
 
-    protected string $ProductCodeDelivery;
+    protected ?string $ProductCodeDelivery = null;
 
     protected ArrayOfWarning $Warnings;
 
@@ -36,7 +36,7 @@ class ResponseShipment extends BaseType
         $this->setWarnings($Warnings);
     }
 
-    public function getBarcode(): string
+    public function getBarcode(): ?string
     {
         return $this->Barcode;
     }
@@ -48,7 +48,7 @@ class ResponseShipment extends BaseType
         return $this;
     }
 
-    public function getDownPartnerBarcode(): string
+    public function getDownPartnerBarcode(): ?string
     {
         return $this->DownPartnerBarcode;
     }
@@ -60,7 +60,7 @@ class ResponseShipment extends BaseType
         return $this;
     }
 
-    public function getDownPartnerID(): string
+    public function getDownPartnerID(): ?string
     {
         return $this->DownPartnerID;
     }
@@ -72,7 +72,7 @@ class ResponseShipment extends BaseType
         return $this;
     }
 
-    public function getDownPartnerLocation(): string
+    public function getDownPartnerLocation(): ?string
     {
         return $this->DownPartnerLocation;
     }
@@ -96,7 +96,7 @@ class ResponseShipment extends BaseType
         return $this;
     }
 
-    public function getProductCodeDelivery(): string
+    public function getProductCodeDelivery(): ?string
     {
         return $this->ProductCodeDelivery;
     }

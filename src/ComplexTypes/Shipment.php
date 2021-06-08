@@ -6,11 +6,11 @@ class Shipment extends BaseType
 {
     protected ArrayOfAddress $Addresses;
 
-    protected string $Barcode;
+    protected ?string $Barcode = null;
 
     protected Dimension $Dimension;
 
-    protected string $ProductCodeDelivery;
+    protected ?string $ProductCodeDelivery = null;
 
     protected ?ArrayOfAmount $Amounts = null;
 
@@ -138,7 +138,7 @@ class Shipment extends BaseType
         return $this;
     }
 
-    public function getBarcode(): string
+    public function getBarcode(): ?string
     {
         return $this->Barcode;
     }
@@ -162,7 +162,7 @@ class Shipment extends BaseType
         return $this;
     }
 
-    public function getProductCodeDelivery(): string
+    public function getProductCodeDelivery(): ?string
     {
         return $this->ProductCodeDelivery;
     }

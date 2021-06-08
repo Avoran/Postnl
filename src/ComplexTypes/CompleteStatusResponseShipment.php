@@ -10,7 +10,7 @@ class CompleteStatusResponseShipment extends BaseType
 
     protected ArrayOfResponseAmount $Amounts;
 
-    protected string $Barcode;
+    protected ?string $Barcode = null;
 
     protected ResponseCustomer $Customer;
 
@@ -26,13 +26,13 @@ class CompleteStatusResponseShipment extends BaseType
 
     protected ArrayOfCompleteStatusResponseOldStatus $OldStatuses;
 
-    protected string $ProductCode;
+    protected ?string $ProductCode = null;
 
-    protected string $ProductDescription;
+    protected ?string $ProductDescription = null;
 
     protected ArrayOfResponseProductOption $ProductOptions;
 
-    protected string $Reference;
+    protected ?string $Reference = null;
 
     protected ResponseStatus $Status;
 
@@ -98,7 +98,7 @@ class CompleteStatusResponseShipment extends BaseType
         return $this;
     }
 
-    public function getBarcode(): string
+    public function getBarcode(): ?string
     {
         return $this->Barcode;
     }
@@ -194,7 +194,7 @@ class CompleteStatusResponseShipment extends BaseType
         return $this;
     }
 
-    public function getProductCode(): string
+    public function getProductCode(): ?string
     {
         return $this->ProductCode;
     }
@@ -206,7 +206,7 @@ class CompleteStatusResponseShipment extends BaseType
         return $this;
     }
 
-    public function getProductDescription(): string
+    public function getProductDescription(): ?string
     {
         return $this->ProductDescription;
     }
@@ -230,7 +230,7 @@ class CompleteStatusResponseShipment extends BaseType
         return $this;
     }
 
-    public function getReference(): string
+    public function getReference(): ?string
     {
         return $this->Reference;
     }

@@ -4,7 +4,7 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class Timeframe extends BaseType
 {
-    protected string $Date;
+    protected ?string $Date = null;
 
     protected ArrayOfTimeframeTimeFrame $Timeframes;
 
@@ -14,7 +14,7 @@ class Timeframe extends BaseType
         $this->setTimeframes($Timeframes);
     }
 
-    public function getDate(): string
+    public function getDate(): ?string
     {
         return $this->Date;
     }

@@ -4,17 +4,17 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class Content extends BaseType
 {
-    protected string $CountryOfOrigin;
+    protected ?string $CountryOfOrigin = null;
 
-    protected string $Description;
+    protected ?string $Description = null;
 
-    protected string $HSTariffNr;
+    protected ?string $HSTariffNr = null;
 
-    protected string $Quantity;
+    protected ?string $Quantity = null;
 
-    protected string $Value;
+    protected ?string $Value = null;
 
-    protected string $Weight;
+    protected ?string $Weight = null;
 
     public function __construct(
         string $CountryOfOrigin,

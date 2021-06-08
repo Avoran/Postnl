@@ -4,7 +4,7 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class GetLocationsInAreaRequest extends BaseType
 {
-    protected string $Countrycode;
+    protected ?string $Countrycode = null;
 
     protected LocationArea $Location;
 
@@ -17,7 +17,7 @@ class GetLocationsInAreaRequest extends BaseType
         $this->Message = $Message;
     }
 
-    public function getCountrycode(): string
+    public function getCountrycode(): ?string
     {
         return $this->Countrycode;
     }

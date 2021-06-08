@@ -4,11 +4,11 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class Label extends BaseType
 {
-    protected string $Content;
+    protected ?string $Content = null;
 
-    protected string $Contenttype;
+    protected ?string $Contenttype = null;
 
-    protected string $Labeltype;
+    protected ?string $Labeltype = null;
 
     public function __construct(string $Content, string $Contenttype, string $Labeltype)
     {
@@ -17,7 +17,7 @@ class Label extends BaseType
         $this->setLabeltype($Labeltype);
     }
 
-    public function getContent(): string
+    public function getContent(): ?string
     {
         return $this->Content;
     }
@@ -29,7 +29,7 @@ class Label extends BaseType
         return $this;
     }
 
-    public function getContenttype(): string
+    public function getContenttype(): ?string
     {
         return $this->Contenttype;
     }
@@ -41,7 +41,7 @@ class Label extends BaseType
         return $this;
     }
 
-    public function getLabeltype(): string
+    public function getLabeltype(): ?string
     {
         return $this->Labeltype;
     }

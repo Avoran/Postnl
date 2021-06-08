@@ -4,7 +4,7 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class LabellingMessage extends Message
 {
-    protected string $Printertype;
+    protected ?string $Printertype = null;
 
     public function __construct(
         string $Printertype = 'GraphicFile|PDF',
@@ -15,7 +15,7 @@ class LabellingMessage extends Message
         $this->setPrintertype($Printertype);
     }
 
-    public function getPrintertype(): string
+    public function getPrintertype(): ?string
     {
         return $this->Printertype;
     }

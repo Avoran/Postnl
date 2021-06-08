@@ -6,25 +6,25 @@ use DateTime;
 
 class TimeframeRequest extends BaseType
 {
-    protected string $City;
+    protected ?string $City = null;
 
-    protected string $CountryCode;
+    protected ?string $CountryCode = null;
 
-    protected string $EndDate;
+    protected ?string $EndDate = null;
 
-    protected string $HouseNr;
+    protected ?string $HouseNr = null;
 
-    protected string $HouseNrExt;
+    protected ?string $HouseNrExt = null;
 
     protected array $Options;
 
-    protected string $PostalCode;
+    protected ?string $PostalCode = null;
 
-    protected string $StartDate;
+    protected ?string $StartDate = null;
 
-    protected string $Street;
+    protected ?string $Street = null;
 
-    protected string $SundaySorting;
+    protected ?string $SundaySorting = null;
 
     public function __construct(
         string $Postalcode,
@@ -44,7 +44,7 @@ class TimeframeRequest extends BaseType
         $this->setSundaySorting($SundaySorting);
     }
 
-    public function getCity(): string
+    public function getCity(): ?string
     {
         return $this->City;
     }
@@ -56,7 +56,7 @@ class TimeframeRequest extends BaseType
         return $this;
     }
 
-    public function getCountryCode(): string
+    public function getCountryCode(): ?string
     {
         return $this->CountryCode;
     }
@@ -68,7 +68,7 @@ class TimeframeRequest extends BaseType
         return $this;
     }
 
-    public function getEndDate(): string
+    public function getEndDate(): ?string
     {
         return $this->EndDate;
     }
@@ -80,7 +80,7 @@ class TimeframeRequest extends BaseType
         return $this;
     }
 
-    public function getHouseNr(): string
+    public function getHouseNr(): ?string
     {
         return $this->HouseNr;
     }
@@ -92,7 +92,7 @@ class TimeframeRequest extends BaseType
         return $this;
     }
 
-    public function getHouseNrExt(): string
+    public function getHouseNrExt(): ?string
     {
         return $this->HouseNrExt;
     }
@@ -116,7 +116,7 @@ class TimeframeRequest extends BaseType
         return $this;
     }
 
-    public function getPostalCode(): string
+    public function getPostalCode(): ?string
     {
         return $this->PostalCode;
     }
@@ -128,7 +128,7 @@ class TimeframeRequest extends BaseType
         return $this;
     }
 
-    public function getStartDate(): string
+    public function getStartDate(): ?string
     {
         return $this->StartDate;
     }
@@ -140,7 +140,7 @@ class TimeframeRequest extends BaseType
         return $this;
     }
 
-    public function getStreet(): string
+    public function getStreet(): ?string
     {
         return $this->Street;
     }
@@ -152,7 +152,7 @@ class TimeframeRequest extends BaseType
         return $this;
     }
 
-    public function getSundaySorting(): string
+    public function getSundaySorting(): ?string
     {
         return $this->SundaySorting;
     }

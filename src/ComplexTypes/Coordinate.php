@@ -4,9 +4,9 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class Coordinate extends BaseType
 {
-    protected string $Latitude;
+    protected ?string $Latitude = null;
 
-    protected string $Longitude;
+    protected ?string $Longitude = null;
 
     public function __construct(string $Latitude, string $Longitude)
     {
@@ -14,7 +14,7 @@ class Coordinate extends BaseType
         $this->setLongitude($Longitude);
     }
 
-    public function getLatitude(): string
+    public function getLatitude(): ?string
     {
         return $this->Latitude;
     }
@@ -26,7 +26,7 @@ class Coordinate extends BaseType
         return $this;
     }
 
-    public function getLongitude(): string
+    public function getLongitude(): ?string
     {
         return $this->Longitude;
     }

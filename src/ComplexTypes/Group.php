@@ -4,9 +4,9 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class Group extends BaseType
 {
-    protected string $GroupCount;
+    protected ?string $GroupCount = null;
 
-    protected string $GroupSequence;
+    protected ?string $GroupSequence = null;
 
     /**
      * The type of group.
@@ -17,9 +17,9 @@ class Group extends BaseType
      * - `03`: Multiple parcels in one shipment (multi-colli)
      * - `04`: Single parcel in one shipment
      */
-    protected string $GroupType;
+    protected ?string $GroupType;
 
-    protected string $MainBarcode;
+    protected ?string $MainBarcode;
 
     public function __construct(string $GroupCount, string $GroupSequence, string $GroupType, string $MainBarcode)
     {
@@ -29,7 +29,7 @@ class Group extends BaseType
         $this->setMainBarcode($MainBarcode);
     }
 
-    public function getGroupCount(): string
+    public function getGroupCount(): ?string
     {
         return $this->GroupCount;
     }
@@ -41,7 +41,7 @@ class Group extends BaseType
         return $this;
     }
 
-    public function getGroupSequence(): string
+    public function getGroupSequence(): ?string
     {
         return $this->GroupSequence;
     }
@@ -53,7 +53,7 @@ class Group extends BaseType
         return $this;
     }
 
-    public function getGroupType(): string
+    public function getGroupType(): ?string
     {
         return $this->GroupType;
     }
@@ -65,7 +65,7 @@ class Group extends BaseType
         return $this;
     }
 
-    public function getMainBarcode(): string
+    public function getMainBarcode(): ?string
     {
         return $this->MainBarcode;
     }

@@ -7,14 +7,14 @@ namespace DivideBV\Postnl\ComplexTypes;
  */
 class GenerateBarcodeResponse extends BaseType
 {
-    protected string $Barcode;
+    protected ?string $Barcode = null;
 
     public function __construct(string $Barcode)
     {
         $this->setBarcode($Barcode);
     }
 
-    public function getBarcode(): string
+    public function getBarcode(): ?string
     {
         return $this->Barcode;
     }

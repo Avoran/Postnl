@@ -4,7 +4,7 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class ConfirmingResponseShipment extends BaseType
 {
-    protected string $Barcode;
+    protected ?string $Barcode = null;
 
     protected ArrayOfWarning $Warnings;
 
@@ -14,10 +14,7 @@ class ConfirmingResponseShipment extends BaseType
         $this->setWarnings($Warnings);
     }
 
-    /**
-     * @return string
-     */
-    public function getBarcode(): string
+    public function getBarcode(): ?string
     {
         return $this->Barcode;
     }

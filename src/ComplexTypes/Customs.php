@@ -4,25 +4,25 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class Customs extends BaseType
 {
-    protected string $Certificate;
+    protected ?string $Certificate = null;
 
-    protected string $CertificateNr;
+    protected ?string $CertificateNr = null;
 
     protected ArrayOfContent $Content;
 
-    protected string $Currency;
+    protected ?string $Currency = null;
 
-    protected string $HandleAsNonDeliverable;
+    protected ?string $HandleAsNonDeliverable = null;
 
-    protected string $Invoice;
+    protected ?string $Invoice = null;
 
-    protected string $InvoiceNr;
+    protected ?string $InvoiceNr = null;
 
-    protected string $License;
+    protected ?string $License = null;
 
-    protected string $LicenseNr;
+    protected ?string $LicenseNr = null;
 
-    protected string $ShipmentType;
+    protected ?string $ShipmentType = null;
 
     public function __construct(
         string $Certificate,
@@ -48,7 +48,7 @@ class Customs extends BaseType
         $this->setShipmentType($ShipmentType);
     }
 
-    public function getCertificate(): string
+    public function getCertificate(): ?string
     {
         return $this->Certificate;
     }
@@ -60,7 +60,7 @@ class Customs extends BaseType
         return $this;
     }
 
-    public function getCertificateNr(): string
+    public function getCertificateNr(): ?string
     {
         return $this->CertificateNr;
     }
@@ -84,7 +84,7 @@ class Customs extends BaseType
         return $this;
     }
 
-    public function getCurrency(): string
+    public function getCurrency(): ?string
     {
         return $this->Currency;
     }
@@ -96,7 +96,7 @@ class Customs extends BaseType
         return $this;
     }
 
-    public function getHandleAsNonDeliverable(): string
+    public function getHandleAsNonDeliverable(): ?string
     {
         return $this->HandleAsNonDeliverable;
     }
@@ -108,7 +108,7 @@ class Customs extends BaseType
         return $this;
     }
 
-    public function getInvoice(): string
+    public function getInvoice(): ?string
     {
         return $this->Invoice;
     }
@@ -120,7 +120,7 @@ class Customs extends BaseType
         return $this;
     }
 
-    public function getInvoiceNr(): string
+    public function getInvoiceNr(): ?string
     {
         return $this->InvoiceNr;
     }
@@ -132,7 +132,7 @@ class Customs extends BaseType
         return $this;
     }
 
-    public function getLicense(): string
+    public function getLicense(): ?string
     {
         return $this->License;
     }
@@ -144,7 +144,7 @@ class Customs extends BaseType
         return $this;
     }
 
-    public function getLicenseNr(): string
+    public function getLicenseNr(): ?string
     {
         return $this->LicenseNr;
     }
@@ -156,7 +156,7 @@ class Customs extends BaseType
         return $this;
     }
 
-    public function getShipmentType(): string
+    public function getShipmentType(): ?string
     {
         return $this->ShipmentType;
     }

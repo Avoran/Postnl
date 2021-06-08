@@ -4,19 +4,19 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class ResponseAmount extends BaseType
 {
-    protected string $AccountName;
+    protected ?string $AccountName = null;
 
-    protected string $AccountNr;
+    protected ?string $AccountNr = null;
 
-    protected string $AmountType;
+    protected ?string $AmountType = null;
 
-    protected string $Currency;
+    protected ?string $Currency = null;
 
-    protected string $Reference;
+    protected ?string $Reference = null;
 
-    protected string $TransactionNumber;
+    protected ?string $TransactionNumber = null;
 
-    protected string $Value;
+    protected ?string $Value = null;
 
     public function __construct(
         string $AccountName,
@@ -36,7 +36,7 @@ class ResponseAmount extends BaseType
         $this->setValue($Value);
     }
 
-    public function getAccountName(): string
+    public function getAccountName(): ?string
     {
         return $this->AccountName;
     }
@@ -48,7 +48,7 @@ class ResponseAmount extends BaseType
         return $this;
     }
 
-    public function getAccountNr(): string
+    public function getAccountNr(): ?string
     {
         return $this->AccountNr;
     }
@@ -60,7 +60,7 @@ class ResponseAmount extends BaseType
         return $this;
     }
 
-    public function getAmountType(): string
+    public function getAmountType(): ?string
     {
         return $this->AmountType;
     }
@@ -72,7 +72,7 @@ class ResponseAmount extends BaseType
         return $this;
     }
 
-    public function getCurrency(): string
+    public function getCurrency(): ?string
     {
         return $this->Currency;
     }
@@ -84,7 +84,7 @@ class ResponseAmount extends BaseType
         return $this;
     }
 
-    public function getReference(): string
+    public function getReference(): ?string
     {
         return $this->Reference;
     }
@@ -96,7 +96,7 @@ class ResponseAmount extends BaseType
         return $this;
     }
 
-    public function getTransactionNumber(): string
+    public function getTransactionNumber(): ?string
     {
         return $this->TransactionNumber;
     }
@@ -108,7 +108,7 @@ class ResponseAmount extends BaseType
         return $this;
     }
 
-    public function getValue(): string
+    public function getValue(): ?string
     {
         return $this->Value;
     }

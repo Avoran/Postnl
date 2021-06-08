@@ -4,25 +4,25 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class GetSentDate extends BaseType
 {
-    protected string $AllowSundaySorting;
+    protected ?string $AllowSundaySorting = null;
 
-    protected string $City;
+    protected ?string $City = null;
 
-    protected string $CountryCode;
+    protected ?string $CountryCode = null;
 
-    protected string $DeliveryDate;
+    protected ?string $DeliveryDate = null;
 
-    protected string $HouseNr;
+    protected ?string $HouseNr = null;
 
-    protected string $HouseNrExt;
+    protected ?string $HouseNrExt = null;
 
     protected array $Options;
 
-    protected string $PostalCode;
+    protected ?string $PostalCode = null;
 
-    protected string $ShippingDuration;
+    protected ?string $ShippingDuration = null;
 
-    protected string $Street;
+    protected ?string $Street = null;
 
     public function __construct(
         string $AllowSundaySorting,
@@ -48,7 +48,7 @@ class GetSentDate extends BaseType
         $this->setStreet($Street);
     }
 
-    public function getAllowSundaySorting(): string
+    public function getAllowSundaySorting(): ?string
     {
         return $this->AllowSundaySorting;
     }
@@ -60,7 +60,7 @@ class GetSentDate extends BaseType
         return $this;
     }
 
-    public function getCity(): string
+    public function getCity(): ?string
     {
         return $this->City;
     }
@@ -72,7 +72,7 @@ class GetSentDate extends BaseType
         return $this;
     }
 
-    public function getCountryCode(): string
+    public function getCountryCode(): ?string
     {
         return $this->CountryCode;
     }
@@ -84,7 +84,7 @@ class GetSentDate extends BaseType
         return $this;
     }
 
-    public function getDeliveryDate(): string
+    public function getDeliveryDate(): ?string
     {
         return $this->DeliveryDate;
     }
@@ -96,7 +96,7 @@ class GetSentDate extends BaseType
         return $this;
     }
 
-    public function getHouseNr(): string
+    public function getHouseNr(): ?string
     {
         return $this->HouseNr;
     }
@@ -108,7 +108,7 @@ class GetSentDate extends BaseType
         return $this;
     }
 
-    public function getHouseNrExt(): string
+    public function getHouseNrExt(): ?string
     {
         return $this->HouseNrExt;
     }
@@ -132,7 +132,7 @@ class GetSentDate extends BaseType
         return $this;
     }
 
-    public function getPostalCode(): string
+    public function getPostalCode(): ?string
     {
         return $this->PostalCode;
     }
@@ -144,7 +144,7 @@ class GetSentDate extends BaseType
         return $this;
     }
 
-    public function getShippingDuration(): string
+    public function getShippingDuration(): ?string
     {
         return $this->ShippingDuration;
     }
@@ -156,7 +156,7 @@ class GetSentDate extends BaseType
         return $this;
     }
 
-    public function getStreet(): string
+    public function getStreet(): ?string
     {
         return $this->Street;
     }

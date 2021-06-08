@@ -4,11 +4,11 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class ReasonNoTimeframe extends BaseType
 {
-    protected string $Code;
+    protected ?string $Code = null;
 
-    protected string $Date;
+    protected ?string $Date = null;
 
-    protected string $Description;
+    protected ?string $Description = null;
 
     protected array $Options;
 
@@ -20,7 +20,7 @@ class ReasonNoTimeframe extends BaseType
         $this->setOptions($Options);
     }
 
-    public function getCode(): string
+    public function getCode(): ?string
     {
         return $this->Code;
     }
@@ -32,7 +32,7 @@ class ReasonNoTimeframe extends BaseType
         return $this;
     }
 
-    public function getDate(): string
+    public function getDate(): ?string
     {
         return $this->Date;
     }
@@ -44,7 +44,7 @@ class ReasonNoTimeframe extends BaseType
         return $this;
     }
 
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->Description;
     }

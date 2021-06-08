@@ -4,7 +4,7 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class GetNearestLocationsRequest extends BaseType
 {
-    protected string $Countrycode;
+    protected ?string $Countrycode = null;
 
     protected Location $Location;
 
@@ -17,7 +17,7 @@ class GetNearestLocationsRequest extends BaseType
         $this->setCountrycode($Countrycode);
     }
 
-    public function getCountrycode(): string
+    public function getCountrycode(): ?string
     {
         return $this->Countrycode;
     }

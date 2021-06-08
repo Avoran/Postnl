@@ -4,9 +4,9 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class CutOffTime extends BaseType
 {
-    protected string $Day;
+    protected ?string $Day = null;
 
-    protected string $Time;
+    protected ?string $Time = null;
 
     public function __construct(string $Day, string $Time)
     {
@@ -14,7 +14,7 @@ class CutOffTime extends BaseType
         $this->setTime($Time);
     }
 
-    public function getDay(): string
+    public function getDay(): ?string
     {
         return $this->Day;
     }
@@ -26,7 +26,7 @@ class CutOffTime extends BaseType
         return $this;
     }
 
-    public function getTime(): string
+    public function getTime(): ?string
     {
         return $this->Time;
     }

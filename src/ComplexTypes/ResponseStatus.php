@@ -4,15 +4,15 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class ResponseStatus extends BaseType
 {
-    protected string $CurrentPhaseCode;
+    protected ?string $CurrentPhaseCode = null;
 
-    protected string $CurrentPhaseDescription;
+    protected ?string $CurrentPhaseDescription = null;
 
-    protected string $CurrentStatusCode;
+    protected ?string $CurrentStatusCode = null;
 
-    protected string $CurrentStatusDescription;
+    protected ?string $CurrentStatusDescription = null;
 
-    protected string $CurrentStatusTimeStamp;
+    protected ?string $CurrentStatusTimeStamp = null;
 
     public function __construct(
         string $CurrentPhaseCode,
@@ -28,7 +28,7 @@ class ResponseStatus extends BaseType
         $this->setCurrentStatusTimeStamp($CurrentStatusTimeStamp);
     }
 
-    public function getCurrentPhaseCode(): string
+    public function getCurrentPhaseCode(): ?string
     {
         return $this->CurrentPhaseCode;
     }
@@ -40,7 +40,7 @@ class ResponseStatus extends BaseType
         return $this;
     }
 
-    public function getCurrentPhaseDescription(): string
+    public function getCurrentPhaseDescription(): ?string
     {
         return $this->CurrentPhaseDescription;
     }
@@ -52,7 +52,7 @@ class ResponseStatus extends BaseType
         return $this;
     }
 
-    public function getCurrentStatusCode(): string
+    public function getCurrentStatusCode(): ?string
     {
         return $this->CurrentStatusCode;
     }
@@ -64,7 +64,7 @@ class ResponseStatus extends BaseType
         return $this;
     }
 
-    public function getCurrentStatusDescription(): string
+    public function getCurrentStatusDescription(): ?string
     {
         return $this->CurrentStatusDescription;
     }
@@ -76,7 +76,7 @@ class ResponseStatus extends BaseType
         return $this;
     }
 
-    public function getCurrentStatusTimeStamp(): string
+    public function getCurrentStatusTimeStamp(): ?string
     {
         return $this->CurrentStatusTimeStamp;
     }

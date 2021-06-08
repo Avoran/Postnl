@@ -6,11 +6,11 @@ use DateTime;
 
 class GetSignatureResponseSignature extends BaseType
 {
-    protected string $Barcode;
+    protected ?string $Barcode = null;
 
     protected DateTime $SignatureDate;
 
-    protected string $SignatureImage;
+    protected ?string $SignatureImage = null;
 
     public function __construct(string $Barcode, DateTime $SignatureDate, string $SignatureImage)
     {
@@ -19,7 +19,7 @@ class GetSignatureResponseSignature extends BaseType
         $this->setSignatureImage($SignatureImage);
     }
 
-    public function getBarcode(): string
+    public function getBarcode(): ?string
     {
         return $this->Barcode;
     }
@@ -43,7 +43,7 @@ class GetSignatureResponseSignature extends BaseType
         return $this;
     }
 
-    public function getSignatureImage(): string
+    public function getSignatureImage(): ?string
     {
         return $this->SignatureImage;
     }

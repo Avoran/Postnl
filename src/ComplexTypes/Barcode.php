@@ -7,11 +7,11 @@ namespace DivideBV\Postnl\ComplexTypes;
  */
 class Barcode extends BaseType
 {
-    protected string $Type;
+    protected ?string $Type = null;
 
-    protected string $Range;
+    protected ?string $Range = null;
 
-    protected string $Serie;
+    protected ?string $Serie = null;
 
     public function __construct(string $Type, string $Range, string $Serie)
     {
@@ -20,7 +20,7 @@ class Barcode extends BaseType
         $this->setSerie($Serie);
     }
 
-    public function getType(): string
+    public function getType(): ?string
     {
         return $this->Type;
     }
@@ -32,7 +32,7 @@ class Barcode extends BaseType
         return $this;
     }
 
-    public function getRange(): string
+    public function getRange(): ?string
     {
         return $this->Range;
     }
@@ -44,7 +44,7 @@ class Barcode extends BaseType
         return $this;
     }
 
-    public function getSerie(): string
+    public function getSerie(): ?string
     {
         return $this->Serie;
     }

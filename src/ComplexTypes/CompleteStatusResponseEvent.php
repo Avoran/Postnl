@@ -4,19 +4,19 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class CompleteStatusResponseEvent extends BaseType
 {
-    protected string $Code;
+    protected ?string $Code = null;
 
-    protected string $Description;
+    protected ?string $Description = null;
 
-    protected string $DestinationLocationCode;
+    protected ?string $DestinationLocationCode = null;
 
-    protected string $LocationCode;
+    protected ?string $LocationCode = null;
 
-    protected string $RouteCode;
+    protected ?string $RouteCode = null;
 
-    protected string $RouteName;
+    protected ?string $RouteName = null;
 
-    protected string $TimeStamp;
+    protected ?string $TimeStamp = null;
 
     public function __construct(
         string $Code,
@@ -36,7 +36,7 @@ class CompleteStatusResponseEvent extends BaseType
         $this->setTimeStamp($TimeStamp);
     }
 
-    public function getCode(): string
+    public function getCode(): ?string
     {
         return $this->Code;
     }
@@ -48,7 +48,7 @@ class CompleteStatusResponseEvent extends BaseType
         return $this;
     }
 
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->Description;
     }
@@ -60,7 +60,7 @@ class CompleteStatusResponseEvent extends BaseType
         return $this;
     }
 
-    public function getDestinationLocationCode(): string
+    public function getDestinationLocationCode(): ?string
     {
         return $this->DestinationLocationCode;
     }
@@ -72,7 +72,7 @@ class CompleteStatusResponseEvent extends BaseType
         return $this;
     }
 
-    public function getLocationCode(): string
+    public function getLocationCode(): ?string
     {
         return $this->LocationCode;
     }
@@ -84,7 +84,7 @@ class CompleteStatusResponseEvent extends BaseType
         return $this;
     }
 
-    public function getRouteCode(): string
+    public function getRouteCode(): ?string
     {
         return $this->RouteCode;
     }
@@ -96,7 +96,7 @@ class CompleteStatusResponseEvent extends BaseType
         return $this;
     }
 
-    public function getRouteName(): string
+    public function getRouteName(): ?string
     {
         return $this->RouteName;
     }
@@ -108,7 +108,7 @@ class CompleteStatusResponseEvent extends BaseType
         return $this;
     }
 
-    public function getTimeStamp(): string
+    public function getTimeStamp(): ?string
     {
         return $this->TimeStamp;
     }

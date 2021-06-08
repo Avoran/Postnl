@@ -4,7 +4,7 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class RequestShipment extends BaseType
 {
-    protected string $Barcode;
+    protected ?string $Barcode = null;
 
     protected ?string $Reference = null;
 
@@ -17,7 +17,7 @@ class RequestShipment extends BaseType
         $this->setZipcode($Zipcode);
     }
 
-    public function getBarcode(): string
+    public function getBarcode(): ?string
     {
         return $this->Barcode;
     }

@@ -12,7 +12,7 @@ class Location extends BaseLocation
 
     protected ?string $HouseNrExt = null;
 
-    protected string $Postalcode;
+    protected ?string $Postalcode = null;
 
     protected ?string $Street = null;
 
@@ -85,7 +85,7 @@ class Location extends BaseLocation
         return $this;
     }
 
-    public function getPostalcode(): string
+    public function getPostalcode(): ?string
     {
         return $this->Postalcode;
     }

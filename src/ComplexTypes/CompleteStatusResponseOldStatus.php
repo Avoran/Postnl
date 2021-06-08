@@ -4,15 +4,15 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class CompleteStatusResponseOldStatus extends BaseType
 {
-    protected string $Code;
+    protected ?string $Code = null;
 
-    protected string $Description;
+    protected ?string $Description = null;
 
-    protected string $PhaseCode;
+    protected ?string $PhaseCode = null;
 
-    protected string $PhaseDescription;
+    protected ?string $PhaseDescription = null;
 
-    protected string $TimeStamp;
+    protected ?string $TimeStamp = null;
 
     public function __construct(
         string $Code,
@@ -28,7 +28,7 @@ class CompleteStatusResponseOldStatus extends BaseType
         $this->setTimeStamp($TimeStamp);
     }
 
-    public function getCode(): string
+    public function getCode(): ?string
     {
         return $this->Code;
     }
@@ -40,7 +40,7 @@ class CompleteStatusResponseOldStatus extends BaseType
         return $this;
     }
 
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->Description;
     }
@@ -52,7 +52,7 @@ class CompleteStatusResponseOldStatus extends BaseType
         return $this;
     }
 
-    public function getPhaseCode(): string
+    public function getPhaseCode(): ?string
     {
         return $this->PhaseCode;
     }
@@ -64,7 +64,7 @@ class CompleteStatusResponseOldStatus extends BaseType
         return $this;
     }
 
-    public function getPhaseDescription(): string
+    public function getPhaseDescription(): ?string
     {
         return $this->PhaseDescription;
     }
@@ -76,7 +76,7 @@ class CompleteStatusResponseOldStatus extends BaseType
         return $this;
     }
 
-    public function getTimeStamp(): string
+    public function getTimeStamp(): ?string
     {
         return $this->TimeStamp;
     }

@@ -4,9 +4,9 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class RequestCustomer extends BaseType
 {
-    protected string $CustomerCode;
+    protected ?string $CustomerCode = null;
 
-    protected string $CustomerNumber;
+    protected ?string $CustomerNumber = null;
 
     public function __construct(string $CustomerCode, string $CustomerNumber)
     {
@@ -14,7 +14,7 @@ class RequestCustomer extends BaseType
         $this->setCustomerNumber($CustomerNumber);
     }
 
-    public function getCustomerCode(): string
+    public function getCustomerCode(): ?string
     {
         return $this->CustomerCode;
     }
@@ -26,7 +26,7 @@ class RequestCustomer extends BaseType
         return $this;
     }
 
-    public function getCustomerNumber(): string
+    public function getCustomerNumber(): ?string
     {
         return $this->CustomerNumber;
     }

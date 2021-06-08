@@ -4,11 +4,11 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class GetLocationRequest extends BaseType
 {
-    protected string $LocationCode;
+    protected ?string $LocationCode = null;
 
     protected Message $Message;
 
-    protected string $RetailNetworkID;
+    protected ?string $RetailNetworkID = null;
 
     public function __construct(string $LocationCode, Message $Message, string $RetailNetworkID)
     {
@@ -17,7 +17,7 @@ class GetLocationRequest extends BaseType
         $this->RetailNetworkID = $RetailNetworkID;
     }
 
-    public function getLocationCode(): string
+    public function getLocationCode(): ?string
     {
         return $this->LocationCode;
     }
@@ -41,7 +41,7 @@ class GetLocationRequest extends BaseType
         return $this;
     }
 
-    public function getRetailNetworkID(): string
+    public function getRetailNetworkID(): ?string
     {
         return $this->RetailNetworkID;
     }

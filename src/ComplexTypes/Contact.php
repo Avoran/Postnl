@@ -4,13 +4,13 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class Contact extends BaseType
 {
-    protected string $ContactType;
+    protected ?string $ContactType = null;
 
-    protected string $Email;
+    protected ?string $Email = null;
 
-    protected string $SMSNr;
+    protected ?string $SMSNr = null;
 
-    protected string $TelNr;
+    protected ?string $TelNr = null;
 
     public function __construct(string $ContactType, string $Email, string $SMSNr, string $TelNr)
     {
@@ -20,7 +20,7 @@ class Contact extends BaseType
         $this->setTelNr($TelNr);
     }
 
-    public function getContactType(): string
+    public function getContactType(): ?string
     {
         return $this->ContactType;
     }
@@ -32,7 +32,7 @@ class Contact extends BaseType
         return $this;
     }
 
-    public function getEmail(): string
+    public function getEmail(): ?string
     {
         return $this->Email;
     }
@@ -44,7 +44,7 @@ class Contact extends BaseType
         return $this;
     }
 
-    public function getSMSNr(): string
+    public function getSMSNr(): ?string
     {
         return $this->SMSNr;
     }
@@ -56,7 +56,7 @@ class Contact extends BaseType
         return $this;
     }
 
-    public function getTelNr(): string
+    public function getTelNr(): ?string
     {
         return $this->TelNr;
     }

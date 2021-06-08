@@ -9,9 +9,9 @@ use DateTime;
  */
 class Message extends BaseType
 {
-    protected string $MessageID;
+    protected ?string $MessageID = null;
 
-    protected string $MessageTimeStamp;
+    protected ?string $MessageTimeStamp = null;
 
     public function __construct(string $MessageID = '1', ?string $MessageTimeStamp = null)
     {
@@ -19,7 +19,7 @@ class Message extends BaseType
         $this->setMessageTimeStamp($MessageTimeStamp ?: (new DateTime())->format("d-m-Y H:i:s"));
     }
 
-    public function getMessageID(): string
+    public function getMessageID(): ?string
     {
         return $this->MessageID;
     }
@@ -31,7 +31,7 @@ class Message extends BaseType
         return $this;
     }
 
-    public function getMessageTimeStamp(): string
+    public function getMessageTimeStamp(): ?string
     {
         return $this->MessageTimeStamp;
     }

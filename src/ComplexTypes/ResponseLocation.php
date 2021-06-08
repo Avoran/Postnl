@@ -8,29 +8,29 @@ class ResponseLocation extends BaseType
 
     protected array $DeliveryOptions;
 
-    protected string $Distance;
+    protected ?string $Distance = null;
 
-    protected string $Latitude;
+    protected ?string $Latitude = null;
 
-    protected string $LocationCode;
+    protected ?string $LocationCode = null;
 
-    protected string $Longitude;
+    protected ?string $Longitude = null;
 
-    protected string $Name;
+    protected ?string $Name = null;
 
     protected OpeningHours $OpeningHours;
 
-    protected string $PartnerName;
+    protected ?string $PartnerName = null;
 
-    protected string $PhoneNumber;
+    protected ?string $PhoneNumber = null;
 
-    protected string $RetailFormulaName;
+    protected ?string $RetailFormulaName = null;
 
-    private string $RetailNetworkID;
+    protected ?string $RetailNetworkID = null;
 
-    protected string $Saleschannel;
+    protected ?string $Saleschannel = null;
 
-    protected string $TerminalType;
+    protected ?string $TerminalType = null;
 
     public function __construct(
         Address $Address,
@@ -88,7 +88,7 @@ class ResponseLocation extends BaseType
         return $this;
     }
 
-    public function getDistance(): string
+    public function getDistance(): ?string
     {
         return $this->Distance;
     }
@@ -100,7 +100,7 @@ class ResponseLocation extends BaseType
         return $this;
     }
 
-    public function getLatitude(): string
+    public function getLatitude(): ?string
     {
         return $this->Latitude;
     }
@@ -112,7 +112,7 @@ class ResponseLocation extends BaseType
         return $this;
     }
 
-    public function getLocationCode(): string
+    public function getLocationCode(): ?string
     {
         return $this->LocationCode;
     }
@@ -124,7 +124,7 @@ class ResponseLocation extends BaseType
         return $this;
     }
 
-    public function getLongitude(): string
+    public function getLongitude(): ?string
     {
         return $this->Longitude;
     }
@@ -136,7 +136,7 @@ class ResponseLocation extends BaseType
         return $this;
     }
 
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->Name;
     }
@@ -160,7 +160,7 @@ class ResponseLocation extends BaseType
         return $this;
     }
 
-    public function getPartnerName(): string
+    public function getPartnerName(): ?string
     {
         return $this->PartnerName;
     }
@@ -171,7 +171,7 @@ class ResponseLocation extends BaseType
         return $this;
     }
 
-    public function getPhoneNumber(): string
+    public function getPhoneNumber(): ?string
     {
         return $this->PhoneNumber;
     }
@@ -183,7 +183,7 @@ class ResponseLocation extends BaseType
         return $this;
     }
 
-    public function getRetailFormulaName(): string
+    public function getRetailFormulaName(): ?string
     {
         return $this->RetailFormulaName;
     }
@@ -195,7 +195,7 @@ class ResponseLocation extends BaseType
         return $this;
     }
 
-    public function getRetailNetworkID(): string
+    public function getRetailNetworkID(): ?string
     {
         return $this->RetailNetworkID;
     }
@@ -207,7 +207,7 @@ class ResponseLocation extends BaseType
         return $this;
     }
 
-    public function getSaleschannel(): string
+    public function getSaleschannel(): ?string
     {
         return $this->Saleschannel;
     }
@@ -219,7 +219,7 @@ class ResponseLocation extends BaseType
         return $this;
     }
 
-    public function getTerminalType(): string
+    public function getTerminalType(): ?string
     {
         return $this->TerminalType;
     }

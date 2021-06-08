@@ -4,9 +4,9 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class TimeframeTimeFrame extends BaseType
 {
-    protected string $From;
+    protected ?string $From = null;
 
-    protected string $To;
+    protected ?string $To = null;
 
     protected array $Options;
 
@@ -17,7 +17,7 @@ class TimeframeTimeFrame extends BaseType
         $this->setOptions($Options);
     }
 
-    public function getFrom(): string
+    public function getFrom(): ?string
     {
         return $this->From;
     }
@@ -41,7 +41,7 @@ class TimeframeTimeFrame extends BaseType
         return $this;
     }
 
-    public function getTo(): string
+    public function getTo(): ?string
     {
         return $this->To;
     }

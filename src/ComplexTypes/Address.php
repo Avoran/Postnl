@@ -4,25 +4,25 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class Address extends BaseType
 {
-    protected string $AddressType;
+    protected ?string $AddressType = null;
 
-    protected string $City;
+    protected ?string $City = null;
 
-    protected string $CompanyName;
+    protected ?string $CompanyName = null;
 
-    protected string $Countrycode;
+    protected ?string $Countrycode = null;
 
-    protected string $FirstName;
+    protected ?string $FirstName = null;
 
-    protected string $HouseNr;
+    protected ?string $HouseNr = null;
 
-    protected string $HouseNrExt;
+    protected ?string $HouseNrExt = null;
 
-    protected string $Name;
+    protected ?string $Name = null;
 
-    protected string $Street;
+    protected ?string $Street = null;
 
-    protected string $Zipcode;
+    protected ?string $Zipcode = null;
 
     protected ?string $Area = null;
 
@@ -80,7 +80,7 @@ class Address extends BaseType
         $this->setRemark($Remark);
     }
 
-    public function getAddressType(): string
+    public function getAddressType(): ?string
     {
         return $this->AddressType;
     }
@@ -92,7 +92,7 @@ class Address extends BaseType
         return $this;
     }
 
-    public function getFirstName(): string
+    public function getFirstName(): ?string
     {
         return $this->FirstName;
     }
@@ -104,7 +104,7 @@ class Address extends BaseType
         return $this;
     }
 
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->Name;
     }
@@ -116,7 +116,7 @@ class Address extends BaseType
         return $this;
     }
 
-    public function getCompanyName(): string
+    public function getCompanyName(): ?string
     {
         return $this->CompanyName;
     }
@@ -151,7 +151,7 @@ class Address extends BaseType
         return $this;
     }
 
-    public function getStreet(): string
+    public function getStreet(): ?string
     {
         return $this->Street;
     }
@@ -163,7 +163,7 @@ class Address extends BaseType
         return $this;
     }
 
-    public function getHouseNr(): string
+    public function getHouseNr(): ?string
     {
         return $this->HouseNr;
     }
@@ -175,7 +175,7 @@ class Address extends BaseType
         return $this;
     }
 
-    public function getHouseNrExt(): string
+    public function getHouseNrExt(): ?string
     {
         return $this->HouseNrExt;
     }
@@ -187,7 +187,7 @@ class Address extends BaseType
         return $this;
     }
 
-    public function getZipcode(): string
+    public function getZipcode(): ?string
     {
         return $this->Zipcode;
     }
@@ -199,7 +199,7 @@ class Address extends BaseType
         return $this;
     }
 
-    public function getCity(): string
+    public function getCity(): ?string
     {
         return $this->City;
     }
@@ -211,7 +211,7 @@ class Address extends BaseType
         return $this;
     }
 
-    public function getCountrycode(): string
+    public function getCountrycode(): ?string
     {
         return $this->Countrycode;
     }

@@ -4,14 +4,14 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class GetSentDateResponse extends BaseType
 {
-    protected string $SentDate;
+    protected ?string $SentDate = null;
 
     public function __construct(string $SentDate)
     {
         $this->setSentDate($SentDate);
     }
 
-    public function getSentDate(): string
+    public function getSentDate(): ?string
     {
         return $this->SentDate;
     }

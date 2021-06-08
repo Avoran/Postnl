@@ -10,7 +10,7 @@ class Dimension extends BaseType
 
     protected ?string $Volume = null;
 
-    protected string $Weight;
+    protected ?string $Weight = null;
 
     protected ?string $Width = null;
 
@@ -30,7 +30,7 @@ class Dimension extends BaseType
         $this->setWidth($Width);
     }
 
-    public function getWeight(): string
+    public function getWeight(): ?string
     {
         return $this->Weight;
     }

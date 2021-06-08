@@ -4,27 +4,27 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class GetDeliveryDate extends BaseType
 {
-    protected string $AllowSundaySorting;
+    protected ?string $AllowSundaySorting = null;
 
-    protected string $City;
+    protected ?string $City = null;
 
-    protected string $CountryCode;
+    protected ?string $CountryCode = null;
 
     protected ArrayOfCutOffTime $CutOffTimes;
 
-    protected string $HouseNr;
+    protected ?string $HouseNr = null;
 
-    protected string $HouseNrExt;
+    protected ?string $HouseNrExt = null;
 
     protected array $Options;
 
-    protected string $PostalCode;
+    protected ?string $PostalCode = null;
 
-    protected string $ShippingDate;
+    protected ?string $ShippingDate = null;
 
-    protected string $ShippingDuration;
+    protected ?string $ShippingDuration = null;
 
-    protected string $Street;
+    protected ?string $Street = null;
 
     public function __construct(
         string $AllowSundaySorting,
@@ -52,7 +52,7 @@ class GetDeliveryDate extends BaseType
         $this->setStreet($Street);
     }
 
-    public function getAllowSundaySorting(): string
+    public function getAllowSundaySorting(): ?string
     {
         return $this->AllowSundaySorting;
     }
@@ -64,7 +64,7 @@ class GetDeliveryDate extends BaseType
         return $this;
     }
 
-    public function getCity(): string
+    public function getCity(): ?string
     {
         return $this->City;
     }
@@ -76,7 +76,7 @@ class GetDeliveryDate extends BaseType
         return $this;
     }
 
-    public function getCountryCode(): string
+    public function getCountryCode(): ?string
     {
         return $this->CountryCode;
     }
@@ -100,7 +100,7 @@ class GetDeliveryDate extends BaseType
         return $this;
     }
 
-    public function getHouseNr(): string
+    public function getHouseNr(): ?string
     {
         return $this->HouseNr;
     }
@@ -112,7 +112,7 @@ class GetDeliveryDate extends BaseType
         return $this;
     }
 
-    public function getHouseNrExt(): string
+    public function getHouseNrExt(): ?string
     {
         return $this->HouseNrExt;
     }
@@ -136,7 +136,7 @@ class GetDeliveryDate extends BaseType
         return $this;
     }
 
-    public function getPostalCode(): string
+    public function getPostalCode(): ?string
     {
         return $this->PostalCode;
     }
@@ -148,7 +148,7 @@ class GetDeliveryDate extends BaseType
         return $this;
     }
 
-    public function getShippingDate(): string
+    public function getShippingDate(): ?string
     {
         return $this->ShippingDate;
     }
@@ -160,7 +160,7 @@ class GetDeliveryDate extends BaseType
         return $this;
     }
 
-    public function getShippingDuration(): string
+    public function getShippingDuration(): ?string
     {
         return $this->ShippingDuration;
     }
@@ -172,7 +172,7 @@ class GetDeliveryDate extends BaseType
         return $this;
     }
 
-    public function getStreet(): string
+    public function getStreet(): ?string
     {
         return $this->Street;
     }

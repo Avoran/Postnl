@@ -4,9 +4,9 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class Warning extends BaseType
 {
-    protected string $Code;
+    protected ?string $Code = null;
 
-    protected string $Description;
+    protected ?string $Description = null;
 
     public function __construct(string $Code, string $Description)
     {
@@ -14,7 +14,7 @@ class Warning extends BaseType
         $this->setDescription($Description);
     }
 
-    public function getCode(): string
+    public function getCode(): ?string
     {
         return $this->Code;
     }
@@ -26,7 +26,7 @@ class Warning extends BaseType
         return $this;
     }
 
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->Description;
     }

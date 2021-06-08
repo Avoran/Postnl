@@ -6,9 +6,9 @@ use DateTime;
 
 class BaseLocation extends BaseType
 {
-    protected string $AllowSundaySorting;
+    protected ?string $AllowSundaySorting = null;
 
-    protected string $DeliveryDate;
+    protected ?string $DeliveryDate = null;
 
     protected array $DeliveryOptions;
 
@@ -28,7 +28,7 @@ class BaseLocation extends BaseType
         $this->setOptions($Options);
     }
 
-    public function getAllowSundaySorting(): string
+    public function getAllowSundaySorting(): ?string
     {
         return $this->AllowSundaySorting;
     }
@@ -40,7 +40,7 @@ class BaseLocation extends BaseType
         return $this;
     }
 
-    public function getDeliveryDate(): string
+    public function getDeliveryDate(): ?string
     {
         return $this->DeliveryDate;
     }

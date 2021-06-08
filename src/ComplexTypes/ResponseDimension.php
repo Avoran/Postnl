@@ -4,15 +4,15 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class ResponseDimension extends BaseType
 {
-    protected string $Height;
+    protected ?string $Height = null;
 
-    protected string $Length;
+    protected ?string $Length = null;
 
-    protected string $Volume;
+    protected ?string $Volume = null;
 
-    protected string $Weight;
+    protected ?string $Weight = null;
 
-    protected string $Width;
+    protected ?string $Width = null;
 
     public function __construct(string $Height, string $Length, string $Volume, string $Weight, string $Width)
     {
@@ -23,7 +23,7 @@ class ResponseDimension extends BaseType
         $this->setWidth($Width);
     }
 
-    public function getHeight(): string
+    public function getHeight(): ?string
     {
         return $this->Height;
     }
@@ -35,7 +35,7 @@ class ResponseDimension extends BaseType
         return $this;
     }
 
-    public function getLength(): string
+    public function getLength(): ?string
     {
         return $this->Length;
     }
@@ -47,7 +47,7 @@ class ResponseDimension extends BaseType
         return $this;
     }
 
-    public function getVolume(): string
+    public function getVolume(): ?string
     {
         return $this->Volume;
     }
@@ -59,7 +59,7 @@ class ResponseDimension extends BaseType
         return $this;
     }
 
-    public function getWeight(): string
+    public function getWeight(): ?string
     {
         return $this->Weight;
     }
@@ -71,7 +71,7 @@ class ResponseDimension extends BaseType
         return $this;
     }
 
-    public function getWidth(): string
+    public function getWidth(): ?string
     {
         return $this->Width;
     }
