@@ -51,14 +51,14 @@ class LabellingClient extends BaseClient
         'Warning',
     ];
 
-    public function generateLabel(ComplexTypes\GenerateLabelRequest $request): ComplexTypes\ResponseShipment
+    public function generateLabel(ComplexTypes\GenerateLabelRequest $request): ComplexTypes\GenerateLabelResponse
     {
         return $this->__soapCall('GenerateLabel', [$request]);
     }
 
     public function generateLabelWithoutConfirm(
         ComplexTypes\GenerateLabelRequest $request
-    ): ComplexTypes\ResponseShipment {
+    ): ComplexTypes\GenerateLabelResponse {
         return $this->__soapCall('GenerateLabelWithoutConfirm', [$request]);
     }
 }
