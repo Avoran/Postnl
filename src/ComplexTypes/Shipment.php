@@ -10,7 +10,7 @@ class Shipment extends BaseType
 
     protected Dimension $Dimension;
 
-    protected ?string $ProductCodeDelivery = null;
+    protected ?int $ProductCodeDelivery = null;
 
     protected ?ArrayOfAmount $Amounts = null;
 
@@ -66,7 +66,7 @@ class Shipment extends BaseType
         ArrayOfAddress $Addresses,
         string $Barcode,
         Dimension $Dimension,
-        string $ProductCodeDelivery,
+        int $ProductCodeDelivery,
         ?ArrayOfAmount $Amounts = null,
         ?string $CollectionTimeStampEnd = null,
         ?string $CollectionTimeStampStart = null,
@@ -162,12 +162,12 @@ class Shipment extends BaseType
         return $this;
     }
 
-    public function getProductCodeDelivery(): ?string
+    public function getProductCodeDelivery(): ?int
     {
         return $this->ProductCodeDelivery;
     }
 
-    public function setProductCodeDelivery(string $ProductCodeDelivery): static
+    public function setProductCodeDelivery(int $ProductCodeDelivery): static
     {
         $this->ProductCodeDelivery = $ProductCodeDelivery;
 

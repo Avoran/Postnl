@@ -9,22 +9,22 @@ use DateTime;
  */
 class Message extends BaseType
 {
-    protected ?string $MessageID = null;
+    protected ?int $MessageID = null;
 
     protected ?string $MessageTimeStamp = null;
 
-    public function __construct(string $MessageID = '1', ?string $MessageTimeStamp = null)
+    public function __construct(int $MessageID = 1, ?string $MessageTimeStamp = null)
     {
         $this->setMessageID($MessageID);
         $this->setMessageTimeStamp($MessageTimeStamp ?: (new DateTime())->format("d-m-Y H:i:s"));
     }
 
-    public function getMessageID(): ?string
+    public function getMessageID(): ?int
     {
         return $this->MessageID;
     }
 
-    public function setMessageID(string $MessageID): static
+    public function setMessageID(int $MessageID): static
     {
         $this->MessageID = $MessageID;
 

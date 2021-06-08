@@ -8,7 +8,7 @@ class LabellingMessage extends Message
 
     public function __construct(
         string $Printertype = 'GraphicFile|PDF',
-        string $MessageID = '1',
+        int $MessageID = 1,
         ?string $MessageTimeStamp = null
     ) {
         parent::__construct($MessageID, $MessageTimeStamp);

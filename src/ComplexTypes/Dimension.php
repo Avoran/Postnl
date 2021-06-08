@@ -4,22 +4,22 @@ namespace DivideBV\Postnl\ComplexTypes;
 
 class Dimension extends BaseType
 {
-    protected ?string $Height = null;
+    protected ?int $Height = null;
 
-    protected ?string $Length = null;
+    protected ?int $Length = null;
 
-    protected ?string $Volume = null;
+    protected ?int $Volume = null;
 
-    protected ?string $Weight = null;
+    protected ?int $Weight = null;
 
-    protected ?string $Width = null;
+    protected ?int $Width = null;
 
     public function __construct(
-        string $Weight,
-        ?string $Height = null,
-        ?string $Length = null,
-        ?string $Volume = null,
-        ?string $Width = null
+        int $Weight,
+        ?int $Height = null,
+        ?int $Length = null,
+        ?int $Volume = null,
+        ?int $Width = null
     ) {
         $this->setWeight($Weight);
 
@@ -30,60 +30,60 @@ class Dimension extends BaseType
         $this->setWidth($Width);
     }
 
-    public function getWeight(): ?string
+    public function getWeight(): ?int
     {
         return $this->Weight;
     }
 
-    public function setWeight(string $Weight): static
+    public function setWeight(int $Weight): static
     {
         $this->Weight = $Weight;
 
         return $this;
     }
 
-    public function getHeight(): ?string
+    public function getHeight(): ?int
     {
         return $this->Height;
     }
 
-    public function setHeight(?string $Height): static
+    public function setHeight(?int $Height): static
     {
         $this->Height = $Height;
 
         return $this;
     }
 
-    public function getLength(): ?string
+    public function getLength(): ?int
     {
         return $this->Length;
     }
 
-    public function setLength(?string $Length): static
+    public function setLength(?int $Length): static
     {
         $this->Length = $Length;
 
         return $this;
     }
 
-    public function getVolume(): ?string
+    public function getVolume(): ?int
     {
         return $this->Volume;
     }
 
-    public function setVolume(?string $Volume): static
+    public function setVolume(?int $Volume): static
     {
         $this->Volume = $Volume;
 
         return $this;
     }
 
-    public function getWidth(): ?string
+    public function getWidth(): ?int
     {
         return $this->Width;
     }
 
-    public function setWidth(?string $Width): static
+    public function setWidth(?int $Width): static
     {
         $this->Width = $Width;
 
