@@ -1,25 +1,26 @@
-<?php namespace DivideBV\Postnl;
+<?php
+
+namespace DivideBV\Postnl;
 
 /**
  * Client class for CIF's confirming service.
  */
 class ConfirmingClient extends BaseClient
 {
+    /**
+     * The URL of the production WSDL.
+     */
+    protected const PRODUCTION_WSDL = 'https://api.postnl.nl/shipment/v1_9/confirm/soap.wsdl';
 
     /**
-     * @var string The URL of the production WSDL.
+     * The URL of the sandbox WSDL.
      */
-    const PRODUCTION_WSDL = 'https://api.postnl.nl/shipment/v1_9/confirm/soap.wsdl';
+    protected const SANDBOX_WSDL = 'https://api-sandbox.postnl.nl/shipment/v1_9/confirm/soap.wsdl';
 
     /**
-     * @var string The URL of the sandbox WSDL.
+     * The complex types used by this client.
      */
-    const SANDBOX_WSDL = 'https://api-sandbox.postnl.nl/shipment/v1_9/confirm/soap.wsdl';
-
-    /**
-     * @var array The complex types used by this client.
-     */
-    protected $classes = [
+    protected array $classes = [
         'ConfirmingMessage',
         'Customer',
         'Address',
@@ -45,12 +46,8 @@ class ConfirmingClient extends BaseClient
         'Warning',
     ];
 
-    /**
-     * @param ComplexTypes\ConfirmingMessage $Confirming
-     * @return ComplexTypes\ArrayOfConfirmingResponseShipment
-     */
-    public function confirming(ComplexTypes\ConfirmingMessage $Confirming)
+    public function confirming(ComplexTypes\ConfirmingMessage $message): ComplexTypes\ArrayOfConfirmingResponseShipment
     {
-        return $this->__soapCall('Confirming', [$Confirming]);
+        return $this->__soapCall('Confirming', [$message]);
     }
 }

@@ -1,61 +1,40 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class GetTimeframesResponse extends BaseType
 {
+    protected ArrayOfReasonNoTimeframe $ReasonNoTimeframes;
 
-    /**
-     * @var ArrayOfReasonNoTimeframe
-     */
-    protected $ReasonNoTimeframes = null;
+    protected ArrayOfTimeframe $Timeframes;
 
-    /**
-     * @var ArrayOfTimeframe
-     */
-    protected $Timeframes = null;
-
-    /**
-     * @param ArrayOfReasonNoTimeframe $ReasonNoTimeframes
-     * @param ArrayOfTimeframe $Timeframes
-     */
     public function __construct(ArrayOfReasonNoTimeframe $ReasonNoTimeframes, ArrayOfTimeframe $Timeframes)
     {
         $this->setReasonNoTimeframes($ReasonNoTimeframes);
         $this->setTimeframes($Timeframes);
     }
 
-    /**
-     * @return ArrayOfReasonNoTimeframe
-     */
-    public function getReasonNoTimeframes()
+    public function getReasonNoTimeframes(): ArrayOfReasonNoTimeframe
     {
         return $this->ReasonNoTimeframes;
     }
 
-    /**
-     * @param ArrayOfReasonNoTimeframe $ReasonNoTimeframes
-     * @return GetTimeframesResponse
-     */
-    public function setReasonNoTimeframes($ReasonNoTimeframes)
+    public function setReasonNoTimeframes(ArrayOfReasonNoTimeframe $ReasonNoTimeframes): static
     {
         $this->ReasonNoTimeframes = $ReasonNoTimeframes;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfTimeframe
-     */
-    public function getTimeframes()
+    public function getTimeframes(): ArrayOfTimeframe
     {
         return $this->Timeframes;
     }
 
-    /**
-     * @param ArrayOfTimeframe $Timeframes
-     * @return GetTimeframesResponse
-     */
-    public function setTimeframes($Timeframes)
+    public function setTimeframes(ArrayOfTimeframe $Timeframes): static
     {
         $this->Timeframes = $Timeframes;
+
         return $this;
     }
 }

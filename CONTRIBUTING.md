@@ -1,6 +1,6 @@
 # Code style
 
-This project uses the [PSR-2](http://www.php-fig.org/psr/psr-2/) coding style.
+This project uses the [PSR-12](https://www.php-fig.org/psr/psr-12/) coding style.
 
 # Grunt
 

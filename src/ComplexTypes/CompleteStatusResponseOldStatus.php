@@ -1,46 +1,25 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class CompleteStatusResponseOldStatus extends BaseType
 {
+    protected string $Code;
 
-    /**
-     * @var string
-     */
-    protected $Code = null;
+    protected string $Description;
 
-    /**
-     * @var string
-     */
-    protected $Description = null;
+    protected string $PhaseCode;
 
-    /**
-     * @var string
-     */
-    protected $PhaseCode = null;
+    protected string $PhaseDescription;
 
-    /**
-     * @var string
-     */
-    protected $PhaseDescription = null;
+    protected string $TimeStamp;
 
-    /**
-     * @var string
-     */
-    protected $TimeStamp = null;
-
-    /**
-     * @param string $Code
-     * @param string $Description
-     * @param string $PhaseCode
-     * @param string $PhaseDescription
-     * @param string $TimeStamp
-     */
     public function __construct(
-        $Code,
-        $Description,
-        $PhaseCode,
-        $PhaseDescription,
-        $TimeStamp
+        string $Code,
+        string $Description,
+        string $PhaseCode,
+        string $PhaseDescription,
+        string $TimeStamp
     ) {
         $this->setCode($Code);
         $this->setDescription($Description);
@@ -49,93 +28,63 @@ class CompleteStatusResponseOldStatus extends BaseType
         $this->setTimeStamp($TimeStamp);
     }
 
-    /**
-     * @return string
-     */
-    public function getCode()
+    public function getCode(): string
     {
         return $this->Code;
     }
 
-    /**
-     * @param string $Code
-     * @return CompleteStatusResponseOldStatus
-     */
-    public function setCode($Code)
+    public function setCode(string $Code): static
     {
         $this->Code = $Code;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->Description;
     }
 
-    /**
-     * @param string $Description
-     * @return CompleteStatusResponseOldStatus
-     */
-    public function setDescription($Description)
+    public function setDescription(string $Description): static
     {
         $this->Description = $Description;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getPhaseCode()
+    public function getPhaseCode(): string
     {
         return $this->PhaseCode;
     }
 
-    /**
-     * @param string $PhaseCode
-     * @return CompleteStatusResponseOldStatus
-     */
-    public function setPhaseCode($PhaseCode)
+    public function setPhaseCode(string $PhaseCode): static
     {
         $this->PhaseCode = $PhaseCode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getPhaseDescription()
+    public function getPhaseDescription(): string
     {
         return $this->PhaseDescription;
     }
 
-    /**
-     * @param string $PhaseDescription
-     * @return CompleteStatusResponseOldStatus
-     */
-    public function setPhaseDescription($PhaseDescription)
+    public function setPhaseDescription(string $PhaseDescription): static
     {
         $this->PhaseDescription = $PhaseDescription;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getTimeStamp()
+    public function getTimeStamp(): string
     {
         return $this->TimeStamp;
     }
 
-    /**
-     * @param string $TimeStamp
-     * @return CompleteStatusResponseOldStatus
-     */
-    public function setTimeStamp($TimeStamp)
+    public function setTimeStamp(string $TimeStamp): static
     {
         $this->TimeStamp = $TimeStamp;
+
         return $this;
     }
 }

@@ -1,25 +1,26 @@
-<?php namespace DivideBV\Postnl;
+<?php
+
+namespace DivideBV\Postnl;
 
 /**
  * Client class for CIF's shipping status service.
  */
 class ShippingStatusClient extends BaseClient
 {
+    /**
+     * The URL of the production WSDL.
+     */
+    protected const PRODUCTION_WSDL = 'https://api.postnl.nl/shipment/v1_6/status/soap.wsdl';
 
     /**
-     * @var string The URL of the production WSDL.
+     * The URL of the sandbox WSDL.
      */
-    const PRODUCTION_WSDL = 'https://api.postnl.nl/shipment/v1_6/status/soap.wsdl';
+    protected const SANDBOX_WSDL = 'https://api-sandbox.postnl.nl/shipment/v1_6/status/soap.wsdl';
 
     /**
-     * @var string The URL of the sandbox WSDL.
+     * The complex types used by this client.
      */
-    const SANDBOX_WSDL = 'https://api-sandbox.postnl.nl/shipment/v1_6/status/soap.wsdl';
-
-    /**
-     * @var array The complex types used by this client.
-     */
-    protected $classes = [
+    protected array $classes = [
         'CurrentStatusRequest',
         'Message',
         'RequestCustomer',
@@ -62,66 +63,42 @@ class ShippingStatusClient extends BaseClient
         'GetSignatureResponseSignature',
     ];
 
-    /**
-     * @param ComplexTypes\CurrentStatusRequest $CurrentStatus
-     * @return ComplexTypes\CurrentStatusResponse
-     */
-    public function currentStatus(ComplexTypes\CurrentStatusRequest $CurrentStatus)
+    public function currentStatus(ComplexTypes\CurrentStatusRequest $request): ComplexTypes\CurrentStatusResponse
     {
-        return $this->__soapCall('CurrentStatus', [$CurrentStatus]);
+        return $this->__soapCall('CurrentStatus', [$request]);
     }
 
-    /**
-     * @param ComplexTypes\CompleteStatusRequest $CompleteStatus
-     * @return ComplexTypes\CompleteStatusResponse
-     */
-    public function completeStatus(ComplexTypes\CompleteStatusRequest $CompleteStatus)
+    public function completeStatus(ComplexTypes\CompleteStatusRequest $request): ComplexTypes\CompleteStatusResponse
     {
-        return $this->__soapCall('CompleteStatus', [$CompleteStatus]);
+        return $this->__soapCall('CompleteStatus', [$request]);
     }
 
-    /**
-     * @param ComplexTypes\CurrentStatusByReferenceRequest $CurrentStatusByReference
-     * @return ComplexTypes\CurrentStatusResponse
-     */
-    public function currentStatusByReference(ComplexTypes\CurrentStatusByReferenceRequest $CurrentStatusByReference)
-    {
-        return $this->__soapCall('CurrentStatusByReference', [$CurrentStatusByReference]);
+    public function currentStatusByReference(
+        ComplexTypes\CurrentStatusByReferenceRequest $request
+    ): ComplexTypes\CurrentStatusResponse {
+        return $this->__soapCall('CurrentStatusByReference', [$request]);
     }
 
-    /**
-     * @param ComplexTypes\CompleteStatusByReferenceRequest $CompleteStatusByReference
-     * @return ComplexTypes\CompleteStatusResponse
-     */
-    public function completeStatusByReference(ComplexTypes\CompleteStatusByReferenceRequest $CompleteStatusByReference)
-    {
-        return $this->__soapCall('CompleteStatusByReference', [$CompleteStatusByReference]);
+    public function completeStatusByReference(
+        ComplexTypes\CompleteStatusByReferenceRequest $request
+    ): ComplexTypes\CompleteStatusResponse {
+        return $this->__soapCall('CompleteStatusByReference', [$request]);
     }
 
-    /**
-     * @param ComplexTypes\CurrentStatusByStatusRequest $CurrentStatusByStatus
-     * @return ComplexTypes\CurrentStatusResponse
-     */
-    public function currentStatusByStatus(ComplexTypes\CurrentStatusByStatusRequest $CurrentStatusByStatus)
-    {
-        return $this->__soapCall('CurrentStatusByStatus', [$CurrentStatusByStatus]);
+    public function currentStatusByStatus(
+        ComplexTypes\CurrentStatusByStatusRequest $request
+    ): ComplexTypes\CurrentStatusResponse {
+        return $this->__soapCall('CurrentStatusByStatus', [$request]);
     }
 
-    /**
-     * @param ComplexTypes\CurrentStatusByPhaseRequest $CurrentStatusByPhase
-     * @return ComplexTypes\CurrentStatusResponse
-     */
-    public function currentStatusByPhase(ComplexTypes\CurrentStatusByPhaseRequest $CurrentStatusByPhase)
-    {
-        return $this->__soapCall('CurrentStatusByPhase', [$CurrentStatusByPhase]);
+    public function currentStatusByPhase(
+        ComplexTypes\CurrentStatusByPhaseRequest $request
+    ): ComplexTypes\CurrentStatusResponse {
+        return $this->__soapCall('CurrentStatusByPhase', [$request]);
     }
 
-    /**
-     * @param ComplexTypes\GetSignatureRequest $GetSignature
-     * @return ComplexTypes\GetSignatureResponse
-     */
-    public function getSignature(ComplexTypes\GetSignatureRequest $GetSignature)
+    public function getSignature(ComplexTypes\GetSignatureRequest $request): ComplexTypes\GetSignatureResponse
     {
-        return $this->__soapCall('GetSignature', [$GetSignature]);
+        return $this->__soapCall('GetSignature', [$request]);
     }
 }

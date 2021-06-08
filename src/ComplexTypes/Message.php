@@ -1,4 +1,6 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 use DateTime;
 
@@ -7,60 +9,37 @@ use DateTime;
  */
 class Message extends BaseType
 {
+    protected string $MessageID;
 
-    /**
-     * @var string
-     */
-    protected $MessageID = null;
+    protected string $MessageTimeStamp;
 
-    /**
-     * @var string
-     */
-    protected $MessageTimeStamp = null;
-
-    /**
-     * @param string $MessageID Defaults to 1.
-     * @param string $MessageTimeStamp Defaults to the current time.
-     */
-    public function __construct($MessageID = 1, $MessageTimeStamp = null)
+    public function __construct(string $MessageID = '1', ?string $MessageTimeStamp = null)
     {
         $this->setMessageID($MessageID);
-        $this->setMessageTimeStamp($MessageTimeStamp ?: (new DateTime)->format("d-m-Y H:i:s"));
+        $this->setMessageTimeStamp($MessageTimeStamp ?: (new DateTime())->format("d-m-Y H:i:s"));
     }
 
-    /**
-     * @return string
-     */
-    public function getMessageID()
+    public function getMessageID(): string
     {
         return $this->MessageID;
     }
 
-    /**
-     * @param string $MessageID
-     * @return Message
-     */
-    public function setMessageID($MessageID)
+    public function setMessageID(string $MessageID): static
     {
         $this->MessageID = $MessageID;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getMessageTimeStamp()
+    public function getMessageTimeStamp(): string
     {
         return $this->MessageTimeStamp;
     }
 
-    /**
-     * @param string $MessageTimeStamp
-     * @return Message
-     */
-    public function setMessageTimeStamp($MessageTimeStamp)
+    public function setMessageTimeStamp(string $MessageTimeStamp): static
     {
         $this->MessageTimeStamp = $MessageTimeStamp;
+
         return $this;
     }
 }

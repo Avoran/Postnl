@@ -1,64 +1,43 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 /**
  * XML namespace: http://postnl.nl/cif/domain/BarcodeWebService/
  */
 class GetNearestLocationsResponse extends BaseType
 {
+    protected ArrayOfGetLocationsResult $NearestLocationsResult;
 
-    /**
-     * @var ArrayOfGetLocationsResult
-     */
-    protected $NearestLocationsResult = null;
+    protected ArrayOfWarning $Warnings;
 
-    /**
-     * @var ArrayOfWarning|null
-     */
-    protected $Warnings = null;
-
-    /**
-     * @param ArrayOfGetLocationsResult $NearestLocationsResult
-     * @param ArrayOfWarning $Warnings
-     */
     public function __construct(ArrayOfGetLocationsResult $NearestLocationsResult, ArrayOfWarning $Warnings)
     {
-        $this->setNearestLocationsResult($NearestLocationsResult);
+        $this->setNearestLocation($NearestLocationsResult);
         $this->setWarnings($Warnings);
     }
 
-    /**
-     * @return ArrayOfGetLocationsResult
-     */
-    public function getNearestLocations()
+    public function getNearestLocations(): ArrayOfGetLocationsResult
     {
         return $this->NearestLocationsResult;
     }
 
-    /**
-     * @param ArrayOfGetLocationsResult $NearestLocationsResult
-     * @return GetNearestLocationsResponse
-     */
-    public function setNearestLocation($NearestLocationsResult)
+    public function setNearestLocation(ArrayOfGetLocationsResult $NearestLocationsResult): static
     {
         $this->NearestLocationsResult = $NearestLocationsResult;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfWarning
-     */
-    public function getWarnings()
+    public function getWarnings(): ArrayOfWarning
     {
         return $this->Warnings;
     }
 
-    /**
-     * @param ArrayOfWarning $Warnings
-     * @return GetSignatureResponse
-     */
-    public function setWarnings($Warnings)
+    public function setWarnings(ArrayOfWarning $Warnings): static
     {
         $this->Warnings = $Warnings;
+
         return $this;
     }
 }

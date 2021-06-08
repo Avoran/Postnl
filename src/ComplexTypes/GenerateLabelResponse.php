@@ -1,63 +1,42 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class GenerateLabelResponse extends BaseType
 {
+    protected ?ArrayOfMergedLabel $MergedLabels = null;
 
-    /**
-     * @var ArrayOfMergedLabel
-     */
-    protected $MergedLabels = null;
+    protected ?ArrayOfResponseShipment $ResponseShipments = null;
 
-    /**
-     * @var ArrayOfResponseShipment
-     */
-    protected $ResponseShipments = null;
-
-    /**
-     * @param ArrayOfMergedLabel|null $MergedLabels
-     * @param ArrayOfResponseShipment|null $ResponseShipments
-     */
     public function __construct(
-        ArrayOfMergedLabel $MergedLabels = null,
-        ArrayOfResponseShipment $ResponseShipments = null
+        ?ArrayOfMergedLabel $MergedLabels = null,
+        ?ArrayOfResponseShipment $ResponseShipments = null
     ) {
         $this->setMergedLabels($MergedLabels);
         $this->setResponseShipments($ResponseShipments);
     }
 
-    /**
-     * @return ArrayOfMergedLabel
-     */
-    public function getMergedLabels()
+    public function getMergedLabels(): ?ArrayOfMergedLabel
     {
         return $this->MergedLabels;
     }
 
-    /**
-     * @param ArrayOfMergedLabel $MergedLabels
-     * @return GenerateLabelResponse
-     */
-    public function setMergedLabels($MergedLabels)
+    public function setMergedLabels(?ArrayOfMergedLabel $MergedLabels): static
     {
         $this->MergedLabels = $MergedLabels;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfResponseShipment
-     */
-    public function getResponseShipments()
+    public function getResponseShipments(): ?ArrayOfResponseShipment
     {
         return $this->ResponseShipments;
     }
 
-    /**
-     * @param ArrayOfResponseShipment $ResponseShipments
-     * @return GenerateLabelResponse
-     */
-    public function setResponseShipments($ResponseShipments)
+    public function setResponseShipments(?ArrayOfResponseShipment $ResponseShipments): static
     {
         $this->ResponseShipments = $ResponseShipments;
+
         return $this;
     }
 }

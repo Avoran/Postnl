@@ -1,41 +1,30 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ArrayOfGetLocationsResult extends BaseArrayOfType
 {
-
     /**
-     * @var string The name of the array property this class is a wrapper of.
+     * The name of the array property this class is a wrapper of.
      */
-    const WRAPPED_PROPERTY = 'GetLocationsResult';
+    protected const WRAPPED_PROPERTY = 'GetLocationsResult';
 
-    /**
-     * @var GetLocationsResult[]
-     */
-    protected $LocationsResult = null;
+    protected array $LocationsResult;
 
-    /**
-     * @param GetLocationsResult[] $LocationsResult
-     */
     public function __construct(array $LocationsResult)
     {
         $this->setLocationsResult($LocationsResult);
     }
 
-    /**
-     * @return GetLocationsResult[]
-     */
-    public function getLocationsResult()
+    public function getLocationsResult(): array
     {
         return $this->LocationsResult;
     }
 
-    /**
-     * @param GetLocationsResult[] $LocationsResult
-     * @return ArrayOfGetLocationsResult
-     */
-    public function setLocationsResult(array $LocationsResult)
+    public function setLocationsResult(array $LocationsResult): static
     {
         $this->LocationsResult = $LocationsResult;
+
         return $this;
     }
 }

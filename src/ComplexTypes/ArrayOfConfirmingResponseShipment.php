@@ -1,41 +1,30 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ArrayOfConfirmingResponseShipment extends BaseArrayOfType
 {
-
     /**
-     * @var string The name of the array property this class is a wrapper of.
+     * The name of the array property this class is a wrapper of.
      */
-    const WRAPPED_PROPERTY = 'ConfirmingResponseShipment';
+    protected const WRAPPED_PROPERTY = 'ConfirmingResponseShipment';
 
-    /**
-     * @var ConfirmingResponseShipment[]
-     */
-    protected $ConfirmingResponseShipment = null;
+    protected array $ConfirmingResponseShipment;
 
-    /**
-     * @param ConfirmingResponseShipment[] $ConfirmingResponseShipment
-     */
     public function __construct(array $ConfirmingResponseShipment)
     {
         $this->setConfirmingResponseShipment($ConfirmingResponseShipment);
     }
 
-    /**
-     * @return ConfirmingResponseShipment[]
-     */
-    public function getConfirmingResponseShipment()
+    public function getConfirmingResponseShipment(): array
     {
         return $this->ConfirmingResponseShipment;
     }
 
-    /**
-     * @param ConfirmingResponseShipment[] $ConfirmingResponseShipment
-     * @return ArrayOfConfirmingResponseShipment
-     */
-    public function setConfirmingResponseShipment(array $ConfirmingResponseShipment)
+    public function setConfirmingResponseShipment(array $ConfirmingResponseShipment): static
     {
         $this->ConfirmingResponseShipment = $ConfirmingResponseShipment;
+
         return $this;
     }
 }

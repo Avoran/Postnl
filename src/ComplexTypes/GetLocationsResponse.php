@@ -1,61 +1,40 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class GetLocationsResponse extends BaseType
 {
+    protected ArrayOfResponseLocation $GetLocationsResult;
 
-    /**
-     * @var ArrayOfResponseLocation
-     */
-    protected $GetLocationsResult = null;
+    protected ArrayOfWarning $Warnings;
 
-    /**
-     * @var ArrayOfWarning
-     */
-    protected $Warnings = null;
-
-    /**
-     * @param ArrayOfResponseLocation $GetLocationsResult
-     * @param ArrayOfWarning $Warnings
-     */
     public function __construct(ArrayOfResponseLocation $GetLocationsResult, ArrayOfWarning $Warnings)
     {
         $this->setGetLocationsResult($GetLocationsResult);
         $this->setWarnings($Warnings);
     }
 
-    /**
-     * @return ArrayOfResponseLocation
-     */
-    public function getGetLocationsResult()
+    public function getGetLocationsResult(): ArrayOfResponseLocation
     {
         return $this->GetLocationsResult;
     }
 
-    /**
-     * @param ArrayOfResponseLocation $GetLocationsResult
-     * @return GetLocationsResponse
-     */
-    public function setGetLocationsResult($GetLocationsResult)
+    public function setGetLocationsResult(ArrayOfResponseLocation $GetLocationsResult): static
     {
         $this->GetLocationsResult = $GetLocationsResult;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfWarning
-     */
-    public function getWarnings()
+    public function getWarnings(): ArrayOfWarning
     {
         return $this->Warnings;
     }
 
-    /**
-     * @param ArrayOfWarning $Warnings
-     * @return GetLocationsResponse
-     */
-    public function setWarnings($Warnings)
+    public function setWarnings(ArrayOfWarning $Warnings): static
     {
         $this->Warnings = $Warnings;
+
         return $this;
     }
 }

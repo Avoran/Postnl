@@ -1,60 +1,31 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ResponseAmount extends BaseType
 {
+    protected string $AccountName;
 
-    /**
-     * @var string
-     */
-    protected $AccountName = null;
+    protected string $AccountNr;
 
-    /**
-     * @var string
-     */
-    protected $AccountNr = null;
+    protected string $AmountType;
 
-    /**
-     * @var string
-     */
-    protected $AmountType = null;
+    protected string $Currency;
 
-    /**
-     * @var string
-     */
-    protected $Currency = null;
+    protected string $Reference;
 
-    /**
-     * @var string
-     */
-    protected $Reference = null;
+    protected string $TransactionNumber;
 
-    /**
-     * @var string
-     */
-    protected $TransactionNumber = null;
+    protected string $Value;
 
-    /**
-     * @var string
-     */
-    protected $Value = null;
-
-    /**
-     * @param string $AccountName
-     * @param string $AccountNr
-     * @param string $AmountType
-     * @param string $Currency
-     * @param string $Reference
-     * @param string $TransactionNumber
-     * @param string $Value
-     */
     public function __construct(
-        $AccountName,
-        $AccountNr,
-        $AmountType,
-        $Currency,
-        $Reference,
-        $TransactionNumber,
-        $Value
+        string $AccountName,
+        string $AccountNr,
+        string $AmountType,
+        string $Currency,
+        string $Reference,
+        string $TransactionNumber,
+        string $Value
     ) {
         $this->setAccountName($AccountName);
         $this->setAccountNr($AccountNr);
@@ -65,129 +36,87 @@ class ResponseAmount extends BaseType
         $this->setValue($Value);
     }
 
-    /**
-     * @return string
-     */
-    public function getAccountName()
+    public function getAccountName(): string
     {
         return $this->AccountName;
     }
 
-    /**
-     * @param string $AccountName
-     * @return ResponseAmount
-     */
-    public function setAccountName($AccountName)
+    public function setAccountName(string $AccountName): static
     {
         $this->AccountName = $AccountName;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getAccountNr()
+    public function getAccountNr(): string
     {
         return $this->AccountNr;
     }
 
-    /**
-     * @param string $AccountNr
-     * @return ResponseAmount
-     */
-    public function setAccountNr($AccountNr)
+    public function setAccountNr(string $AccountNr): static
     {
         $this->AccountNr = $AccountNr;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getAmountType()
+    public function getAmountType(): string
     {
         return $this->AmountType;
     }
 
-    /**
-     * @param string $AmountType
-     * @return ResponseAmount
-     */
-    public function setAmountType($AmountType)
+    public function setAmountType(string $AmountType): static
     {
         $this->AmountType = $AmountType;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCurrency()
+    public function getCurrency(): string
     {
         return $this->Currency;
     }
 
-    /**
-     * @param string $Currency
-     * @return ResponseAmount
-     */
-    public function setCurrency($Currency)
+    public function setCurrency(string $Currency): static
     {
         $this->Currency = $Currency;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getReference()
+    public function getReference(): string
     {
         return $this->Reference;
     }
 
-    /**
-     * @param string $Reference
-     * @return ResponseAmount
-     */
-    public function setReference($Reference)
+    public function setReference(string $Reference): static
     {
         $this->Reference = $Reference;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getTransactionNumber()
+    public function getTransactionNumber(): string
     {
         return $this->TransactionNumber;
     }
 
-    /**
-     * @param string $TransactionNumber
-     * @return ResponseAmount
-     */
-    public function setTransactionNumber($TransactionNumber)
+    public function setTransactionNumber(string $TransactionNumber): static
     {
         $this->TransactionNumber = $TransactionNumber;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getValue()
+    public function getValue(): string
     {
         return $this->Value;
     }
 
-    /**
-     * @param string $Value
-     * @return ResponseAmount
-     */
-    public function setValue($Value)
+    public function setValue(string $Value): static
     {
         $this->Value = $Value;
+
         return $this;
     }
 }

@@ -1,61 +1,40 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class Warning extends BaseType
 {
+    protected string $Code;
 
-    /**
-     * @var string
-     */
-    protected $Code = null;
+    protected string $Description;
 
-    /**
-     * @var string
-     */
-    protected $Description = null;
-
-    /**
-     * @param string $Code
-     * @param string $Description
-     */
-    public function __construct($Code, $Description)
+    public function __construct(string $Code, string $Description)
     {
         $this->setCode($Code);
         $this->setDescription($Description);
     }
 
-    /**
-     * @return string
-     */
-    public function getCode()
+    public function getCode(): string
     {
         return $this->Code;
     }
 
-    /**
-     * @param string $Code
-     * @return Warning
-     */
-    public function setCode($Code)
+    public function setCode(string $Code): static
     {
         $this->Code = $Code;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->Description;
     }
 
-    /**
-     * @param string $Description
-     * @return Warning
-     */
-    public function setDescription($Description)
+    public function setDescription(string $Description): static
     {
         $this->Description = $Description;
+
         return $this;
     }
 }

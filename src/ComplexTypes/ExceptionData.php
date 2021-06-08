@@ -1,74 +1,48 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ExceptionData extends BaseType
 {
+    protected ?string $Description = null;
 
-    /**
-     * @var string
-     */
-    protected $Description = null;
+    protected ?string $ErrorMsg = null;
 
-    /**
-     * @var string
-     */
-    protected $ErrorMsg = null;
+    protected ?string $ErrorNumber = null;
 
-    /**
-     * @var string
-     */
-    protected $ErrorNumber = null;
-
-    /**
-     * @return string
-     */
-    public function getDescription()
+    public function getDescription(): ?string
     {
         return $this->Description;
     }
 
-    /**
-     * @param string $Description
-     * @return ExceptionData
-     */
-    public function setDescription($Description)
+    public function setDescription(string $Description): static
     {
         $this->Description = $Description;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getErrorMsg()
+    public function getErrorMsg(): ?string
     {
         return $this->ErrorMsg;
     }
 
-    /**
-     * @param string $ErrorMsg
-     * @return ExceptionData
-     */
-    public function setErrorMsg($ErrorMsg)
+    public function setErrorMsg(string $ErrorMsg): static
     {
         $this->ErrorMsg = $ErrorMsg;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getErrorNumber()
+    public function getErrorNumber(): ?string
     {
         return $this->ErrorNumber;
     }
 
-    /**
-     * @param string $ErrorNumber
-     * @return ExceptionData
-     */
-    public function setErrorNumber($ErrorNumber)
+    public function setErrorNumber(string $ErrorNumber): static
     {
         $this->ErrorNumber = $ErrorNumber;
+
         return $this;
     }
 }

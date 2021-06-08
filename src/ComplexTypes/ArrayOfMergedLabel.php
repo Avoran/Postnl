@@ -1,41 +1,30 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ArrayOfMergedLabel extends BaseArrayOfType
 {
-
     /**
-     * @var string The name of the array property this class is a wrapper of.
+     * The name of the array property this class is a wrapper of.
      */
-    const WRAPPED_PROPERTY = 'MergedLabel';
+    protected const WRAPPED_PROPERTY = 'MergedLabel';
 
-    /**
-     * @var MergedLabel[]
-     */
-    protected $MergedLabel = null;
+    protected array $MergedLabel;
 
-    /**
-     * @param MergedLabel[] $MergedLabel
-     */
     public function __construct(array $MergedLabel)
     {
         $this->setMergedLabel($MergedLabel);
     }
 
-    /**
-     * @return MergedLabel[]
-     */
-    public function getMergedLabel()
+    public function getMergedLabel(): array
     {
         return $this->MergedLabel;
     }
 
-    /**
-     * @param MergedLabel[] $MergedLabel
-     * @return ArrayOfMergedLabel
-     */
-    public function setMergedLabel(array $MergedLabel)
+    public function setMergedLabel(array $MergedLabel): static
     {
         $this->MergedLabel = $MergedLabel;
+
         return $this;
     }
 }

@@ -1,61 +1,40 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class Timeframe extends BaseType
 {
+    protected string $Date;
 
-    /**
-     * @var string
-     */
-    protected $Date = null;
+    protected ArrayOfTimeframeTimeFrame $Timeframes;
 
-    /**
-     * @var ArrayOfTimeframeTimeFrame
-     */
-    protected $Timeframes = null;
-
-    /**
-     * @param string $Date
-     * @param ArrayOfTimeframeTimeFrame $Timeframes
-     */
-    public function __construct($Date, ArrayOfTimeframeTimeFrame $Timeframes)
+    public function __construct(string $Date, ArrayOfTimeframeTimeFrame $Timeframes)
     {
         $this->setDate($Date);
         $this->setTimeframes($Timeframes);
     }
 
-    /**
-     * @return string
-     */
-    public function getDate()
+    public function getDate(): string
     {
         return $this->Date;
     }
 
-    /**
-     * @param string $Date
-     * @return Timeframe
-     */
-    public function setDate($Date)
+    public function setDate(string $Date): static
     {
         $this->Date = $Date;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfTimeframeTimeFrame
-     */
-    public function getTimeframes()
+    public function getTimeframes(): ArrayOfTimeframeTimeFrame
     {
         return $this->Timeframes;
     }
 
-    /**
-     * @param ArrayOfTimeframeTimeFrame $Timeframes
-     * @return Timeframe
-     */
-    public function setTimeframes($Timeframes)
+    public function setTimeframes(ArrayOfTimeframeTimeFrame $Timeframes): static
     {
         $this->Timeframes = $Timeframes;
+
         return $this;
     }
 }

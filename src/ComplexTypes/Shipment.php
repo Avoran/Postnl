@@ -1,214 +1,97 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class Shipment extends BaseType
 {
+    protected ArrayOfAddress $Addresses;
 
-    /**
-     * @var ArrayOfAddress
-     */
-    protected $Addresses = null;
+    protected string $Barcode;
 
-    /**
-     * @var string
-     */
-    protected $Barcode = null;
+    protected Dimension $Dimension;
 
-    /**
-     * @var Dimension
-     */
-    protected $Dimension = null;
+    protected string $ProductCodeDelivery;
 
-    /**
-     * @var string
-     */
-    protected $ProductCodeDelivery = null;
+    protected ?ArrayOfAmount $Amounts = null;
 
-    /**
-     * @var ArrayOfAmount
-     */
-    protected $Amounts = null;
+    protected ?string $CollectionTimeStampEnd = null;
 
-    /**
-     * @var string
-     */
-    protected $CollectionTimeStampEnd = null;
+    protected ?string $CollectionTimeStampStart = null;
 
-    /**
-     * @var string
-     */
-    protected $CollectionTimeStampStart = null;
+    protected ?ArrayOfContact $Contacts = null;
 
-    /**
-     * @var ArrayOfContact
-     */
-    protected $Contacts = null;
+    protected ?string $Content = null;
 
-    /**
-     * @var string
-     */
-    protected $Content = null;
+    protected ?string $CostCenter = null;
 
-    /**
-     * @var string
-     */
-    protected $CostCenter = null;
+    protected ?string $CustomerOrderNumber = null;
 
-    /**
-     * @var string
-     */
-    protected $CustomerOrderNumber = null;
+    protected ?Customs $Customs = null;
 
-    /**
-     * @var Customs
-     */
-    protected $Customs = null;
+    protected ?string $DeliveryAddress = null;
 
-    /**
-     * @var string
-     */
-    protected $DeliveryAddress = null;
+    protected ?string $DeliveryDate = null;
 
-    /**
-     * @var string
-     */
-    protected $DeliveryDate = null;
+    protected ?string $DownPartnerBarcode = null;
 
-    /**
-     * @var string
-     */
-    protected $DownPartnerBarcode = null;
+    protected ?string $DownPartnerID = null;
 
-    /**
-     * @var string
-     */
-    protected $DownPartnerID = null;
+    protected ?string $DownPartnerLocation = null;
 
-    /**
-     * @var string
-     */
-    protected $DownPartnerLocation = null;
+    protected ?ArrayOfGroup $Groups = null;
 
-    /**
-     * @var ArrayOfGroup
-     */
-    protected $Groups = null;
+    protected ?string $IDExpiration = null;
 
-    /**
-     * @var string
-     */
-    protected $IDExpiration = null;
+    protected ?string $IDNumber = null;
 
-    /**
-     * @var string
-     */
-    protected $IDNumber = null;
+    protected ?string $IDType = null;
 
-    /**
-     * @var string
-     */
-    protected $IDType = null;
+    protected ?string $ProductCodeCollect = null;
 
-    /**
-     * @var string
-     */
-    protected $ProductCodeCollect = null;
+    protected ?ArrayOfProductOption $ProductOptions = null;
 
-    /**
-     * @var ArrayOfProductOption
-     */
-    protected $ProductOptions = null;
+    protected ?string $ReceiverDateOfBirth = null;
 
-    /**
-     * @var string
-     */
-    protected $ReceiverDateOfBirth = null;
+    protected ?string $Reference = null;
 
-    /**
-     * @var string
-     */
-    protected $Reference = null;
+    protected ?string $ReferenceCollect = null;
 
-    /**
-     * @var string
-     */
-    protected $ReferenceCollect = null;
+    protected ?string $Remark = null;
 
-    /**
-     * @var string
-     */
-    protected $Remark = null;
+    protected ?string $ReturnBarcode = null;
 
-    /**
-     * @var string
-     */
-    protected $ReturnBarcode = null;
+    protected ?string $ReturnReference = null;
 
-    /**
-     * @var string
-     */
-    protected $ReturnReference = null;
-
-    /**
-     * @param ArrayOfAddress $Addresses
-     * @param string $Barcode
-     * @param Dimension $Dimension
-     * @param string $ProductCodeDelivery
-     * @param ArrayOfAmount|null $Amounts Optional.
-     * @param string $CollectionTimeStampEnd Optional.
-     * @param string $CollectionTimeStampStart Optional.
-     * @param ArrayOfContact|null $Contacts Optional.
-     * @param string $Content Optional.
-     * @param string $CostCenter Optional.
-     * @param string $CustomerOrderNumber Optional.
-     * @param Customs|null $Customs Optional.
-     * @param string $DeliveryAddress Optional.
-     * @param string $DeliveryDate Optional.
-     * @param string $DownPartnerBarcode Optional.
-     * @param string $DownPartnerID Optional.
-     * @param string $DownPartnerLocation Optional.
-     * @param ArrayOfGroup|null $Groups Optional.
-     * @param string $IDExpiration Optional.
-     * @param string $IDNumber Optional.
-     * @param string $IDType Optional.
-     * @param string $ProductCodeCollect Optional.
-     * @param ArrayOfProductOption|null $ProductOptions Optional.
-     * @param string $ReceiverDateOfBirth Optional.
-     * @param string $Reference Optional.
-     * @param string $ReferenceCollect Optional.
-     * @param string $Remark Optional.
-     * @param string $ReturnBarcode Optional.
-     * @param string $ReturnReference Optional.
-     */
     public function __construct(
         ArrayOfAddress $Addresses,
-        $Barcode,
+        string $Barcode,
         Dimension $Dimension,
-        $ProductCodeDelivery,
-        ArrayOfAmount $Amounts = null,
-        $CollectionTimeStampEnd = null,
-        $CollectionTimeStampStart = null,
-        ArrayOfContact $Contacts = null,
-        $Content = null,
-        $CostCenter = null,
-        $CustomerOrderNumber = null,
-        Customs $Customs = null,
-        $DeliveryAddress = null,
-        $DeliveryDate = null,
-        $DownPartnerBarcode = null,
-        $DownPartnerID = null,
-        $DownPartnerLocation = null,
-        ArrayOfGroup $Groups = null,
-        $IDExpiration = null,
-        $IDNumber = null,
-        $IDType = null,
-        $ProductCodeCollect = null,
-        ArrayOfProductOption $ProductOptions = null,
-        $ReceiverDateOfBirth = null,
-        $Reference = null,
-        $ReferenceCollect = null,
-        $Remark = null,
-        $ReturnBarcode = null,
-        $ReturnReference = null
+        string $ProductCodeDelivery,
+        ?ArrayOfAmount $Amounts = null,
+        ?string $CollectionTimeStampEnd = null,
+        ?string $CollectionTimeStampStart = null,
+        ?ArrayOfContact $Contacts = null,
+        ?string $Content = null,
+        ?string $CostCenter = null,
+        ?string $CustomerOrderNumber = null,
+        ?Customs $Customs = null,
+        ?string $DeliveryAddress = null,
+        ?string $DeliveryDate = null,
+        ?string $DownPartnerBarcode = null,
+        ?string $DownPartnerID = null,
+        ?string $DownPartnerLocation = null,
+        ?ArrayOfGroup $Groups = null,
+        ?string $IDExpiration = null,
+        ?string $IDNumber = null,
+        ?string $IDType = null,
+        ?string $ProductCodeCollect = null,
+        ?ArrayOfProductOption $ProductOptions = null,
+        ?string $ReceiverDateOfBirth = null,
+        ?string $Reference = null,
+        ?string $ReferenceCollect = null,
+        ?string $Remark = null,
+        ?string $ReturnBarcode = null,
+        ?string $ReturnReference = null
     ) {
         $this->setAddresses($Addresses);
         $this->setBarcode($Barcode);
@@ -243,525 +126,351 @@ class Shipment extends BaseType
         $this->setReturnReference($ReturnReference);
     }
 
-    /**
-     * @return ArrayOfAddress
-     */
-    public function getAddresses()
+    public function getAddresses(): ArrayOfAddress
     {
         return $this->Addresses;
     }
 
-    /**
-     * @param ArrayOfAddress $Addresses
-     * @return Shipment
-     */
-    public function setAddresses($Addresses)
+    public function setAddresses(ArrayOfAddress $Addresses): static
     {
         $this->Addresses = $Addresses;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getBarcode()
+    public function getBarcode(): string
     {
         return $this->Barcode;
     }
 
-    /**
-     * @param string $Barcode
-     * @return Shipment
-     */
-    public function setBarcode($Barcode)
+    public function setBarcode(string $Barcode): static
     {
         $this->Barcode = $Barcode;
+
         return $this;
     }
 
-    /**
-     * @return Dimension
-     */
-    public function getDimension()
+    public function getDimension(): Dimension
     {
         return $this->Dimension;
     }
 
-    /**
-     * @param Dimension $Dimension
-     * @return Shipment
-     */
-    public function setDimension($Dimension)
+    public function setDimension(Dimension $Dimension): static
     {
         $this->Dimension = $Dimension;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getProductCodeDelivery()
+    public function getProductCodeDelivery(): string
     {
         return $this->ProductCodeDelivery;
     }
 
-    /**
-     * @param string $ProductCodeDelivery
-     * @return Shipment
-     */
-    public function setProductCodeDelivery($ProductCodeDelivery)
+    public function setProductCodeDelivery(string $ProductCodeDelivery): static
     {
         $this->ProductCodeDelivery = $ProductCodeDelivery;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfAmount
-     */
-    public function getAmounts()
+    public function getAmounts(): ?ArrayOfAmount
     {
         return $this->Amounts;
     }
 
-    /**
-     * @param ArrayOfAmount $Amounts
-     * @return Shipment
-     */
-    public function setAmounts($Amounts)
+    public function setAmounts(?ArrayOfAmount $Amounts): static
     {
         $this->Amounts = $Amounts;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCollectionTimeStampEnd()
+    public function getCollectionTimeStampEnd(): ?string
     {
         return $this->CollectionTimeStampEnd;
     }
 
-    /**
-     * @param string $CollectionTimeStampEnd
-     * @return Shipment
-     */
-    public function setCollectionTimeStampEnd($CollectionTimeStampEnd)
+    public function setCollectionTimeStampEnd(?string $CollectionTimeStampEnd): static
     {
         $this->CollectionTimeStampEnd = $CollectionTimeStampEnd;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCollectionTimeStampStart()
+    public function getCollectionTimeStampStart(): ?string
     {
         return $this->CollectionTimeStampStart;
     }
 
-    /**
-     * @param string $CollectionTimeStampStart
-     * @return Shipment
-     */
-    public function setCollectionTimeStampStart($CollectionTimeStampStart)
+    public function setCollectionTimeStampStart(?string $CollectionTimeStampStart): static
     {
         $this->CollectionTimeStampStart = $CollectionTimeStampStart;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfContact
-     */
-    public function getContacts()
+    public function getContacts(): ?ArrayOfContact
     {
         return $this->Contacts;
     }
 
-    /**
-     * @param ArrayOfContact $Contacts
-     * @return Shipment
-     */
-    public function setContacts($Contacts)
+    public function setContacts(?ArrayOfContact $Contacts): static
     {
         $this->Contacts = $Contacts;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getContent()
+    public function getContent(): ?string
     {
         return $this->Content;
     }
 
-    /**
-     * @param string $Content
-     * @return Shipment
-     */
-    public function setContent($Content)
+    public function setContent(?string $Content): static
     {
         $this->Content = $Content;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCostCenter()
+    public function getCostCenter(): ?string
     {
         return $this->CostCenter;
     }
 
-    /**
-     * @param string $CostCenter
-     * @return Shipment
-     */
-    public function setCostCenter($CostCenter)
+    public function setCostCenter(?string $CostCenter): static
     {
         $this->CostCenter = $CostCenter;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCustomerOrderNumber()
+    public function getCustomerOrderNumber(): ?string
     {
         return $this->CustomerOrderNumber;
     }
 
-    /**
-     * @param string $CustomerOrderNumber
-     * @return Shipment
-     */
-    public function setCustomerOrderNumber($CustomerOrderNumber)
+    public function setCustomerOrderNumber(?string $CustomerOrderNumber): static
     {
         $this->CustomerOrderNumber = $CustomerOrderNumber;
+
         return $this;
     }
 
-    /**
-     * @return Customs
-     */
-    public function getCustoms()
+    public function getCustoms(): ?Customs
     {
         return $this->Customs;
     }
 
-    /**
-     * @param Customs $Customs
-     * @return Shipment
-     */
-    public function setCustoms($Customs)
+    public function setCustoms(?Customs $Customs): static
     {
         $this->Customs = $Customs;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDeliveryAddress()
+    public function getDeliveryAddress(): ?string
     {
         return $this->DeliveryAddress;
     }
 
-    /**
-     * @param string $DeliveryAddress
-     * @return Shipment
-     */
-    public function setDeliveryAddress($DeliveryAddress)
+    public function setDeliveryAddress(?string $DeliveryAddress): static
     {
         $this->DeliveryAddress = $DeliveryAddress;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDeliveryDate()
+    public function getDeliveryDate(): ?string
     {
         return $this->DeliveryDate;
     }
 
-    /**
-     * @param string $DeliveryDate
-     * @return Shipment
-     */
-    public function setDeliveryDate($DeliveryDate)
+    public function setDeliveryDate(?string $DeliveryDate): static
     {
         $this->DeliveryDate = $DeliveryDate;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDownPartnerBarcode()
+    public function getDownPartnerBarcode(): ?string
     {
         return $this->DownPartnerBarcode;
     }
 
-    /**
-     * @param string $DownPartnerBarcode
-     * @return Shipment
-     */
-    public function setDownPartnerBarcode($DownPartnerBarcode)
+    public function setDownPartnerBarcode(?string $DownPartnerBarcode): static
     {
         $this->DownPartnerBarcode = $DownPartnerBarcode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDownPartnerID()
+    public function getDownPartnerID(): ?string
     {
         return $this->DownPartnerID;
     }
 
-    /**
-     * @param string $DownPartnerID
-     * @return Shipment
-     */
-    public function setDownPartnerID($DownPartnerID)
+    public function setDownPartnerID(?string $DownPartnerID): static
     {
         $this->DownPartnerID = $DownPartnerID;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDownPartnerLocation()
+    public function getDownPartnerLocation(): ?string
     {
         return $this->DownPartnerLocation;
     }
 
-    /**
-     * @param string $DownPartnerLocation
-     * @return Shipment
-     */
-    public function setDownPartnerLocation($DownPartnerLocation)
+    public function setDownPartnerLocation(?string $DownPartnerLocation): static
     {
         $this->DownPartnerLocation = $DownPartnerLocation;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfGroup
-     */
-    public function getGroups()
+    public function getGroups(): ?ArrayOfGroup
     {
         return $this->Groups;
     }
 
-    /**
-     * @param ArrayOfGroup $Groups
-     * @return Shipment
-     */
-    public function setGroups($Groups)
+    public function setGroups(?ArrayOfGroup $Groups): static
     {
         $this->Groups = $Groups;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getIDExpiration()
+    public function getIDExpiration(): ?string
     {
         return $this->IDExpiration;
     }
 
-    /**
-     * @param string $IDExpiration
-     * @return Shipment
-     */
-    public function setIDExpiration($IDExpiration)
+    public function setIDExpiration(?string $IDExpiration): static
     {
         $this->IDExpiration = $IDExpiration;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getIDNumber()
+    public function getIDNumber(): ?string
     {
         return $this->IDNumber;
     }
 
-    /**
-     * @param string $IDNumber
-     * @return Shipment
-     */
-    public function setIDNumber($IDNumber)
+    public function setIDNumber(?string $IDNumber): static
     {
         $this->IDNumber = $IDNumber;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getIDType()
+    public function getIDType(): ?string
     {
         return $this->IDType;
     }
 
-    /**
-     * @param string $IDType
-     * @return Shipment
-     */
-    public function setIDType($IDType)
+    public function setIDType(?string $IDType): static
     {
         $this->IDType = $IDType;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getProductCodeCollect()
+    public function getProductCodeCollect(): ?string
     {
         return $this->ProductCodeCollect;
     }
 
-    /**
-     * @param string $ProductCodeCollect
-     * @return Shipment
-     */
-    public function setProductCodeCollect($ProductCodeCollect)
+    public function setProductCodeCollect(?string $ProductCodeCollect): static
     {
         $this->ProductCodeCollect = $ProductCodeCollect;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfProductOption
-     */
-    public function getProductOptions()
+    public function getProductOptions(): ?ArrayOfProductOption
     {
         return $this->ProductOptions;
     }
 
-    /**
-     * @param ArrayOfProductOption $ProductOptions
-     * @return Shipment
-     */
-    public function setProductOptions($ProductOptions)
+    public function setProductOptions(?ArrayOfProductOption $ProductOptions): static
     {
         $this->ProductOptions = $ProductOptions;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getReceiverDateOfBirth()
+    public function getReceiverDateOfBirth(): ?string
     {
         return $this->ReceiverDateOfBirth;
     }
 
-    /**
-     * @param string $ReceiverDateOfBirth
-     * @return Shipment
-     */
-    public function setReceiverDateOfBirth($ReceiverDateOfBirth)
+    public function setReceiverDateOfBirth(?string $ReceiverDateOfBirth): static
     {
         $this->ReceiverDateOfBirth = $ReceiverDateOfBirth;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getReference()
+    public function getReference(): ?string
     {
         return $this->Reference;
     }
 
-    /**
-     * @param string $Reference
-     * @return Shipment
-     */
-    public function setReference($Reference)
+    public function setReference(?string $Reference): static
     {
         $this->Reference = $Reference;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getReferenceCollect()
+    public function getReferenceCollect(): ?string
     {
         return $this->ReferenceCollect;
     }
 
-    /**
-     * @param string $ReferenceCollect
-     * @return Shipment
-     */
-    public function setReferenceCollect($ReferenceCollect)
+    public function setReferenceCollect(?string $ReferenceCollect): static
     {
         $this->ReferenceCollect = $ReferenceCollect;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getRemark()
+    public function getRemark(): ?string
     {
         return $this->Remark;
     }
 
-    /**
-     * @param string $Remark
-     * @return Shipment
-     */
-    public function setRemark($Remark)
+    public function setRemark(?string $Remark): static
     {
         $this->Remark = $Remark;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getReturnBarcode()
+    public function getReturnBarcode(): ?string
     {
         return $this->ReturnBarcode;
     }
 
-    /**
-     * @param string $ReturnBarcode
-     * @return Shipment
-     */
-    public function setReturnBarcode($ReturnBarcode)
+    public function setReturnBarcode(?string $ReturnBarcode): static
     {
         $this->ReturnBarcode = $ReturnBarcode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getReturnReference()
+    public function getReturnReference(): ?string
     {
         return $this->ReturnReference;
     }
 
-    /**
-     * @param string $ReturnReference
-     * @return Shipment
-     */
-    public function setReturnReference($ReturnReference)
+    public function setReturnReference(?string $ReturnReference): static
     {
         $this->ReturnReference = $ReturnReference;
+
         return $this;
     }
 }

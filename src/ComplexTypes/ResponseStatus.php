@@ -1,46 +1,25 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ResponseStatus extends BaseType
 {
+    protected string $CurrentPhaseCode;
 
-    /**
-     * @var string
-     */
-    protected $CurrentPhaseCode = null;
+    protected string $CurrentPhaseDescription;
 
-    /**
-     * @var string
-     */
-    protected $CurrentPhaseDescription = null;
+    protected string $CurrentStatusCode;
 
-    /**
-     * @var string
-     */
-    protected $CurrentStatusCode = null;
+    protected string $CurrentStatusDescription;
 
-    /**
-     * @var string
-     */
-    protected $CurrentStatusDescription = null;
+    protected string $CurrentStatusTimeStamp;
 
-    /**
-     * @var string
-     */
-    protected $CurrentStatusTimeStamp = null;
-
-    /**
-     * @param string $CurrentPhaseCode
-     * @param string $CurrentPhaseDescription
-     * @param string $CurrentStatusCode
-     * @param string $CurrentStatusDescription
-     * @param string $CurrentStatusTimeStamp
-     */
     public function __construct(
-        $CurrentPhaseCode,
-        $CurrentPhaseDescription,
-        $CurrentStatusCode,
-        $CurrentStatusDescription,
-        $CurrentStatusTimeStamp
+        string $CurrentPhaseCode,
+        string $CurrentPhaseDescription,
+        string $CurrentStatusCode,
+        string $CurrentStatusDescription,
+        string $CurrentStatusTimeStamp
     ) {
         $this->setCurrentPhaseCode($CurrentPhaseCode);
         $this->setCurrentPhaseDescription($CurrentPhaseDescription);
@@ -49,93 +28,63 @@ class ResponseStatus extends BaseType
         $this->setCurrentStatusTimeStamp($CurrentStatusTimeStamp);
     }
 
-    /**
-     * @return string
-     */
-    public function getCurrentPhaseCode()
+    public function getCurrentPhaseCode(): string
     {
         return $this->CurrentPhaseCode;
     }
 
-    /**
-     * @param string $CurrentPhaseCode
-     * @return ResponseStatus
-     */
-    public function setCurrentPhaseCode($CurrentPhaseCode)
+    public function setCurrentPhaseCode(string $CurrentPhaseCode): static
     {
         $this->CurrentPhaseCode = $CurrentPhaseCode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCurrentPhaseDescription()
+    public function getCurrentPhaseDescription(): string
     {
         return $this->CurrentPhaseDescription;
     }
 
-    /**
-     * @param string $CurrentPhaseDescription
-     * @return ResponseStatus
-     */
-    public function setCurrentPhaseDescription($CurrentPhaseDescription)
+    public function setCurrentPhaseDescription(string $CurrentPhaseDescription): static
     {
         $this->CurrentPhaseDescription = $CurrentPhaseDescription;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCurrentStatusCode()
+    public function getCurrentStatusCode(): string
     {
         return $this->CurrentStatusCode;
     }
 
-    /**
-     * @param string $CurrentStatusCode
-     * @return ResponseStatus
-     */
-    public function setCurrentStatusCode($CurrentStatusCode)
+    public function setCurrentStatusCode(string $CurrentStatusCode): static
     {
         $this->CurrentStatusCode = $CurrentStatusCode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCurrentStatusDescription()
+    public function getCurrentStatusDescription(): string
     {
         return $this->CurrentStatusDescription;
     }
 
-    /**
-     * @param string $CurrentStatusDescription
-     * @return ResponseStatus
-     */
-    public function setCurrentStatusDescription($CurrentStatusDescription)
+    public function setCurrentStatusDescription(string $CurrentStatusDescription): static
     {
         $this->CurrentStatusDescription = $CurrentStatusDescription;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCurrentStatusTimeStamp()
+    public function getCurrentStatusTimeStamp(): string
     {
         return $this->CurrentStatusTimeStamp;
     }
 
-    /**
-     * @param string $CurrentStatusTimeStamp
-     * @return ResponseStatus
-     */
-    public function setCurrentStatusTimeStamp($CurrentStatusTimeStamp)
+    public function setCurrentStatusTimeStamp(string $CurrentStatusTimeStamp): static
     {
         $this->CurrentStatusTimeStamp = $CurrentStatusTimeStamp;
+
         return $this;
     }
 }

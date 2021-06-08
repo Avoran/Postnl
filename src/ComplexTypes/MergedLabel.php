@@ -1,61 +1,40 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class MergedLabel extends BaseType
 {
+    protected array $Barcodes;
 
-    /**
-     * @var string[]
-     */
-    protected $Barcodes = null;
+    protected ArrayOfLabel $Labels;
 
-    /**
-     * @var ArrayOfLabel
-     */
-    protected $Labels = null;
-
-    /**
-     * @param string[] $Barcodes
-     * @param ArrayOfLabel $Labels
-     */
     public function __construct(array $Barcodes, ArrayOfLabel $Labels)
     {
         $this->setBarcodes($Barcodes);
         $this->setLabels($Labels);
     }
 
-    /**
-     * @return string[]
-     */
-    public function getBarcodes()
+    public function getBarcodes(): array
     {
         return $this->Barcodes;
     }
 
-    /**
-     * @param string[] $Barcodes
-     * @return MergedLabel
-     */
-    public function setBarcodes($Barcodes)
+    public function setBarcodes(array $Barcodes): static
     {
         $this->Barcodes = $Barcodes;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfLabel
-     */
-    public function getLabels()
+    public function getLabels(): ArrayOfLabel
     {
         return $this->Labels;
     }
 
-    /**
-     * @param ArrayOfLabel $Labels
-     * @return MergedLabel
-     */
-    public function setLabels($Labels)
+    public function setLabels(ArrayOfLabel $Labels): static
     {
         $this->Labels = $Labels;
+
         return $this;
     }
 }

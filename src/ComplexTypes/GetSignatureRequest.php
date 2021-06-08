@@ -1,89 +1,55 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class GetSignatureRequest extends BaseType
 {
+    protected Message $Message;
 
-    /**
-     * @var Message
-     */
-    protected $Message = null;
+    protected RequestCustomer $Customer;
 
-    /**
-     * @var RequestCustomer
-     */
-    protected $Customer = null;
+    protected RequestSignature $Shipment;
 
-    /**
-     * @var RequestSignature
-     */
-    protected $Shipment = null;
-
-    /**
-     * @param Message $Message
-     * @param RequestCustomer $Customer
-     * @param RequestSignature $Shipment
-     */
-    public function __construct(
-        Message $Message,
-        RequestCustomer $Customer,
-        RequestSignature $Shipment
-    ) {
+    public function __construct(Message $Message, RequestCustomer $Customer, RequestSignature $Shipment)
+    {
         $this->setMessage($Message);
         $this->setCustomer($Customer);
         $this->setShipment($Shipment);
     }
 
-    /**
-     * @return Message
-     */
-    public function getMessage()
+    public function getMessage(): Message
     {
         return $this->Message;
     }
 
-    /**
-     * @param Message $Message
-     * @return GetSignatureRequest
-     */
-    public function setMessage(Message $Message)
+    public function setMessage(Message $Message): static
     {
         $this->Message = $Message;
+
         return $this;
     }
 
-    /**
-     * @return RequestCustomer
-     */
-    public function getCustomer()
+    public function getCustomer(): RequestCustomer
     {
         return $this->Customer;
     }
 
-    /**
-     * @param RequestCustomer $Customer
-     * @return GetSignatureRequest
-     */
-    public function setCustomer(RequestCustomer $Customer)
+    public function setCustomer(RequestCustomer $Customer): static
     {
         $this->Customer = $Customer;
+
         return $this;
     }
 
-    /**
-     * @return RequestSignature
-     */
-    public function getShipment()
+    public function getShipment(): RequestSignature
     {
         return $this->Shipment;
     }
 
-    /**
-     * @param RequestSignature $Shipment
-     * @return GetSignatureRequest
-     */
-    public function setShipment(RequestSignature $Shipment)
+    public function setShipment(RequestSignature $Shipment): static
     {
         $this->Shipment = $Shipment;
+
         return $this;
     }
 }

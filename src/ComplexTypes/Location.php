@@ -1,61 +1,32 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class Location extends BaseLocation
 {
+    protected ?string $City = null;
 
-    /**
-     * @var string
-     */
-    protected $City = null;
+    protected ?Coordinate $Coordinates = null;
 
-    /**
-     * @var Coordinate
-     */
-    protected $Coordinates = null;
+    protected ?string $HouseNr = null;
 
-    /**
-     * @var string
-     */
-    protected $HouseNr = null;
+    protected ?string $HouseNrExt = null;
 
-    /**
-     * @var string
-     */
-    protected $HouseNrExt = null;
+    protected string $Postalcode;
 
-    /**
-     * @var string
-     */
-    protected $Postalcode = null;
+    protected ?string $Street = null;
 
-    /**
-     * @var string
-     */
-    protected $Street = null;
-
-    /**
-     * @param string $PostalCode
-     * @param string $AllowSundaySorting
-     * @param string $DeliveryDate
-     * @param array $DeliveryOptions
-     * @param array $Options
-     * @param string $Coordinates
-     * @param string $City
-     * @param string $Street
-     * @param string $HouseNr
-     * @param string $HouseNrExt
-     */
     public function __construct(
-        $PostalCode,
-        $AllowSundaySorting,
-        $DeliveryDate = null,
-        $DeliveryOptions = ['PG'],
-        $Options = ['Daytime'],
-        $Coordinates = null,
-        $City = null,
-        $Street = null,
-        $HouseNr = null,
-        $HouseNrExt = null
+        string $PostalCode,
+        string $AllowSundaySorting,
+        ?string $DeliveryDate = null,
+        array $DeliveryOptions = ['PG'],
+        array $Options = ['Daytime'],
+        ?Coordinate $Coordinates = null,
+        ?string $City = null,
+        ?string $Street = null,
+        ?string $HouseNr = null,
+        ?string $HouseNrExt = null
     ) {
         parent::__construct($AllowSundaySorting, $DeliveryDate, $DeliveryOptions, $Options);
         $this->setPostalcode($PostalCode);
@@ -66,111 +37,75 @@ class Location extends BaseLocation
         $this->setHouseNrExt($HouseNrExt);
     }
 
-    /**
-     * @return string
-     */
-    public function getCity()
+    public function getCity(): ?string
     {
         return $this->City;
     }
 
-    /**
-     * @param string $City
-     * @return Location
-     */
-    public function setCity($City)
+    public function setCity(?string $City): static
     {
         $this->City = $City;
+
         return $this;
     }
 
-    /**
-     * @return Coordinate
-     */
-    public function getCoordinates()
+    public function getCoordinates(): ?Coordinate
     {
         return $this->Coordinates;
     }
 
-    /**
-     * @param Coordinate $Coordinates
-     * @return Location
-     */
-    public function setCoordinates($Coordinates)
+    public function setCoordinates(?Coordinate $Coordinates): static
     {
         $this->Coordinates = $Coordinates;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getHouseNr()
+    public function getHouseNr(): ?string
     {
         return $this->HouseNr;
     }
 
-    /**
-     * @param string $HouseNr
-     * @return Location
-     */
-    public function setHouseNr($HouseNr)
+    public function setHouseNr(?string $HouseNr): static
     {
         $this->HouseNr = $HouseNr;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getHouseNrExt()
+    public function getHouseNrExt(): ?string
     {
         return $this->HouseNrExt;
     }
 
-    /**
-     * @param string $HouseNrExt
-     * @return Location
-     */
-    public function setHouseNrExt($HouseNrExt)
+    public function setHouseNrExt(?string $HouseNrExt): static
     {
         $this->HouseNrExt = $HouseNrExt;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getPostalcode()
+    public function getPostalcode(): string
     {
         return $this->Postalcode;
     }
 
-    /**
-     * @param string $Postalcode
-     * @return Location
-     */
-    public function setPostalcode($Postalcode)
+    public function setPostalcode(string $Postalcode): static
     {
         $this->Postalcode = $Postalcode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getStreet()
+    public function getStreet(): ?string
     {
         return $this->Street;
     }
 
-    /**
-     * @param string $Street
-     * @return Location
-     */
-    public function setStreet($Street)
+    public function setStreet(?string $Street): static
     {
         $this->Street = $Street;
+
         return $this;
     }
 }

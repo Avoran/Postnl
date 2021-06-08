@@ -1,4 +1,6 @@
-<?php namespace DivideBV\Postnl;
+<?php
+
+namespace DivideBV\Postnl;
 
 use SoapClient;
 
@@ -7,36 +9,22 @@ use SoapClient;
  */
 abstract class BaseClient extends SoapClient
 {
+    /**
+     * The URL of the production WSDL. Actual clients must define this.
+     */
+    protected const PRODUCTION_WSDL = '';
 
     /**
-     * @var string The URL of the production WSDL.
-     *
-     * Actual clients must define this.
+     * The URL of the sandbox WSDL. Actual clients must define this.
      */
-    const PRODUCTION_WSDL = '';
+    protected const SANDBOX_WSDL = '';
 
     /**
-     * @var string The URL of the sandbox WSDL. Actual clients must define this.
+     * A list of complex types for generating a SoapClient classmap.
      */
-    const SANDBOX_WSDL = '';
+    protected array $classes = [];
 
-    /**
-     * @var array A list of complex types for generating a SoapClient classmap.
-     *
-     * @see self::getClassmap()
-     */
-    protected $classes = [];
-
-    /**
-     * @param string $apikey
-     *     The authorization API key.
-     * @param bool $sandbox
-     *     Whether to use the production or sandbox environment. Defaults to
-     *     production.
-     * @param string $wsdl
-     *     The URL of the WSDL file to use, if not production or sandbox.
-     */
-    public function __construct($apikey, $sandbox = false, $wsdl = null)
+    public function __construct(string $apikey, bool $sandbox = false, ?string $wsdl = null)
     {
         // If no WSDL is provided, use either the sandbox or production WSDL.
         if (!$wsdl) {
@@ -55,15 +43,12 @@ abstract class BaseClient extends SoapClient
         ]);
     }
 
-    /**
-     * @return array The classmap generated from self::$classes.
-     */
-    protected function getClassmap()
+    protected function getClassmap(): array
     {
         $classmap = [];
 
         foreach ($this->classes as $class) {
-            $classmap[$class] = "DivideBV\\Postnl\\ComplexTypes\\{$class}";
+            $classmap[$class] = "DivideBV\\Postnl\\ComplexTypes\\$class";
         }
 
         return $classmap;

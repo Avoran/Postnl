@@ -1,89 +1,55 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class CurrentStatusRequest extends BaseType
 {
+    protected Message $Message;
 
-    /**
-     * @var Message
-     */
-    protected $Message = null;
+    protected RequestCustomer $Customer;
 
-    /**
-     * @var RequestCustomer
-     */
-    protected $Customer = null;
+    protected RequestShipment $Shipment;
 
-    /**
-     * @var RequestShipment
-     */
-    protected $Shipment = null;
-
-    /**
-     * @param Message $Message
-     * @param RequestCustomer $Customer
-     * @param RequestShipment $Shipment
-     */
-    public function __construct(
-        Message $Message,
-        RequestCustomer $Customer,
-        RequestShipment $Shipment
-    ) {
+    public function __construct(Message $Message, RequestCustomer $Customer, RequestShipment $Shipment)
+    {
         $this->setMessage($Message);
         $this->setCustomer($Customer);
         $this->setShipment($Shipment);
     }
 
-    /**
-     * @return Message
-     */
-    public function getMessage()
+    public function getMessage(): Message
     {
         return $this->Message;
     }
 
-    /**
-     * @param Message $Message
-     * @return CurrentStatusRequest
-     */
-    public function setMessage($Message)
+    public function setMessage(Message $Message): static
     {
         $this->Message = $Message;
+
         return $this;
     }
 
-    /**
-     * @return RequestCustomer
-     */
-    public function getCustomer()
+    public function getCustomer(): RequestCustomer
     {
         return $this->Customer;
     }
 
-    /**
-     * @param RequestCustomer $Customer
-     * @return CurrentStatusRequest
-     */
-    public function setCustomer($Customer)
+    public function setCustomer(RequestCustomer $Customer): static
     {
         $this->Customer = $Customer;
+
         return $this;
     }
 
-    /**
-     * @return RequestShipment
-     */
-    public function getShipment()
+    public function getShipment(): RequestShipment
     {
         return $this->Shipment;
     }
 
-    /**
-     * @param RequestShipment $Shipment
-     * @return CurrentStatusRequest
-     */
-    public function setShipment($Shipment)
+    public function setShipment(RequestShipment $Shipment): static
     {
         $this->Shipment = $Shipment;
+
         return $this;
     }
 }

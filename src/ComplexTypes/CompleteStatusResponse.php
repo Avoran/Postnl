@@ -1,36 +1,25 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class CompleteStatusResponse extends BaseType
 {
+    protected ArrayOfCompleteStatusResponseShipment $Shipments;
 
-    /**
-     * @var ArrayOfCompleteStatusResponseShipment
-     */
-    protected $Shipments = null;
-
-    /**
-     * @param ArrayOfCompleteStatusResponseShipment $Shipments
-     */
     public function __construct(ArrayOfCompleteStatusResponseShipment $Shipments)
     {
         $this->setShipments($Shipments);
     }
 
-    /**
-     * @return ArrayOfCompleteStatusResponseShipment
-     */
-    public function getShipments()
+    public function getShipments(): ArrayOfCompleteStatusResponseShipment
     {
         return $this->Shipments;
     }
 
-    /**
-     * @param ArrayOfCompleteStatusResponseShipment $Shipments
-     * @return CompleteStatusResponse
-     */
-    public function setShipments($Shipments)
+    public function setShipments(ArrayOfCompleteStatusResponseShipment $Shipments): static
     {
         $this->Shipments = $Shipments;
+
         return $this;
     }
 }

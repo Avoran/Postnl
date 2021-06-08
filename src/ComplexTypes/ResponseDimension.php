@@ -1,41 +1,20 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ResponseDimension extends BaseType
 {
+    protected string $Height;
 
-    /**
-     * @var string
-     */
-    protected $Height = null;
+    protected string $Length;
 
-    /**
-     * @var string
-     */
-    protected $Length = null;
+    protected string $Volume;
 
-    /**
-     * @var string
-     */
-    protected $Volume = null;
+    protected string $Weight;
 
-    /**
-     * @var string
-     */
-    protected $Weight = null;
+    protected string $Width;
 
-    /**
-     * @var string
-     */
-    protected $Width = null;
-
-    /**
-     * @param string $Height
-     * @param string $Length
-     * @param string $Volume
-     * @param string $Weight
-     * @param string $Width
-     */
-    public function __construct($Height, $Length, $Volume, $Weight, $Width)
+    public function __construct(string $Height, string $Length, string $Volume, string $Weight, string $Width)
     {
         $this->setHeight($Height);
         $this->setLength($Length);
@@ -44,93 +23,63 @@ class ResponseDimension extends BaseType
         $this->setWidth($Width);
     }
 
-    /**
-     * @return string
-     */
-    public function getHeight()
+    public function getHeight(): string
     {
         return $this->Height;
     }
 
-    /**
-     * @param string $Height
-     * @return ResponseDimension
-     */
-    public function setHeight($Height)
+    public function setHeight(string $Height): static
     {
         $this->Height = $Height;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getLength()
+    public function getLength(): string
     {
         return $this->Length;
     }
 
-    /**
-     * @param string $Length
-     * @return ResponseDimension
-     */
-    public function setLength($Length)
+    public function setLength(string $Length): static
     {
         $this->Length = $Length;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getVolume()
+    public function getVolume(): string
     {
         return $this->Volume;
     }
 
-    /**
-     * @param string $Volume
-     * @return ResponseDimension
-     */
-    public function setVolume($Volume)
+    public function setVolume(string $Volume): static
     {
         $this->Volume = $Volume;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getWeight()
+    public function getWeight(): string
     {
         return $this->Weight;
     }
 
-    /**
-     * @param string $Weight
-     * @return ResponseDimension
-     */
-    public function setWeight($Weight)
+    public function setWeight(string $Weight): static
     {
         $this->Weight = $Weight;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getWidth()
+    public function getWidth(): string
     {
         return $this->Width;
     }
 
-    /**
-     * @param string $Width
-     * @return ResponseDimension
-     */
-    public function setWidth($Width)
+    public function setWidth(string $Width): static
     {
         $this->Width = $Width;
+
         return $this;
     }
 }

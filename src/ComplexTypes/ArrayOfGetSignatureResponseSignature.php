@@ -1,41 +1,30 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ArrayOfGetSignatureResponseSignature extends BaseArrayOfType
 {
-
     /**
-     * @var string The name of the array property this class is a wrapper of.
+     * The name of the array property this class is a wrapper of.
      */
-    const WRAPPED_PROPERTY = 'GetSignatureResponseSignature';
+    protected const WRAPPED_PROPERTY = 'GetSignatureResponseSignature';
 
-    /**
-     * @var GetSignatureResponseSignature[]
-     */
-    protected $GetSignatureResponseSignature = null;
+    protected array $GetSignatureResponseSignature;
 
-    /**
-     * @param GetSignatureResponseSignature[] $GetSignatureResponseSignature
-     */
     public function __construct(array $GetSignatureResponseSignature)
     {
-        $this->getGetSignatureResponseSignature($GetSignatureResponseSignature);
+        $this->setGetSignatureResponseSignature($GetSignatureResponseSignature);
     }
 
-    /**
-     * @return GetSignatureResponseSignature[]
-     */
-    public function getGetSignatureResponseSignature()
+    public function getGetSignatureResponseSignature(): array
     {
         return $this->GetSignatureResponseSignature;
     }
 
-    /**
-     * @param GetSignatureResponseSignature[] $GetSignatureResponseSignature
-     * @return ArrayOfGetSignatureResponseSignature
-     */
-    public function setGetSignatureResponseSignature(array $GetSignatureResponseSignature)
+    public function setGetSignatureResponseSignature(array $GetSignatureResponseSignature): static
     {
         $this->GetSignatureResponseSignature = $GetSignatureResponseSignature;
+
         return $this;
     }
 }

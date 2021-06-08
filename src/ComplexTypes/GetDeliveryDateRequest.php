@@ -1,61 +1,40 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class GetDeliveryDateRequest extends BaseType
 {
+    protected GetDeliveryDate $GetDeliveryDate;
 
-    /**
-     * @var GetDeliveryDate
-     */
-    protected $GetDeliveryDate = null;
+    protected Message $Message;
 
-    /**
-     * @var Message
-     */
-    protected $Message = null;
-
-    /**
-     * @param Message $Message
-     * @param GetDeliveryDate $GetDeliveryDate
-     */
     public function __construct(Message $Message, GetDeliveryDate $GetDeliveryDate)
     {
         $this->setMessage($Message);
         $this->setGetDeliveryDate($GetDeliveryDate);
     }
 
-    /**
-     * @return GetDeliveryDate
-     */
-    public function getGetDeliveryDate()
+    public function getGetDeliveryDate(): GetDeliveryDate
     {
         return $this->GetDeliveryDate;
     }
 
-    /**
-     * @param GetDeliveryDate $GetDeliveryDate
-     * @return GetDeliveryDateRequest
-     */
-    public function setGetDeliveryDate($GetDeliveryDate)
+    public function setGetDeliveryDate(GetDeliveryDate $GetDeliveryDate): static
     {
         $this->GetDeliveryDate = $GetDeliveryDate;
+
         return $this;
     }
 
-    /**
-     * @return Message
-     */
-    public function getMessage()
+    public function getMessage(): Message
     {
         return $this->Message;
     }
 
-    /**
-     * @param Message $Message
-     * @return GetDeliveryDateRequest
-     */
-    public function setMessage($Message)
+    public function setMessage(Message $Message): static
     {
         $this->Message = $Message;
+
         return $this;
     }
 }

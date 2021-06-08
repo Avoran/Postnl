@@ -1,26 +1,12 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
 
-/**
- * Describes a group of shipments.
- *
- * @see ArrayOfGroup
- */
+namespace DivideBV\Postnl\ComplexTypes;
+
 class Group extends BaseType
 {
+    protected string $GroupCount;
 
-    /**
-     * Amount of shipments in the group.
-     *
-     * @var string
-     */
-    protected $GroupCount = null;
-
-    /**
-     * Sequence number.
-     *
-     * @var string
-     */
-    protected $GroupSequence = null;
+    protected string $GroupSequence;
 
     /**
      * The type of group.
@@ -30,27 +16,12 @@ class Group extends BaseType
      * - `01`: Collection request
      * - `03`: Multiple parcels in one shipment (multi-colli)
      * - `04`: Single parcel in one shipment
-     *
-     * @var string
      */
-    protected $GroupType = null;
+    protected string $GroupType;
 
-    /**
-     * Main barcode for the shipment.
-     *
-     * @var string
-     */
-    protected $MainBarcode = null;
+    protected string $MainBarcode;
 
-    /**
-     * Constructor.
-     *
-     * @param string $GroupCount
-     * @param string $GroupSequence
-     * @param string $GroupType
-     * @param string $MainBarcode
-     */
-    public function __construct($GroupCount, $GroupSequence, $GroupType, $MainBarcode)
+    public function __construct(string $GroupCount, string $GroupSequence, string $GroupType, string $MainBarcode)
     {
         $this->setGroupCount($GroupCount);
         $this->setGroupSequence($GroupSequence);
@@ -58,91 +29,51 @@ class Group extends BaseType
         $this->setMainBarcode($MainBarcode);
     }
 
-    /**
-     * Get self::$GroupCount.
-     *
-     * @return string
-     */
-    public function getGroupCount()
+    public function getGroupCount(): string
     {
         return $this->GroupCount;
     }
 
-    /**
-     * Set self::$GroupCount.
-     *
-     * @param string $GroupCount
-     * @return Group
-     */
-    public function setGroupCount($GroupCount)
+    public function setGroupCount(string $GroupCount): static
     {
         $this->GroupCount = $GroupCount;
+
         return $this;
     }
 
-    /**
-     * Get self::$GroupSequence.
-     *
-     * @return string
-     */
-    public function getGroupSequence()
+    public function getGroupSequence(): string
     {
         return $this->GroupSequence;
     }
 
-    /**
-     * Set self::$GroupSequence.
-     *
-     * @param string $GroupSequence
-     * @return Group
-     */
-    public function setGroupSequence($GroupSequence)
+    public function setGroupSequence(string $GroupSequence): static
     {
         $this->GroupSequence = $GroupSequence;
+
         return $this;
     }
 
-    /**
-     * Get self::$GroupType.
-     *
-     * @return string
-     */
-    public function getGroupType()
+    public function getGroupType(): string
     {
         return $this->GroupType;
     }
 
-    /**
-     * Set self::$GroupType.
-     *
-     * @param string $GroupType
-     * @return Group
-     */
-    public function setGroupType($GroupType)
+    public function setGroupType(string $GroupType): static
     {
         $this->GroupType = $GroupType;
+
         return $this;
     }
 
-    /**
-     * Get self::$MainBarcode.
-     *
-     * @return string
-     */
-    public function getMainBarcode()
+    public function getMainBarcode(): string
     {
         return $this->MainBarcode;
     }
 
-    /**
-     * Set self::$MainBarcode.
-     *
-     * @param string $MainBarcode
-     * @return Group
-     */
-    public function setMainBarcode($MainBarcode)
+    public function setMainBarcode(string $MainBarcode): static
     {
         $this->MainBarcode = $MainBarcode;
+
         return $this;
     }
 }

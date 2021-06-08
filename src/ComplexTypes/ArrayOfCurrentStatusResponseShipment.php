@@ -1,41 +1,30 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ArrayOfCurrentStatusResponseShipment extends BaseArrayOfType
 {
-
     /**
-     * @var string The name of the array property this class is a wrapper of.
+     * The name of the array property this class is a wrapper of.
      */
-    const WRAPPED_PROPERTY = 'CurrentStatusResponseShipment';
+    protected const WRAPPED_PROPERTY = 'CurrentStatusResponseShipment';
 
-    /**
-     * @var CurrentStatusResponseShipment[]
-     */
-    protected $CurrentStatusResponseShipment = null;
+    protected array $CurrentStatusResponseShipment;
 
-    /**
-     * @param CurrentStatusResponseShipment[] $CurrentStatusResponseShipment
-     */
     public function __construct(array $CurrentStatusResponseShipment)
     {
         $this->setCurrentStatusResponseShipment($CurrentStatusResponseShipment);
     }
 
-    /**
-     * @return CurrentStatusResponseShipment[]
-     */
-    public function getCurrentStatusResponseShipment()
+    public function getCurrentStatusResponseShipment(): array
     {
         return $this->CurrentStatusResponseShipment;
     }
 
-    /**
-     * @param CurrentStatusResponseShipment[] $CurrentStatusResponseShipment
-     * @return ArrayOfCurrentStatusResponseShipment
-     */
-    public function setCurrentStatusResponseShipment(array $CurrentStatusResponseShipment)
+    public function setCurrentStatusResponseShipment(array $CurrentStatusResponseShipment): static
     {
         $this->CurrentStatusResponseShipment = $CurrentStatusResponseShipment;
+
         return $this;
     }
 }

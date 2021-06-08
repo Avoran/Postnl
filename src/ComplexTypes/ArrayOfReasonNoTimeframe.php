@@ -1,41 +1,30 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ArrayOfReasonNoTimeframe extends BaseArrayOfType
 {
-
     /**
-     * @var string The name of the array property this class is a wrapper of.
+     * The name of the array property this class is a wrapper of.
      */
-    const WRAPPED_PROPERTY = 'ReasonNoTimeframe';
+    protected const WRAPPED_PROPERTY = 'ReasonNoTimeframe';
 
-    /**
-     * @var ReasonNoTimeframe[]
-     */
-    protected $ReasonNoTimeframe = null;
+    protected array $ReasonNoTimeframe;
 
-    /**
-     * @param ReasonNoTimeframe[] $ReasonNoTimeFrame
-     */
     public function __construct(array $ReasonNoTimeFrame)
     {
         $this->setReasonNoTimeframe($ReasonNoTimeFrame);
     }
 
-    /**
-     * @return ReasonNoTimeframe[]
-     */
-    public function getReasonNoTimeframe()
+    public function getReasonNoTimeframe(): array
     {
         return $this->ReasonNoTimeframe;
     }
 
-    /**
-     * @param ReasonNoTimeframe[] $ReasonNoTimeframe
-     * @return ArrayOfReasonNoTimeframe
-     */
-    public function setReasonNoTimeframe(array $ReasonNoTimeframe)
+    public function setReasonNoTimeframe(array $ReasonNoTimeframe): static
     {
         $this->ReasonNoTimeframe = $ReasonNoTimeframe;
+
         return $this;
     }
 }

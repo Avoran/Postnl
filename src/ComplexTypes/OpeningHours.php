@@ -1,166 +1,104 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class OpeningHours extends BaseType
 {
+    protected ?string $Monday = null;
 
-    /**
-     * @var string
-     */
-    protected $Monday = null;
+    protected ?string $Tuesday = null;
 
-    /**
-     * @var string
-     */
-    protected $Tuesday = null;
+    protected ?string $Wednesday = null;
 
-    /**
-     * @var string
-     */
-    protected $Wednesday = null;
+    protected ?string $Thursday = null;
 
-    /**
-     * @var string
-     */
-    protected $Thursday = null;
+    protected ?string $Friday = null;
 
-    /**
-     * @var string
-     */
-    protected $Friday = null;
+    protected ?string $Saturday = null;
 
-    /**
-     * @var string
-     */
-    protected $Saturday = null;
+    protected ?string $Sunday = null;
 
-    /**
-     * @var string
-     */
-    protected $Sunday = null;
-
-    /**
-     * @return string
-     */
-    public function getMonday()
+    public function getMonday(): ?string
     {
         return $this->Monday;
     }
 
-    /**
-     * @param string $Monday
-     * @return OpeningHours
-     */
-    public function setMonday($Monday)
+    public function setMonday(string $Monday): static
     {
-        $this->Monday = (string)$Monday;
+        $this->Monday = $Monday;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getTuesday()
+    public function getTuesday(): ?string
     {
         return $this->Tuesday;
     }
 
-    /**
-     * @param string $Tuesday
-     * @return OpeningHours
-     */
-    public function setTuesday($Tuesday)
+    public function setTuesday(string $Tuesday): static
     {
-        $this->Tuesday = (string)$Tuesday;
+        $this->Tuesday = $Tuesday;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getWednesday()
+    public function getWednesday(): ?string
     {
         return $this->Wednesday;
     }
 
-    /**
-     * @param string $Wednesday
-     * @return OpeningHours
-     */
-    public function setWednesday($Wednesday)
+    public function setWednesday(string $Wednesday): static
     {
-        $this->Wednesday = (string)$Wednesday;
+        $this->Wednesday = $Wednesday;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getThursday()
+    public function getThursday(): ?string
     {
         return $this->Thursday;
     }
 
-    /**
-     * @param string $Thursday
-     * @return OpeningHours
-     */
-    public function setThursday($Thursday)
+    public function setThursday(string $Thursday): static
     {
-        $this->Thursday = (string)$Thursday;
+        $this->Thursday = $Thursday;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getFriday()
+    public function getFriday(): ?string
     {
         return $this->Friday;
     }
 
-    /**
-     * @param string $Friday
-     * @return OpeningHours
-     */
-    public function setFriday($Friday)
+    public function setFriday(string $Friday): static
     {
-        $this->Friday = (string)$Friday;
+        $this->Friday = $Friday;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getSaturday()
+    public function getSaturday(): ?string
     {
         return $this->Saturday;
     }
 
-    /**
-     * @param string $Saturday
-     * @return OpeningHours
-     */
-    public function setSaturday($Saturday)
+    public function setSaturday(string $Saturday): static
     {
-        $this->Saturday = (string)$Saturday;
+        $this->Saturday = $Saturday;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getSunday()
+    public function getSunday(): ?string
     {
         return $this->Sunday;
     }
 
-    /**
-     * @param string $Sunday
-     * @return OpeningHours
-     */
-    public function setSunday($Sunday)
+    public function setSunday(string $Sunday): static
     {
-        $this->Sunday = (string)$Sunday;
+        $this->Sunday = $Sunday;
+
         return $this;
     }
 }

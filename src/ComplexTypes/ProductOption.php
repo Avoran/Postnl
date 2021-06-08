@@ -1,61 +1,40 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ProductOption extends BaseType
 {
+    protected string $Characteristic;
 
-    /**
-     * @var string
-     */
-    protected $Characteristic = null;
+    protected string $Option;
 
-    /**
-     * @var string
-     */
-    protected $Option = null;
-
-    /**
-     * @param string $Characteristic
-     * @param string $Option
-     */
-    public function __construct($Characteristic, $Option)
+    public function __construct(string $Characteristic, string $Option)
     {
         $this->setCharacteristic($Characteristic);
         $this->setOption($Option);
     }
 
-    /**
-     * @return string
-     */
-    public function getCharacteristic()
+    public function getCharacteristic(): string
     {
         return $this->Characteristic;
     }
 
-    /**
-     * @param string $Characteristic
-     * @return ProductOption
-     */
-    public function setCharacteristic($Characteristic)
+    public function setCharacteristic(string $Characteristic): static
     {
         $this->Characteristic = $Characteristic;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getOption()
+    public function getOption(): string
     {
         return $this->Option;
     }
 
-    /**
-     * @param string $Option
-     * @return ProductOption
-     */
-    public function setOption($Option)
+    public function setOption(string $Option): static
     {
         $this->Option = $Option;
+
         return $this;
     }
 }

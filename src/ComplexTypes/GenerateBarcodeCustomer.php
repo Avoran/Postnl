@@ -1,62 +1,39 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 /**
  * XML namespace: http://postnl.nl/cif/domain/BarcodeWebService/
  */
 class GenerateBarcodeCustomer extends BaseType
 {
+    protected string $CustomerCode;
 
-    /**
-     * @var string
-     */
-    protected $CustomerCode = null;
+    protected string $CustomerNumber;
 
-    /**
-     * @var string
-     */
-    protected $CustomerNumber = null;
-
-    /**
-     * @param string $CustomerCode
-     * @param string $CustomerNumber
-     */
-    public function __construct($CustomerCode, $CustomerNumber)
+    public function __construct(string $CustomerCode, string $CustomerNumber)
     {
         $this->setCustomerCode($CustomerCode);
         $this->setCustomerNumber($CustomerNumber);
     }
 
-    /**
-     * @return string
-     */
-    public function getCustomerCode()
+    public function getCustomerCode(): string
     {
         return $this->CustomerCode;
     }
 
-    /**
-     * @param string $CustomerCode
-     * @return GenerateBarcodeCustomer
-     */
-    public function setCustomerCode($CustomerCode)
+    public function setCustomerCode(string $CustomerCode): static
     {
         $this->CustomerCode = $CustomerCode;
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCustomerNumber()
+    public function getCustomerNumber(): string
     {
         return $this->CustomerNumber;
     }
 
-    /**
-     * @param string $CustomerNumber
-     * @return GenerateBarcodeCustomer
-     */
-    public function setCustomerNumber($CustomerNumber)
+    public function setCustomerNumber(string $CustomerNumber): static
     {
         $this->CustomerNumber = $CustomerNumber;
         return $this;

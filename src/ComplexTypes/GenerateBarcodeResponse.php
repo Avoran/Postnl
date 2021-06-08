@@ -1,45 +1,31 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 /**
  * XML namespace: http://postnl.nl/cif/domain/BarcodeWebService/
  */
 class GenerateBarcodeResponse extends BaseType
 {
+    protected string $Barcode;
 
-    /**
-     * @var string
-     */
-    protected $Barcode = null;
-
-    /**
-     * @param string $Barcode
-     */
-    public function __construct($Barcode)
+    public function __construct(string $Barcode)
     {
         $this->setBarcode($Barcode);
     }
 
-    /**
-     * @return string
-     */
-    public function getBarcode()
+    public function getBarcode(): string
     {
         return $this->Barcode;
     }
 
-    /**
-     * @param string $Barcode
-     * @return GenerateBarcodeResponse
-     */
-    public function setBarcode($Barcode)
+    public function setBarcode(string $Barcode): static
     {
         $this->Barcode = $Barcode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function __toString()
     {
         return $this->Barcode;

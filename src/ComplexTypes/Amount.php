@@ -1,67 +1,34 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class Amount extends BaseType
 {
+    protected string $AccountName;
 
-    /**
-     * @var string
-     */
-    protected $AccountName = null;
+    protected string $AmountType;
 
-    /**
-     * @var string
-     */
-    protected $AmountType = null;
+    protected string $BIC;
 
-    /**
-     * @var string
-     */
-    protected $BIC = null;
+    protected string $Currency;
 
-    /**
-     * @var string
-     */
-    protected $Currency = null;
+    protected string $IBAN;
 
-    /**
-     * @var string
-     */
-    protected $IBAN = null;
+    protected string $Reference;
 
-    /**
-     * @var string
-     */
-    protected $Reference = null;
+    protected string $TransactionNumber;
 
-    /**
-     * @var string
-     */
-    protected $TransactionNumber = null;
+    protected string $Value;
 
-    /**
-     * @var string
-     */
-    protected $Value = null;
-
-    /**
-     * @param string $AccountName
-     * @param string $AmountType
-     * @param string $BIC
-     * @param string $Currency
-     * @param string $IBAN
-     * @param string $Reference
-     * @param string $TransactionNumber
-     * @param string $Value
-     */
     public function __construct(
-        $AccountName,
-        $AmountType,
-        $BIC,
-        $Currency,
-        $IBAN,
-        $Reference,
-        $TransactionNumber,
-        $Value
+        string $AccountName,
+        string $AmountType,
+        string $BIC,
+        string $Currency,
+        string $IBAN,
+        string $Reference,
+        string $TransactionNumber,
+        string $Value
     ) {
         $this->setAccountName($AccountName);
         $this->setAmountType($AmountType);
@@ -73,147 +40,99 @@ class Amount extends BaseType
         $this->setValue($Value);
     }
 
-    /**
-     * @return string
-     */
-    public function getAccountName()
+    public function getAccountName(): string
     {
         return $this->AccountName;
     }
 
-    /**
-     * @param string $AccountName
-     * @return Amount
-     */
-    public function setAccountName($AccountName)
+    public function setAccountName(string $AccountName): static
     {
         $this->AccountName = $AccountName;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getAmountType()
+    public function getAmountType(): string
     {
         return $this->AmountType;
     }
 
-    /**
-     * @param string $AmountType
-     * @return Amount
-     */
-    public function setAmountType($AmountType)
+    public function setAmountType(string $AmountType): static
     {
         $this->AmountType = $AmountType;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getBIC()
+    public function getBIC(): string
     {
         return $this->BIC;
     }
 
-    /**
-     * @param string $BIC
-     * @return Amount
-     */
-    public function setBIC($BIC)
+    public function setBIC(string $BIC): static
     {
         $this->BIC = $BIC;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCurrency()
+    public function getCurrency(): string
     {
         return $this->Currency;
     }
 
-    /**
-     * @param string $Currency
-     * @return Amount
-     */
-    public function setCurrency($Currency)
+    public function setCurrency(string $Currency): static
     {
         $this->Currency = $Currency;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getIBAN()
+    public function getIBAN(): string
     {
         return $this->IBAN;
     }
 
-    /**
-     * @param string $IBAN
-     * @return Amount
-     */
-    public function setIBAN($IBAN)
+    public function setIBAN(string $IBAN): static
     {
         $this->IBAN = $IBAN;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getReference()
+    public function getReference(): string
     {
         return $this->Reference;
     }
 
-    /**
-     * @param string $Reference
-     * @return Amount
-     */
-    public function setReference($Reference)
+    public function setReference(string $Reference): static
     {
         $this->Reference = $Reference;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getTransactionNumber()
+    public function getTransactionNumber(): string
     {
         return $this->TransactionNumber;
     }
 
-    /**
-     * @param string $TransactionNumber
-     * @return Amount
-     */
-    public function setTransactionNumber($TransactionNumber)
+    public function setTransactionNumber(string $TransactionNumber): static
     {
         $this->TransactionNumber = $TransactionNumber;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getValue()
+    public function getValue(): string
     {
         return $this->Value;
     }
 
-    /**
-     * @param string $Value
-     * @return Amount
-     */
-    public function setValue($Value)
+    public function setValue(string $Value): static
     {
         $this->Value = $Value;
+
         return $this;
     }
 }

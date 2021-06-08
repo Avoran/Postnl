@@ -1,41 +1,30 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ArrayOfResponseAmount extends BaseArrayOfType
 {
-
     /**
-     * @var string The name of the array property this class is a wrapper of.
+     * The name of the array property this class is a wrapper of.
      */
-    const WRAPPED_PROPERTY = 'ResponseAmount';
+    protected const WRAPPED_PROPERTY = 'ResponseAmount';
 
-    /**
-     * @var ResponseAmount[]
-     */
-    protected $ResponseAmount = null;
+    protected array $ResponseAmount;
 
-    /**
-     * @param ResponseAmount[] $ResponseAmount
-     */
     public function __construct(array $ResponseAmount)
     {
         $this->setResponseAmount($ResponseAmount);
     }
 
-    /**
-     * @return ResponseAmount[]
-     */
-    public function getResponseAmount()
+    public function getResponseAmount(): array
     {
         return $this->ResponseAmount;
     }
 
-    /**
-     * @param ResponseAmount[] $ResponseAmount
-     * @return ArrayOfResponseAmount
-     */
-    public function setResponseAmount(array $ResponseAmount)
+    public function setResponseAmount(array $ResponseAmount): static
     {
         $this->ResponseAmount = $ResponseAmount;
+
         return $this;
     }
 }

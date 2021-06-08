@@ -1,41 +1,30 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ArrayOfCutOffTime extends BaseArrayOfType
 {
-
     /**
-     * @var string The name of the array property this class is a wrapper of.
+     * The name of the array property this class is a wrapper of.
      */
-    const WRAPPED_PROPERTY = 'CutOffTime';
+    protected const WRAPPED_PROPERTY = 'CutOffTime';
 
-    /**
-     * @var CutOffTime[]
-     */
-    protected $CutOffTime = null;
+    protected array $CutOffTime;
 
-    /**
-     * @param CutOffTime[] $CutOffTime
-     */
     public function __construct(array $CutOffTime)
     {
         $this->setCutOffTime($CutOffTime);
     }
 
-    /**
-     * @return CutOffTime[]
-     */
-    public function getCutOffTime()
+    public function getCutOffTime(): array
     {
         return $this->CutOffTime;
     }
 
-    /**
-     * @param CutOffTime[] $CutOffTime
-     * @return ArrayOfCutOffTime
-     */
-    public function setCutOffTime(array $CutOffTime)
+    public function setCutOffTime(array $CutOffTime): static
     {
         $this->CutOffTime = $CutOffTime;
+
         return $this;
     }
 }

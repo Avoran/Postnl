@@ -1,41 +1,30 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ArrayOfCompleteStatusResponseShipment extends BaseArrayOfType
 {
-
     /**
-     * @var string The name of the array property this class is a wrapper of.
+     * The name of the array property this class is a wrapper of.
      */
-    const WRAPPED_PROPERTY = 'CompleteStatusResponseShipment';
+    protected const WRAPPED_PROPERTY = 'CompleteStatusResponseShipment';
 
-    /**
-     * @var CompleteStatusResponseShipment[]
-     */
-    protected $CompleteStatusResponseShipment = null;
+    protected array $CompleteStatusResponseShipment;
 
-    /**
-     * @param CompleteStatusResponseShipment[] $CompleteStatusResponseShipment
-     */
     public function __construct(array $CompleteStatusResponseShipment)
     {
         $this->setCompleteStatusResponseShipment($CompleteStatusResponseShipment);
     }
 
-    /**
-     * @return CompleteStatusResponseShipment[]
-     */
-    public function getCompleteStatusResponseShipment()
+    public function getCompleteStatusResponseShipment(): array
     {
         return $this->CompleteStatusResponseShipment;
     }
 
-    /**
-     * @param CompleteStatusResponseShipment[] $CompleteStatusResponseShipment
-     * @return ArrayOfCompleteStatusResponseShipment
-     */
-    public function setCompleteStatusResponseShipment(array $CompleteStatusResponseShipment)
+    public function setCompleteStatusResponseShipment(array $CompleteStatusResponseShipment): static
     {
         $this->CompleteStatusResponseShipment = $CompleteStatusResponseShipment;
+
         return $this;
     }
 }

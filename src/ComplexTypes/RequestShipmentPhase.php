@@ -1,86 +1,55 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class RequestShipmentPhase extends BaseType
 {
+    protected string $PhaseCode;
 
-    /**
-     * @var string
-     */
-    protected $PhaseCode = null;
+    protected string $DateFrom;
 
-    /**
-     * @var string
-     */
-    protected $DateFrom = null;
+    protected string $DateTo;
 
-    /**
-     * @var string
-     */
-    protected $DateTo = null;
-
-    /**
-     * @param string $PhaseCode
-     * @param string $DateFrom
-     * @param string $DateTo
-     */
-    public function __construct($PhaseCode, $DateFrom, $DateTo)
+    public function __construct(string $PhaseCode, string $DateFrom, string $DateTo)
     {
         $this->setPhaseCode($PhaseCode);
         $this->setDateFrom($DateFrom);
         $this->setDateTo($DateTo);
     }
 
-    /**
-     * @return string
-     */
-    public function getPhaseCode()
+    public function getPhaseCode(): string
     {
         return $this->PhaseCode;
     }
 
-    /**
-     * @param string $PhaseCode
-     * @return RequestShipmentPhase
-     */
-    public function setPhaseCode($PhaseCode)
+    public function setPhaseCode(string $PhaseCode): static
     {
         $this->PhaseCode = $PhaseCode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDateFrom()
+    public function getDateFrom(): string
     {
         return $this->DateFrom;
     }
 
-    /**
-     * @param string $DateFrom
-     * @return RequestShipmentPhase
-     */
-    public function setDateFrom($DateFrom)
+    public function setDateFrom(string $DateFrom): static
     {
         $this->DateFrom = $DateFrom;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDateTo()
+    public function getDateTo(): string
     {
         return $this->DateTo;
     }
 
-    /**
-     * @param string $DateTo
-     * @return RequestShipmentPhase
-     */
-    public function setDateTo($DateTo)
+    public function setDateTo(string $DateTo): static
     {
         $this->DateTo = $DateTo;
+
         return $this;
     }
 }

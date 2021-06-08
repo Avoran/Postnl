@@ -1,135 +1,63 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class Address extends BaseType
 {
+    protected string $AddressType;
 
-    /**
-     * @var string
-     */
-    protected $AddressType = null;
+    protected string $City;
 
-    /**
-     * @var string
-     */
-    protected $Area = null;
+    protected string $CompanyName;
 
-    /**
-     * @var string
-     */
-    protected $Buildingname = null;
+    protected string $Countrycode;
 
-    /**
-     * @var string
-     */
-    protected $City = null;
+    protected string $FirstName;
 
-    /**
-     * @var string
-     */
-    protected $CompanyName = null;
+    protected string $HouseNr;
 
-    /**
-     * @var string
-     */
-    protected $Countrycode = null;
+    protected string $HouseNrExt;
 
-    /**
-     * @var string
-     */
-    protected $Department = null;
+    protected string $Name;
 
-    /**
-     * @var string
-     */
-    protected $Doorcode = null;
+    protected string $Street;
 
-    /**
-     * @var string
-     */
-    protected $FirstName = null;
+    protected string $Zipcode;
 
-    /**
-     * @var string
-     */
-    protected $Floor = null;
+    protected ?string $Area = null;
 
-    /**
-     * @var string
-     */
-    protected $HouseNr = null;
+    protected ?string $Buildingname = null;
 
-    /**
-     * @var string
-     */
-    protected $HouseNrExt = null;
+    protected ?string $Department = null;
 
-    /**
-     * @var string
-     */
-    protected $Name = null;
+    protected ?string $Doorcode = null;
 
-    /**
-     * @var string
-     */
-    protected $Region = null;
+    protected ?string $Floor = null;
 
-    /**
-     * @var string
-     */
-    protected $Remark = null;
+    protected ?string $Region = null;
 
-    /**
-     * @var string
-     */
-    protected $Street = null;
+    protected ?string $Remark = null;
 
-    /**
-     * @var string
-     */
-    protected $StreetHouseNrExt = null;
+    protected ?string $StreetHouseNrExt = null;
 
-    /**
-     * @var string
-     */
-    protected $Zipcode = null;
-
-    /**
-     * @param string $AddressType
-     * @param string $FirstName
-     * @param string $Name
-     * @param string $CompanyName
-     * @param string $Street
-     * @param string $HouseNr
-     * @param string $HouseNrExt
-     * @param string $Zipcode
-     * @param string $City
-     * @param string $Countrycode
-     * @param string $Area Optional.
-     * @param string $Buildingname Optional.
-     * @param string $Department Optional.
-     * @param string $Doorcode Optional.
-     * @param string $Floor Optional.
-     * @param string $Region Optional.
-     * @param string $Remark Optional.
-     */
     public function __construct(
-        $AddressType,
-        $FirstName,
-        $Name,
-        $CompanyName,
-        $Street,
-        $HouseNr,
-        $HouseNrExt,
-        $Zipcode,
-        $City,
-        $Countrycode,
-        $Area = null,
-        $Buildingname = null,
-        $Department = null,
-        $Doorcode = null,
-        $Floor = null,
-        $Region = null,
-        $Remark = null
+        string $AddressType,
+        string $FirstName,
+        string $Name,
+        string $CompanyName,
+        string $Street,
+        string $HouseNr,
+        string $HouseNrExt,
+        string $Zipcode,
+        string $City,
+        string $Countrycode,
+        ?string $Area = null,
+        ?string $Buildingname = null,
+        ?string $Department = null,
+        ?string $Doorcode = null,
+        ?string $Floor = null,
+        ?string $Region = null,
+        ?string $Remark = null
     ) {
         $this->setAddressType($AddressType);
         $this->setFirstName($FirstName);
@@ -152,82 +80,55 @@ class Address extends BaseType
         $this->setRemark($Remark);
     }
 
-    /**
-     * @return string
-     */
-    public function getAddressType()
+    public function getAddressType(): string
     {
         return $this->AddressType;
     }
 
-    /**
-     * @param string $AddressType
-     * @return Address
-     */
-    public function setAddressType($AddressType)
+    public function setAddressType(string $AddressType): static
     {
         $this->AddressType = $AddressType;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getFirstName()
+    public function getFirstName(): string
     {
         return $this->FirstName;
     }
 
-    /**
-     * @param string $FirstName
-     * @return Address
-     */
-    public function setFirstName($FirstName)
+    public function setFirstName(string $FirstName): static
     {
         $this->FirstName = $FirstName;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->Name;
     }
 
-    /**
-     * @param string $Name
-     * @return Address
-     */
-    public function setName($Name)
+    public function setName(string $Name): static
     {
         $this->Name = $Name;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCompanyName()
+    public function getCompanyName(): string
     {
         return $this->CompanyName;
     }
 
-    /**
-     * @param string $CompanyName
-     * @return Address
-     */
-    public function setCompanyName($CompanyName)
+    public function setCompanyName(string $CompanyName): static
     {
         $this->CompanyName = $CompanyName;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getStreetHouseNrExt()
+    public function getStreetHouseNrExt(): ?string
     {
         return $this->StreetHouseNrExt;
     }
@@ -242,247 +143,167 @@ class Address extends BaseType
      * Important:
      * - The conversion is only made for NL, BE and DE addresses.
      * - Use separate fields (street, houseNr and extension) when possible.
-     *
-     * @param string $streetHouseNrExt
-     * @return Address
      */
-    public function setStreetHouseNrExt($streetHouseNrExt)
+    public function setStreetHouseNrExt(string $streetHouseNrExt): static
     {
         $this->StreetHouseNrExt = $streetHouseNrExt;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getStreet()
+    public function getStreet(): string
     {
         return $this->Street;
     }
 
-    /**
-     * @param string $Street
-     * @return Address
-     */
-    public function setStreet($Street)
+    public function setStreet(string $Street): static
     {
         $this->Street = $Street;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getHouseNr()
+    public function getHouseNr(): string
     {
         return $this->HouseNr;
     }
 
-    /**
-     * @param string $HouseNr
-     * @return Address
-     */
-    public function setHouseNr($HouseNr)
+    public function setHouseNr(string $HouseNr): static
     {
         $this->HouseNr = $HouseNr;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getHouseNrExt()
+    public function getHouseNrExt(): string
     {
         return $this->HouseNrExt;
     }
 
-    /**
-     * @param string $HouseNrExt
-     * @return Address
-     */
-    public function setHouseNrExt($HouseNrExt)
+    public function setHouseNrExt(string $HouseNrExt): static
     {
         $this->HouseNrExt = $HouseNrExt;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getZipcode()
+    public function getZipcode(): string
     {
         return $this->Zipcode;
     }
 
-    /**
-     * @param string $Zipcode
-     * @return Address
-     */
-    public function setZipcode($Zipcode)
+    public function setZipcode(string $Zipcode): static
     {
         $this->Zipcode = $Zipcode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCity()
+    public function getCity(): string
     {
         return $this->City;
     }
 
-    /**
-     * @param string $City
-     * @return Address
-     */
-    public function setCity($City)
+    public function setCity(string $City): static
     {
         $this->City = $City;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCountrycode()
+    public function getCountrycode(): string
     {
         return $this->Countrycode;
     }
 
-    /**
-     * @param string $Countrycode
-     * @return Address
-     */
-    public function setCountrycode($Countrycode)
+    public function setCountrycode(string $Countrycode): static
     {
         $this->Countrycode = $Countrycode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getArea()
+    public function getArea(): ?string
     {
         return $this->Area;
     }
 
-    /**
-     * @param string $Area
-     * @return Address
-     */
-    public function setArea($Area)
+    public function setArea(?string $Area): static
     {
         $this->Area = $Area;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getBuildingname()
+    public function getBuildingname(): ?string
     {
         return $this->Buildingname;
     }
 
-    /**
-     * @param string $Buildingname
-     * @return Address
-     */
-    public function setBuildingname($Buildingname)
+    public function setBuildingname(?string $Buildingname): static
     {
         $this->Buildingname = $Buildingname;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDepartment()
+    public function getDepartment(): ?string
     {
         return $this->Department;
     }
 
-    /**
-     * @param string $Department
-     * @return Address
-     */
-    public function setDepartment($Department)
+    public function setDepartment(?string $Department): static
     {
         $this->Department = $Department;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDoorcode()
+    public function getDoorcode(): ?string
     {
         return $this->Doorcode;
     }
 
-    /**
-     * @param string $Doorcode
-     * @return Address
-     */
-    public function setDoorcode($Doorcode)
+    public function setDoorcode(?string $Doorcode): static
     {
         $this->Doorcode = $Doorcode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getFloor()
+    public function getFloor(): ?string
     {
         return $this->Floor;
     }
 
-    /**
-     * @param string $Floor
-     * @return Address
-     */
-    public function setFloor($Floor)
+    public function setFloor(?string $Floor): static
     {
         $this->Floor = $Floor;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getRegion()
+    public function getRegion(): ?string
     {
         return $this->Region;
     }
 
-    /**
-     * @param string $Region
-     * @return Address
-     */
-    public function setRegion($Region)
+    public function setRegion(?string $Region): static
     {
         $this->Region = $Region;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getRemark()
+    public function getRemark(): ?string
     {
         return $this->Remark;
     }
 
-    /**
-     * @param string $Remark
-     * @return Address
-     */
-    public function setRemark($Remark)
+    public function setRemark(?string $Remark): static
     {
         $this->Remark = $Remark;
+
         return $this;
     }
 }

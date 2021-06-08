@@ -1,87 +1,55 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class TimeframeTimeFrame extends BaseType
 {
+    protected string $From;
 
-    /**
-     * @var string
-     */
-    protected $From = null;
+    protected string $To;
 
-    /**
-     * @var string
-     */
-    protected $To = null;
+    protected array $Options;
 
-
-    /**
-     * @var string[]
-     */
-    protected $Options = null;
-
-    /**
-     * @param string $From
-     * @param string $To
-     * @param array $Options
-     */
-    public function __construct($From, $To, array $Options)
+    public function __construct(string $From, string $To, array $Options)
     {
         $this->setFrom($From);
         $this->setTo($To);
         $this->setOptions($Options);
     }
 
-    /**
-     * @return string
-     */
-    public function getFrom()
+    public function getFrom(): string
     {
         return $this->From;
     }
 
-    /**
-     * @param string $From
-     * @return TimeframeTimeFrame
-     */
-    public function setFrom($From)
+    public function setFrom(string $From): static
     {
         $this->From = $From;
+
         return $this;
     }
 
-    /**
-     * @return string[]
-     */
-    public function getOptions()
+    public function getOptions(): array
     {
         return $this->Options;
     }
 
-    /**
-     * @param string[] $Options
-     * @return TimeframeTimeFrame
-     */
-    public function setOptions(array $Options)
+    public function setOptions(array $Options): static
     {
         $this->Options = $Options;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getTo()
+    public function getTo(): string
     {
         return $this->To;
     }
 
-    /**
-     * @param string $To
-     * @return TimeframeTimeFrame
-     */
-    public function setTo($To)
+    public function setTo(string $To): static
     {
         $this->To = $To;
+
         return $this;
     }
 }

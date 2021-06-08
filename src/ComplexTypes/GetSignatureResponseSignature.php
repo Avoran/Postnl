@@ -1,88 +1,57 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 use DateTime;
 
 class GetSignatureResponseSignature extends BaseType
 {
+    protected string $Barcode;
 
-    /**
-     * @var string
-     */
-    protected $Barcode = null;
+    protected DateTime $SignatureDate;
 
-    /**
-     * @var DateTime
-     */
-    protected $SignatureDate = null;
+    protected string $SignatureImage;
 
-    /**
-     * @var string In base64 encoding.
-     */
-    protected $SignatureImage = null;
-
-    /**
-     * @param string $Barcode
-     * @param DateTime $SignatureDate
-     * @param string $SignatureImage In base64 encoding.
-     */
-    public function __construct($Barcode, DateTime $SignatureDate, $SignatureImage)
+    public function __construct(string $Barcode, DateTime $SignatureDate, string $SignatureImage)
     {
         $this->setBarcode($Barcode);
         $this->setSignatureDate($SignatureDate);
         $this->setSignatureImage($SignatureImage);
     }
 
-    /**
-     * @return string
-     */
-    public function getBarcode()
+    public function getBarcode(): string
     {
         return $this->Barcode;
     }
 
-    /**
-     * @param string $Barcode
-     * @return GetSignatureResponseSignature
-     */
-    public function setBarcode($Barcode)
+    public function setBarcode(string $Barcode): static
     {
         $this->Barcode = $Barcode;
+
         return $this;
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getSignatureDate()
+    public function getSignatureDate(): DateTime
     {
         return $this->SignatureDate;
     }
 
-    /**
-     * @param DateTime $SignatureDate
-     * @return GetSignatureResponseSignature
-     */
-    public function setSignatureDate(DateTime $SignatureDate)
+    public function setSignatureDate(DateTime $SignatureDate): static
     {
         $this->SignatureDate = $SignatureDate;
+
         return $this;
     }
 
-    /**
-     * @return string In base64 encoding.
-     */
-    public function getSignatureImage()
+    public function getSignatureImage(): string
     {
         return $this->SignatureImage;
     }
 
-    /**
-     * @param string $SignatureImage In base64 encoding.
-     * @return GetSignatureResponseSignature
-     */
-    public function setSignatureImage($SignatureImage)
+    public function setSignatureImage(string $SignatureImage): static
     {
         $this->SignatureImage = $SignatureImage;
+
         return $this;
     }
 }

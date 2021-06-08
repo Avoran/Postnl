@@ -1,23 +1,14 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ConfirmingResponseShipment extends BaseType
 {
+    protected string $Barcode;
 
-    /**
-     * @var string
-     */
-    protected $Barcode = null;
+    protected ArrayOfWarning $Warnings;
 
-    /**
-     * @var ArrayOfWarning
-     */
-    protected $Warnings = null;
-
-    /**
-     * @param string $Barcode
-     * @param ArrayOfWarning $Warnings
-     */
-    public function __construct($Barcode, ArrayOfWarning $Warnings)
+    public function __construct(string $Barcode, ArrayOfWarning $Warnings)
     {
         $this->setBarcode($Barcode);
         $this->setWarnings($Warnings);
@@ -26,36 +17,27 @@ class ConfirmingResponseShipment extends BaseType
     /**
      * @return string
      */
-    public function getBarcode()
+    public function getBarcode(): string
     {
         return $this->Barcode;
     }
 
-    /**
-     * @param string $Barcode
-     * @return ConfirmingResponseShipment
-     */
-    public function setBarcode($Barcode)
+    public function setBarcode(string $Barcode): static
     {
         $this->Barcode = $Barcode;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfWarning
-     */
-    public function getWarnings()
+    public function getWarnings(): ArrayOfWarning
     {
         return $this->Warnings;
     }
 
-    /**
-     * @param ArrayOfWarning $Warnings
-     * @return ConfirmingResponseShipment
-     */
-    public function setWarnings($Warnings)
+    public function setWarnings(ArrayOfWarning $Warnings): static
     {
         $this->Warnings = $Warnings;
+
         return $this;
     }
 }

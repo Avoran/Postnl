@@ -1,25 +1,26 @@
-<?php namespace DivideBV\Postnl;
+<?php
+
+namespace DivideBV\Postnl;
 
 /**
  * Client class for CIF's delivery date service.
  */
 class DeliveryDateClient extends BaseClient
 {
+    /**
+     * The URL of the production WSDL.
+     */
+    protected const PRODUCTION_WSDL = 'https://api.postnl.nl/shipment/v2_1/calculate/date/soap.wsdl';
 
     /**
-     * @var string The URL of the production WSDL.
+     * The URL of the sandbox WSDL.
      */
-    const PRODUCTION_WSDL = 'https://api.postnl.nl/shipment/v2_1/calculate/date/soap.wsdl';
+    protected const SANDBOX_WSDL = 'https://api-sandbox.postnl.nl/shipment/v2_1/calculate/date/soap.wsdl';
 
     /**
-     * @var string The URL of the sandbox WSDL.
+     * The complex types used by this client.
      */
-    const SANDBOX_WSDL = 'https://api-sandbox.postnl.nl/shipment/v2_1/calculate/date/soap.wsdl';
-
-    /**
-     * @var array The complex types used by this client.
-     */
-    protected $classes = [
+    protected array $classes = [
         'ArrayOfCutOffTime',
         'ArrayOfExceptionData',
         'CifException',
@@ -34,21 +35,13 @@ class DeliveryDateClient extends BaseClient
         'Message'
     ];
 
-    /**
-     * @param ComplexTypes\GetDeliveryDateRequest $GetDeliveryDate
-     * @return ComplexTypes\GetDeliveryDateResponse
-     */
-    public function getDeliveryDate(ComplexTypes\GetDeliveryDateRequest $GetDeliveryDate)
+    public function getDeliveryDate(ComplexTypes\GetDeliveryDateRequest $request): ComplexTypes\GetDeliveryDateResponse
     {
-        return $this->__soapCall('GetDeliveryDate', array($GetDeliveryDate));
+        return $this->__soapCall('GetDeliveryDate', [$request]);
     }
 
-    /**
-     * @param ComplexTypes\GetSentDateRequest $GetSentDateRequest
-     * @return ComplexTypes\GetSentDateResponse
-     */
-    public function getSentDate(ComplexTypes\GetSentDateRequest $GetSentDateRequest)
+    public function getSentDate(ComplexTypes\GetSentDateRequest $request): ComplexTypes\GetSentDateResponse
     {
-        return $this->__soapCall('GetSentDate', array($GetSentDateRequest));
+        return $this->__soapCall('GetSentDate', [$request]);
     }
 }

@@ -1,86 +1,55 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class GetLocationRequest extends BaseType
 {
+    protected string $LocationCode;
 
-    /**
-     * @var string
-     */
-    protected $LocationCode = null;
+    protected Message $Message;
 
-    /**
-     * @var Message
-     */
-    protected $Message = null;
+    protected string $RetailNetworkID;
 
-    /**
-     * @var string
-     */
-    protected $RetailNetworkID = null;
-
-    /**
-     * @param string $LocationCode
-     * @param Message $Message
-     * @param string $RetailNetworkID
-     */
-    public function __construct($LocationCode, Message $Message, $RetailNetworkID)
+    public function __construct(string $LocationCode, Message $Message, string $RetailNetworkID)
     {
         $this->LocationCode = $LocationCode;
         $this->Message = $Message;
         $this->RetailNetworkID = $RetailNetworkID;
     }
 
-    /**
-     * @return string
-     */
-    public function getLocationCode()
+    public function getLocationCode(): string
     {
         return $this->LocationCode;
     }
 
-    /**
-     * @param string $LocationCode
-     * @return GetLocationRequest
-     */
-    public function setLocationCode($LocationCode)
+    public function setLocationCode(string $LocationCode): static
     {
         $this->LocationCode = $LocationCode;
+
         return $this;
     }
 
-    /**
-     * @return Message
-     */
-    public function getMessage()
+    public function getMessage(): Message
     {
         return $this->Message;
     }
 
-    /**
-     * @param Message $Message
-     * @return GetLocationRequest
-     */
-    public function setMessage($Message)
+    public function setMessage(Message $Message): static
     {
         $this->Message = $Message;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getRetailNetworkID()
+    public function getRetailNetworkID(): string
     {
         return $this->RetailNetworkID;
     }
 
-    /**
-     * @param string $RetailNetworkID
-     * @return GetLocationRequest
-     */
-    public function setRetailNetworkID($RetailNetworkID)
+    public function setRetailNetworkID(string $RetailNetworkID): static
     {
         $this->RetailNetworkID = $RetailNetworkID;
+
         return $this;
     }
 }

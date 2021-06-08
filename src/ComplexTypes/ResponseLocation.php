@@ -1,109 +1,52 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ResponseLocation extends BaseType
 {
+    protected Address $Address;
 
-    /**
-     * @var Address
-     */
-    protected $Address = null;
+    protected array $DeliveryOptions;
 
-    /**
-     * @var string[]
-     */
-    protected $DeliveryOptions = null;
+    protected string $Distance;
 
-    /**
-     * @var string
-     */
-    protected $Distance = null;
+    protected string $Latitude;
 
-    /**
-     * @var string
-     */
-    protected $Latitude = null;
+    protected string $LocationCode;
 
-    /**
-     * @var string
-     */
-    protected $LocationCode = null;
+    protected string $Longitude;
 
-    /**
-     * @var string
-     */
-    protected $Longitude = null;
+    protected string $Name;
 
-    /**
-     * @var string
-     */
-    protected $Name = null;
+    protected OpeningHours $OpeningHours;
 
-    /**
-     * @var OpeningHours
-     */
-    protected $OpeningHours = null;
+    protected string $PartnerName;
 
-    /**
-     * @var string
-     */
-    protected $PartnerName = null;
+    protected string $PhoneNumber;
 
-    /**
-     * @var string
-     */
-    protected $PhoneNumber = null;
+    protected string $RetailFormulaName;
 
-    /**
-     * @var string
-     */
-    protected $RetailFormulaName = null;
+    private string $RetailNetworkID;
 
-    /**
-     * @var string
-     */
-    protected $RetailNetworkID = null;
+    protected string $Saleschannel;
 
-    /**
-     * @var string
-     */
-    protected $Saleschannel = null;
+    protected string $TerminalType;
 
-    /**
-     * @var string
-     */
-    protected $TerminalType = null;
-
-    /**
-     * @param Address $Address
-     * @param string[] $DeliveryOptions
-     * @param string $Distance
-     * @param string $Latitude
-     * @param string $LocationCode
-     * @param string $Longtitude
-     * @param string $Name
-     * @param OpeningHours $OpeningHours
-     * @param string $PartnerName
-     * @param string $PhoneNumber
-     * @param string $RetailFormulaName
-     * @param string $RetailNetworkID
-     * @param string $Saleschannel
-     * @param string $TerminalType
-     */
     public function __construct(
         Address $Address,
         array $DeliveryOptions,
-        $Distance,
-        $Latitude,
-        $LocationCode,
-        $Longtitude,
-        $Name,
+        string $Distance,
+        string $Latitude,
+        string $LocationCode,
+        string $Longtitude,
+        string $Name,
         OpeningHours $OpeningHours,
-        $PartnerName,
-        $PhoneNumber,
-        $RetailFormulaName,
-        $RetailNetworkID,
-        $Saleschannel,
-        $TerminalType
+        string $PartnerName,
+        string $PhoneNumber,
+        string $RetailFormulaName,
+        string $RetailNetworkID,
+        string $Saleschannel,
+        string $TerminalType
     ) {
         $this->setAddress($Address);
         $this->setDeliveryOptions($DeliveryOptions);
@@ -121,255 +64,170 @@ class ResponseLocation extends BaseType
         $this->setTerminalType($TerminalType);
     }
 
-    /**
-     * @return Address
-     */
-    public function getAddress()
+    public function getAddress(): Address
     {
         return $this->Address;
     }
 
-    /**
-     * @param Address $Address
-     * @return ResponseLocation
-     */
-    public function setAddress($Address)
+    public function setAddress(Address $Address): static
     {
         $this->Address = $Address;
+
         return $this;
     }
 
-    /**
-     * @return string[]
-     */
-    public function getDeliveryOptions()
+    public function getDeliveryOptions(): array
     {
         return $this->DeliveryOptions;
     }
 
-    /**
-     * @param string[] $DeliveryOptions
-     * @return ResponseLocation
-     */
-    public function setDeliveryOptions($DeliveryOptions)
+    public function setDeliveryOptions(array $DeliveryOptions): static
     {
         $this->DeliveryOptions = $DeliveryOptions;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDistance()
+    public function getDistance(): string
     {
         return $this->Distance;
     }
 
-    /**
-     * @param string $Distance
-     * @return ResponseLocation
-     */
-    public function setDistance($Distance)
+    public function setDistance(string $Distance): static
     {
         $this->Distance = $Distance;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getLatitude()
+    public function getLatitude(): string
     {
         return $this->Latitude;
     }
 
-    /**
-     * @param string $Latitude
-     * @return ResponseLocation
-     */
-    public function setLatitude($Latitude)
+    public function setLatitude(string $Latitude): static
     {
         $this->Latitude = $Latitude;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getLocationCode()
+    public function getLocationCode(): string
     {
         return $this->LocationCode;
     }
 
-    /**
-     * @param string $LocationCode
-     * @return ResponseLocation
-     */
-    public function setLocationCode($LocationCode)
+    public function setLocationCode(string $LocationCode): static
     {
         $this->LocationCode = $LocationCode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getLongitude()
+    public function getLongitude(): string
     {
         return $this->Longitude;
     }
 
-    /**
-     * @param string $Longitude
-     * @return ResponseLocation
-     */
-    public function setLongitude($Longitude)
+    public function setLongitude(string $Longitude): static
     {
         $this->Longitude = $Longitude;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->Name;
     }
 
-    /**
-     * @param string $Name
-     * @return ResponseLocation
-     */
-    public function setName($Name)
+    public function setName(string $Name): static
     {
         $this->Name = $Name;
+
         return $this;
     }
 
-    /**
-     * @return OpeningHours
-     */
-    public function getOpeningHours()
+    public function getOpeningHours(): OpeningHours
     {
         return $this->OpeningHours;
     }
 
-    /**
-     * @param OpeningHours $OpeningHours
-     * @return ResponseLocation
-     */
-    public function setOpeningHours($OpeningHours)
+    public function setOpeningHours(OpeningHours $OpeningHours): static
     {
         $this->OpeningHours = $OpeningHours;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getPartnerName()
+    public function getPartnerName(): string
     {
         return $this->PartnerName;
     }
 
-    /**
-     * @param string $PartnerName
-     * @return ResponseLocation
-     */
-    public function setPartnerName($PartnerName)
+    public function setPartnerName(string $PartnerName): static
     {
         $this->PartnerName = $PartnerName;
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getPhoneNumber()
+    public function getPhoneNumber(): string
     {
         return $this->PhoneNumber;
     }
 
-    /**
-     * @param string $PhoneNumber
-     * @return ResponseLocation
-     */
-    public function setPhoneNumber($PhoneNumber)
+    public function setPhoneNumber(string $PhoneNumber): static
     {
         $this->PhoneNumber = $PhoneNumber;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getRetailFormulaName()
+    public function getRetailFormulaName(): string
     {
         return $this->RetailFormulaName;
     }
 
-    /**
-     * @param string $RetailFormulaName
-     * @return ResponseLocation
-     */
-    public function setRetailFormulaName($RetailFormulaName)
+    public function setRetailFormulaName(string $RetailFormulaName): static
     {
         $this->RetailFormulaName = $RetailFormulaName;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getRetailNetworkID()
+    public function getRetailNetworkID(): string
     {
         return $this->RetailNetworkID;
     }
 
-    /**
-     * @param string $RetailNetworkID
-     * @return ResponseLocation
-     */
-    public function setRetailNetworkID($RetailNetworkID)
+    public function setRetailNetworkID(string $RetailNetworkID): static
     {
         $this->RetailNetworkID = $RetailNetworkID;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getSaleschannel()
+    public function getSaleschannel(): string
     {
         return $this->Saleschannel;
     }
 
-    /**
-     * @param string $Saleschannel
-     * @return ResponseLocation
-     */
-    public function setSaleschannel($Saleschannel)
+    public function setSaleschannel(string $Saleschannel): static
     {
         $this->Saleschannel = $Saleschannel;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getTerminalType()
+    public function getTerminalType(): string
     {
         return $this->TerminalType;
     }
 
-    /**
-     * @param string $TerminalType
-     * @return ResponseLocation
-     */
-    public function setTerminalType($TerminalType)
+    public function setTerminalType(string $TerminalType): static
     {
         $this->TerminalType = $TerminalType;
+
         return $this;
     }
 }

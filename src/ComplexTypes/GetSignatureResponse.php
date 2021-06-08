@@ -1,61 +1,40 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class GetSignatureResponse extends BaseType
 {
+    protected ArrayOfGetSignatureResponseSignature $Signature;
 
-    /**
-     * @var ArrayOfGetSignatureResponseSignature
-     */
-    protected $Signature = null;
+    protected ArrayOfWarning $Warnings;
 
-    /**
-     * @var ArrayOfWarning
-     */
-    protected $Warnings = null;
-
-    /**
-     * @param ArrayOfGetSignatureResponseSignature $Signature
-     * @param ArrayOfWarning $Warnings
-     */
     public function __construct(ArrayOfGetSignatureResponseSignature $Signature, ArrayOfWarning $Warnings)
     {
         $this->setSignature($Signature);
         $this->setWarnings($Warnings);
     }
 
-    /**
-     * @return ArrayOfGetSignatureResponseSignature
-     */
-    public function getSignature()
+    public function getSignature(): ArrayOfGetSignatureResponseSignature
     {
         return $this->Signature;
     }
 
-    /**
-     * @param ArrayOfGetSignatureResponseSignature $Signature
-     * @return GetSignatureResponse
-     */
-    public function setSignature($Signature)
+    public function setSignature(ArrayOfGetSignatureResponseSignature $Signature): static
     {
         $this->Signature = $Signature;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfWarning
-     */
-    public function getWarnings()
+    public function getWarnings(): ArrayOfWarning
     {
         return $this->Warnings;
     }
 
-    /**
-     * @param ArrayOfWarning $Warnings
-     * @return GetSignatureResponse
-     */
-    public function setWarnings($Warnings)
+    public function setWarnings(ArrayOfWarning $Warnings): static
     {
         $this->Warnings = $Warnings;
+
         return $this;
     }
 }

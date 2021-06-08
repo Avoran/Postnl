@@ -1,134 +1,90 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
+
+use DateTime;
 
 class BaseLocation extends BaseType
 {
+    protected string $AllowSundaySorting;
 
-    /**
-     * @var string
-     */
-    protected $AllowSundaySorting = null;
+    protected string $DeliveryDate;
 
-    /**
-     * @var string
-     */
-    protected $DeliveryDate = null;
+    protected array $DeliveryOptions;
 
-    /**
-     * @var string[]
-     */
-    protected $DeliveryOptions = null;
+    protected ?string $OpeningTime = null;
 
-    /**
-     * @var string
-     */
-    protected $OpeningTime = null;
+    protected array $Options;
 
-    /**
-     * @var string[]
-     */
-    protected $Options = null;
-
-    /**
-     * @param string $AllowSundaySorting
-     * @param string $DeliveryDate
-     * @param array $DeliveryOptions
-     * @param array $Options
-     */
-    public function __construct($AllowSundaySorting, $DeliveryDate, $DeliveryOptions, $Options)
-    {
+    public function __construct(
+        string $AllowSundaySorting,
+        string $DeliveryDate,
+        array $DeliveryOptions,
+        array $Options
+    ) {
         $this->setAllowSundaySorting($AllowSundaySorting);
-        $this->setDeliveryDate($DeliveryDate ?: (new \DateTime('next monday'))->format('d-m-Y'));
+        $this->setDeliveryDate($DeliveryDate ?: (new DateTime('next monday'))->format('d-m-Y'));
         $this->setDeliveryOptions($DeliveryOptions);
         $this->setOptions($Options);
     }
 
-    /**
-     * @return string
-     */
-    public function getAllowSundaySorting()
+    public function getAllowSundaySorting(): string
     {
         return $this->AllowSundaySorting;
     }
 
-    /**
-     * @param string $AllowSundaySorting
-     * @return $this
-     */
-    public function setAllowSundaySorting($AllowSundaySorting)
+    public function setAllowSundaySorting(string $AllowSundaySorting): static
     {
         $this->AllowSundaySorting = $AllowSundaySorting;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDeliveryDate()
+    public function getDeliveryDate(): string
     {
         return $this->DeliveryDate;
     }
 
-    /**
-     * @param string $DeliveryDate
-     * @return $this
-     */
-    public function setDeliveryDate($DeliveryDate)
+    public function setDeliveryDate(string $DeliveryDate): static
     {
         $this->DeliveryDate = $DeliveryDate;
+
         return $this;
     }
 
-    /**
-     * @return string[]
-     */
-    public function getDeliveryOptions()
+    public function getDeliveryOptions(): array
     {
         return $this->DeliveryOptions;
     }
 
-    /**
-     * @param string[] $DeliveryOptions
-     * @return $this
-     */
-    public function setDeliveryOptions($DeliveryOptions)
+    public function setDeliveryOptions(array $DeliveryOptions): static
     {
         $this->DeliveryOptions = $DeliveryOptions;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getOpeningTime()
+    public function getOpeningTime(): ?string
     {
         return $this->OpeningTime;
     }
 
-    /**
-     * @param string $OpeningTime
-     * @return $this
-     */
-    public function setOpeningTime($OpeningTime)
+    public function setOpeningTime(string $OpeningTime): static
     {
         $this->OpeningTime = $OpeningTime;
+
         return $this;
     }
 
-    /**
-     * @return string[]
-     */
-    public function getOptions()
+    public function getOptions(): array
     {
         return $this->Options;
     }
 
-    /**
-     * @param string[] $Options
-     * @return $this
-     */
-    public function setOptions($Options)
+    public function setOptions(array $Options): static
     {
         $this->Options = $Options;
+
         return $this;
     }
 }

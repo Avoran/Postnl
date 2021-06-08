@@ -1,86 +1,55 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class RequestShipment extends BaseType
 {
+    protected string $Barcode;
 
-    /**
-     * @var string
-     */
-    protected $Barcode = null;
+    protected ?string $Reference = null;
 
-    /**
-     * @var string Optional.
-     */
-    protected $Reference = null;
+    protected ?string $Zipcode = null;
 
-    /**
-     * @var string Optional.
-     */
-    protected $Zipcode = null;
-
-    /**
-     * @param string $Barcode
-     * @param string $Reference
-     * @param string $Zipcode
-     */
-    public function __construct($Barcode, $Reference = null, $Zipcode = null)
+    public function __construct(string $Barcode, ?string $Reference = null, ?string $Zipcode = null)
     {
         $this->setBarcode($Barcode);
         $this->setReference($Reference);
         $this->setZipcode($Zipcode);
     }
 
-    /**
-     * @return string
-     */
-    public function getBarcode()
+    public function getBarcode(): string
     {
         return $this->Barcode;
     }
 
-    /**
-     * @param string $Barcode
-     * @return RequestShipment
-     */
-    public function setBarcode($Barcode)
+    public function setBarcode(string $Barcode): static
     {
         $this->Barcode = $Barcode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getReference()
+    public function getReference(): ?string
     {
         return $this->Reference;
     }
 
-    /**
-     * @param string $Reference
-     * @return RequestShipment
-     */
-    public function setReference($Reference)
+    public function setReference(?string $Reference): static
     {
         $this->Reference = $Reference;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getZipcode()
+    public function getZipcode(): ?string
     {
         return $this->Zipcode;
     }
 
-    /**
-     * @param string $Zipcode
-     * @return RequestShipment
-     */
-    public function setZipcode($Zipcode)
+    public function setZipcode(?string $Zipcode): static
     {
         $this->Zipcode = $Zipcode;
+
         return $this;
     }
 }

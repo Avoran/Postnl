@@ -1,41 +1,30 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ArrayOfResponseAddress extends BaseArrayOfType
 {
-
     /**
-     * @var string The name of the array property this class is a wrapper of.
+     * The name of the array property this class is a wrapper of.
      */
-    const WRAPPED_PROPERTY = 'ResponseAddress';
+    protected const WRAPPED_PROPERTY = 'ResponseAddress';
 
-    /**
-     * @var ResponseAddress[]
-     */
-    protected $ResponseAddress = null;
+    protected array $ResponseAddress;
 
-    /**
-     * @param ResponseAddress[] $ResponseAddress
-     */
     public function __construct(array $ResponseAddress)
     {
         $this->setResponseAddress($ResponseAddress);
     }
 
-    /**
-     * @return ResponseAddress[]
-     */
-    public function getResponseAddress()
+    public function getResponseAddress(): array
     {
         return $this->ResponseAddress;
     }
 
-    /**
-     * @param ResponseAddress[] $ResponseAddress
-     * @return ArrayOfResponseAddress
-     */
-    public function setResponseAddress(array $ResponseAddress)
+    public function setResponseAddress(array $ResponseAddress): static
     {
         $this->ResponseAddress = $ResponseAddress;
+
         return $this;
     }
 }

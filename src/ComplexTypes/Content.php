@@ -1,48 +1,29 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class Content extends BaseType
 {
+    protected string $CountryOfOrigin;
 
-    /**
-     * @var string
-     */
-    protected $CountryOfOrigin = null;
+    protected string $Description;
 
-    /**
-     * @var string
-     */
-    protected $Description = null;
+    protected string $HSTariffNr;
 
-    /**
-     * @var string
-     */
-    protected $HSTariffNr = null;
+    protected string $Quantity;
 
-    /**
-     * @var string
-     */
-    protected $Quantity = null;
+    protected string $Value;
 
-    /**
-     * @var string
-     */
-    protected $Value = null;
+    protected string $Weight;
 
-    /**
-     * @var string
-     */
-    protected $Weight = null;
-
-    /**
-     * @param string $CountryOfOrigin
-     * @param string $Description
-     * @param string $HSTariffNr
-     * @param string $Quantity
-     * @param string $Value
-     * @param string $Weight
-     */
-    public function __construct($CountryOfOrigin, $Description, $HSTariffNr, $Quantity, $Value, $Weight)
-    {
+    public function __construct(
+        string $CountryOfOrigin,
+        string $Description,
+        string $HSTariffNr,
+        string $Quantity,
+        string $Value,
+        string $Weight
+    ) {
         $this->setCountryOfOrigin($CountryOfOrigin);
         $this->setDescription($Description);
         $this->setHSTariffNr($HSTariffNr);
@@ -51,111 +32,75 @@ class Content extends BaseType
         $this->setWeight($Weight);
     }
 
-    /**
-     * @return string
-     */
-    public function getCountryOfOrigin()
+    public function getCountryOfOrigin(): string
     {
         return $this->CountryOfOrigin;
     }
 
-    /**
-     * @param string $CountryOfOrigin
-     * @return Content
-     */
-    public function setCountryOfOrigin($CountryOfOrigin)
+    public function setCountryOfOrigin(string $CountryOfOrigin): static
     {
         $this->CountryOfOrigin = $CountryOfOrigin;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->Description;
     }
 
-    /**
-     * @param string $Description
-     * @return Content
-     */
-    public function setDescription($Description)
+    public function setDescription(string $Description): static
     {
         $this->Description = $Description;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getHSTariffNr()
+    public function getHSTariffNr(): string
     {
         return $this->HSTariffNr;
     }
 
-    /**
-     * @param string $HSTariffNr
-     * @return Content
-     */
-    public function setHSTariffNr($HSTariffNr)
+    protected function setHSTariffNr(string $HSTariffNr): static
     {
         $this->HSTariffNr = $HSTariffNr;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getQuantity()
+    public function getQuantity(): string
     {
         return $this->Quantity;
     }
 
-    /**
-     * @param string $Quantity
-     * @return Content
-     */
-    public function setQuantity($Quantity)
+    public function setQuantity(string $Quantity): static
     {
         $this->Quantity = $Quantity;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getValue()
+    public function getValue(): string
     {
         return $this->Value;
     }
 
-    /**
-     * @param string $Value
-     * @return Content
-     */
-    public function setValue($Value)
+    public function setValue(string $Value): static
     {
         $this->Value = $Value;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getWeight()
+    public function getWeight(): string
     {
         return $this->Weight;
     }
 
-    /**
-     * @param string $Weight
-     * @return Content
-     */
-    public function setWeight($Weight)
+    public function setWeight(string $Weight): static
     {
         $this->Weight = $Weight;
+
         return $this;
     }
 }

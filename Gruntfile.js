@@ -10,7 +10,7 @@ module.exports = function(grunt) {
         bin: 'vendor/bin/phpcs',
         extensions: 'php',
         ignore: '/node_modules,/vendor',
-        standard: 'PSR2'
+        standard: 'PSR12'
       }
     },
     phplint: {

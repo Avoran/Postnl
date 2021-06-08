@@ -1,56 +1,35 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class GetTimeframesRequest extends BaseType
 {
+    protected Message $Message;
 
-    /**
-     * @var Message
-     */
-    protected $Message = null;
+    protected TimeframeRequest $Timeframe;
 
-    /**
-     * @var TimeframeRequest
-     */
-    protected $Timeframe = null;
-
-    /**
-     * @param Message $Message
-     * @param TimeframeRequest $Timeframe
-     */
     public function __construct(Message $Message, TimeframeRequest $Timeframe)
     {
         $this->setMessage($Message);
         $this->setTimeframe($Timeframe);
     }
 
-    /**
-     * @return Message
-     */
-    public function getMessage()
+    public function getMessage(): Message
     {
         return $this->Message;
     }
 
-    /**
-     * @param Message $Message
-     */
-    public function setMessage($Message)
+    public function setMessage(Message $Message)
     {
         $this->Message = $Message;
     }
 
-    /**
-     * @return TimeframeRequest
-     */
-    public function getTimeframe()
+    public function getTimeframe(): TimeframeRequest
     {
         return $this->Timeframe;
     }
 
-    /**
-     * @param TimeframeRequest $Timeframe
-     */
-    public function setTimeframe($Timeframe)
+    public function setTimeframe(TimeframeRequest $Timeframe)
     {
         $this->Timeframe = $Timeframe;
     }

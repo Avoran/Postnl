@@ -1,60 +1,31 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class CompleteStatusResponseEvent extends BaseType
 {
+    protected string $Code;
 
-    /**
-     * @var string
-     */
-    protected $Code = null;
+    protected string $Description;
 
-    /**
-     * @var string
-     */
-    protected $Description = null;
+    protected string $DestinationLocationCode;
 
-    /**
-     * @var string
-     */
-    protected $DestinationLocationCode = null;
+    protected string $LocationCode;
 
-    /**
-     * @var string
-     */
-    protected $LocationCode = null;
+    protected string $RouteCode;
 
-    /**
-     * @var string
-     */
-    protected $RouteCode = null;
+    protected string $RouteName;
 
-    /**
-     * @var string
-     */
-    protected $RouteName = null;
+    protected string $TimeStamp;
 
-    /**
-     * @var string
-     */
-    protected $TimeStamp = null;
-
-    /**
-     * @param string $Code
-     * @param string $Description
-     * @param string $DestinationLocationCode
-     * @param string $LocationCode
-     * @param string $RouteCode
-     * @param string $RouteName
-     * @param string $TimeStamp
-     */
     public function __construct(
-        $Code,
-        $Description,
-        $DestinationLocationCode,
-        $LocationCode,
-        $RouteCode,
-        $RouteName,
-        $TimeStamp
+        string $Code,
+        string $Description,
+        string $DestinationLocationCode,
+        string $LocationCode,
+        string $RouteCode,
+        string $RouteName,
+        string $TimeStamp
     ) {
         $this->setCode($Code);
         $this->setDescription($Description);
@@ -65,129 +36,87 @@ class CompleteStatusResponseEvent extends BaseType
         $this->setTimeStamp($TimeStamp);
     }
 
-    /**
-     * @return string
-     */
-    public function getCode()
+    public function getCode(): string
     {
         return $this->Code;
     }
 
-    /**
-     * @param string $Code
-     * @return CompleteStatusResponseEvent
-     */
-    public function setCode($Code)
+    public function setCode(string $Code): static
     {
         $this->Code = $Code;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->Description;
     }
 
-    /**
-     * @param string $Description
-     * @return CompleteStatusResponseEvent
-     */
-    public function setDescription($Description)
+    public function setDescription(string $Description): static
     {
         $this->Description = $Description;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDestinationLocationCode()
+    public function getDestinationLocationCode(): string
     {
         return $this->DestinationLocationCode;
     }
 
-    /**
-     * @param string $DestinationLocationCode
-     * @return CompleteStatusResponseEvent
-     */
-    public function setDestinationLocationCode($DestinationLocationCode)
+    public function setDestinationLocationCode(string $DestinationLocationCode): static
     {
         $this->DestinationLocationCode = $DestinationLocationCode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getLocationCode()
+    public function getLocationCode(): string
     {
         return $this->LocationCode;
     }
 
-    /**
-     * @param string $LocationCode
-     * @return CompleteStatusResponseEvent
-     */
-    public function setLocationCode($LocationCode)
+    public function setLocationCode(string $LocationCode): static
     {
         $this->LocationCode = $LocationCode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getRouteCode()
+    public function getRouteCode(): string
     {
         return $this->RouteCode;
     }
 
-    /**
-     * @param string $RouteCode
-     * @return CompleteStatusResponseEvent
-     */
-    public function setRouteCode($RouteCode)
+    public function setRouteCode(string $RouteCode): static
     {
         $this->RouteCode = $RouteCode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getRouteName()
+    public function getRouteName(): string
     {
         return $this->RouteName;
     }
 
-    /**
-     * @param string $RouteName
-     * @return CompleteStatusResponseEvent
-     */
-    public function setRouteName($RouteName)
+    public function setRouteName(string $RouteName): static
     {
         $this->RouteName = $RouteName;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getTimeStamp()
+    public function getTimeStamp(): string
     {
         return $this->TimeStamp;
     }
 
-    /**
-     * @param string $TimeStamp
-     * @return CompleteStatusResponseEvent
-     */
-    public function setTimeStamp($TimeStamp)
+    public function setTimeStamp(string $TimeStamp): static
     {
         $this->TimeStamp = $TimeStamp;
+
         return $this;
     }
 }

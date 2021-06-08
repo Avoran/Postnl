@@ -1,25 +1,26 @@
-<?php namespace DivideBV\Postnl;
+<?php
+
+namespace DivideBV\Postnl;
 
 /**
  * Client class for CIF's labelling service.
  */
 class LabellingClient extends BaseClient
 {
+    /**
+     * The URL of the production WSDL.
+     */
+    protected const PRODUCTION_WSDL = 'https://api.postnl.nl/shipment/v2_0/label/soap.wsdl';
 
     /**
-     * @var string The URL of the production WSDL.
+     * The URL of the sandbox WSDL.
      */
-    const PRODUCTION_WSDL = 'https://api.postnl.nl/shipment/v2_0/label/soap.wsdl';
+    protected const SANDBOX_WSDL = 'https://api-sandbox.postnl.nl/shipment/v2_0/label/soap.wsdl';
 
     /**
-     * @var string The URL of the sandbox WSDL.
+     * The complex types used by this client.
      */
-    const SANDBOX_WSDL = 'https://api-sandbox.postnl.nl/shipment/v2_0/label/soap.wsdl';
-
-    /**
-     * @var array The complex types used by this client.
-     */
-    protected $classes = [
+    protected array $classes = [
         'GenerateLabelRequest',
         'Customer',
         'Address',
@@ -50,21 +51,14 @@ class LabellingClient extends BaseClient
         'Warning',
     ];
 
-    /**
-     * @param ComplexTypes\GenerateLabelRequest $GenerateLabel
-     * @return ComplexTypes\ResponseShipment
-     */
-    public function generateLabel(ComplexTypes\GenerateLabelRequest $GenerateLabel)
+    public function generateLabel(ComplexTypes\GenerateLabelRequest $request): ComplexTypes\ResponseShipment
     {
-        return $this->__soapCall('GenerateLabel', [$GenerateLabel]);
+        return $this->__soapCall('GenerateLabel', [$request]);
     }
 
-    /**
-     * @param ComplexTypes\GenerateLabelRequest $GenerateLabel
-     * @return ComplexTypes\ResponseShipment
-     */
-    public function generateLabelWithoutConfirm(ComplexTypes\GenerateLabelRequest $GenerateLabel)
-    {
-        return $this->__soapCall('GenerateLabelWithoutConfirm', [$GenerateLabel]);
+    public function generateLabelWithoutConfirm(
+        ComplexTypes\GenerateLabelRequest $request
+    ): ComplexTypes\ResponseShipment {
+        return $this->__soapCall('GenerateLabelWithoutConfirm', [$request]);
     }
 }

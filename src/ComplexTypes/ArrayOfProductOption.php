@@ -1,41 +1,30 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ArrayOfProductOption extends BaseArrayOfType
 {
-
     /**
-     * @var string The name of the array property this class is a wrapper of.
+     * The name of the array property this class is a wrapper of.
      */
-    const WRAPPED_PROPERTY = 'ProductOption';
+    protected const WRAPPED_PROPERTY = 'ProductOption';
 
-    /**
-     * @var ProductOption[]
-     */
-    protected $ProductOption = null;
+    protected array $ProductOption;
 
-    /**
-     * @param ProductOption[] $ProductOption
-     */
     public function __construct(array $ProductOption)
     {
         $this->setProductOption($ProductOption);
     }
 
-    /**
-     * @return ProductOption[]
-     */
-    public function getProductOption()
+    public function getProductOption(): array
     {
         return $this->ProductOption;
     }
 
-    /**
-     * @param ProductOption[] $ProductOption
-     * @return ArrayOfProductOption
-     */
-    public function setProductOption(array $ProductOption)
+    public function setProductOption(array $ProductOption): static
     {
         $this->ProductOption = $ProductOption;
+
         return $this;
     }
 }

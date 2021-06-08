@@ -1,81 +1,40 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class Customs extends BaseType
 {
+    protected string $Certificate;
 
-    /**
-     * @var string
-     */
-    protected $Certificate = null;
+    protected string $CertificateNr;
 
-    /**
-     * @var string
-     */
-    protected $CertificateNr = null;
+    protected ArrayOfContent $Content;
 
-    /**
-     * @var ArrayOfContent
-     */
-    protected $Content = null;
+    protected string $Currency;
 
-    /**
-     * @var string
-     */
-    protected $Currency = null;
+    protected string $HandleAsNonDeliverable;
 
-    /**
-     * @var string
-     */
-    protected $HandleAsNonDeliverable = null;
+    protected string $Invoice;
 
-    /**
-     * @var string
-     */
-    protected $Invoice = null;
+    protected string $InvoiceNr;
 
-    /**
-     * @var string
-     */
-    protected $InvoiceNr = null;
+    protected string $License;
 
-    /**
-     * @var string
-     */
-    protected $License = null;
+    protected string $LicenseNr;
 
-    /**
-     * @var string
-     */
-    protected $LicenseNr = null;
+    protected string $ShipmentType;
 
-    /**
-     * @var string
-     */
-    protected $ShipmentType = null;
-
-    /**
-     * @param string $Certificate
-     * @param string $CertificateNr
-     * @param ArrayOfContent $Content
-     * @param string $Currency
-     * @param string $HandleAsNonDeliverable
-     * @param string $Invoice
-     * @param string $InvoiceNr
-     * @param string $License
-     * @param string $LicenseNr
-     * @param string $ShipmentType
-     */
     public function __construct(
-        $Certificate,
-        $CertificateNr,
+        string $Certificate,
+        string $CertificateNr,
         ArrayOfContent $Content,
-        $Currency,
-        $HandleAsNonDeliverable,
-        $Invoice,
-        $InvoiceNr,
-        $License,
-        $LicenseNr,
-        $ShipmentType
+        string $Currency,
+        string $HandleAsNonDeliverable,
+        string $Invoice,
+        string $InvoiceNr,
+        string $License,
+        string $LicenseNr,
+        string $ShipmentType
     ) {
         $this->setCertificate($Certificate);
         $this->setCertificateNr($CertificateNr);
@@ -89,183 +48,123 @@ class Customs extends BaseType
         $this->setShipmentType($ShipmentType);
     }
 
-    /**
-     * @return string
-     */
-    public function getCertificate()
+    public function getCertificate(): string
     {
         return $this->Certificate;
     }
 
-    /**
-     * @param string $Certificate
-     * @return Customs
-     */
-    public function setCertificate($Certificate)
+    public function setCertificate(string $Certificate): static
     {
         $this->Certificate = $Certificate;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCertificateNr()
+    public function getCertificateNr(): string
     {
         return $this->CertificateNr;
     }
 
-    /**
-     * @param string $CertificateNr
-     * @return Customs
-     */
-    public function setCertificateNr($CertificateNr)
+    public function setCertificateNr(string $CertificateNr): static
     {
         $this->CertificateNr = $CertificateNr;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfContent
-     */
-    public function getContent()
+    public function getContent(): ArrayOfContent
     {
         return $this->Content;
     }
 
-    /**
-     * @param ArrayOfContent $Content
-     * @return Customs
-     */
-    public function setContent($Content)
+    public function setContent(ArrayOfContent $Content): static
     {
         $this->Content = $Content;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCurrency()
+    public function getCurrency(): string
     {
         return $this->Currency;
     }
 
-    /**
-     * @param string $Currency
-     * @return Customs
-     */
-    public function setCurrency($Currency)
+    public function setCurrency(string $Currency): static
     {
         $this->Currency = $Currency;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getHandleAsNonDeliverable()
+    public function getHandleAsNonDeliverable(): string
     {
         return $this->HandleAsNonDeliverable;
     }
 
-    /**
-     * @param string $HandleAsNonDeliverable
-     * @return Customs
-     */
-    public function setHandleAsNonDeliverable($HandleAsNonDeliverable)
+    public function setHandleAsNonDeliverable(string $HandleAsNonDeliverable): static
     {
         $this->HandleAsNonDeliverable = $HandleAsNonDeliverable;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getInvoice()
+    public function getInvoice(): string
     {
         return $this->Invoice;
     }
 
-    /**
-     * @param string $Invoice
-     * @return Customs
-     */
-    public function setInvoice($Invoice)
+    public function setInvoice(string $Invoice): static
     {
         $this->Invoice = $Invoice;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getInvoiceNr()
+    public function getInvoiceNr(): string
     {
         return $this->InvoiceNr;
     }
 
-    /**
-     * @param string $InvoiceNr
-     * @return Customs
-     */
-    public function setInvoiceNr($InvoiceNr)
+    public function setInvoiceNr(string $InvoiceNr): static
     {
         $this->InvoiceNr = $InvoiceNr;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getLicense()
+    public function getLicense(): string
     {
         return $this->License;
     }
 
-    /**
-     * @param string $License
-     * @return Customs
-     */
-    public function setLicense($License)
+    public function setLicense(string $License): static
     {
         $this->License = $License;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getLicenseNr()
+    public function getLicenseNr(): string
     {
         return $this->LicenseNr;
     }
 
-    /**
-     * @param string $LicenseNr
-     * @return Customs
-     */
-    public function setLicenseNr($LicenseNr)
+    public function setLicenseNr(string $LicenseNr): static
     {
         $this->LicenseNr = $LicenseNr;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getShipmentType()
+    public function getShipmentType(): string
     {
         return $this->ShipmentType;
     }
 
-    /**
-     * @param string $ShipmentType
-     * @return Customs
-     */
-    public function setShipmentType($ShipmentType)
+    public function setShipmentType(string $ShipmentType): static
     {
         $this->ShipmentType = $ShipmentType;
+
         return $this;
     }
 }

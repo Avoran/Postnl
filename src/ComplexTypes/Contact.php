@@ -1,35 +1,18 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class Contact extends BaseType
 {
+    protected string $ContactType;
 
-    /**
-     * @var string
-     */
-    protected $ContactType = null;
+    protected string $Email;
 
-    /**
-     * @var string
-     */
-    protected $Email = null;
+    protected string $SMSNr;
 
-    /**
-     * @var string
-     */
-    protected $SMSNr = null;
+    protected string $TelNr;
 
-    /**
-     * @var string
-     */
-    protected $TelNr = null;
-
-    /**
-     * @param string $ContactType
-     * @param string $Email
-     * @param string $SMSNr
-     * @param string $TelNr
-     */
-    public function __construct($ContactType, $Email, $SMSNr, $TelNr)
+    public function __construct(string $ContactType, string $Email, string $SMSNr, string $TelNr)
     {
         $this->setContactType($ContactType);
         $this->setEmail($Email);
@@ -37,75 +20,51 @@ class Contact extends BaseType
         $this->setTelNr($TelNr);
     }
 
-    /**
-     * @return string
-     */
-    public function getContactType()
+    public function getContactType(): string
     {
         return $this->ContactType;
     }
 
-    /**
-     * @param string $ContactType
-     * @return Contact
-     */
-    public function setContactType($ContactType)
+    public function setContactType(string $ContactType): static
     {
         $this->ContactType = $ContactType;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getEmail()
+    public function getEmail(): string
     {
         return $this->Email;
     }
 
-    /**
-     * @param string $Email
-     * @return Contact
-     */
-    public function setEmail($Email)
+    public function setEmail(string $Email): static
     {
         $this->Email = $Email;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getSMSNr()
+    public function getSMSNr(): string
     {
         return $this->SMSNr;
     }
 
-    /**
-     * @param string $SMSNr
-     * @return Contact
-     */
-    public function setSMSNr($SMSNr)
+    public function setSMSNr(string $SMSNr): static
     {
         $this->SMSNr = $SMSNr;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getTelNr()
+    public function getTelNr(): string
     {
         return $this->TelNr;
     }
 
-    /**
-     * @param string $TelNr
-     * @return Contact
-     */
-    public function setTelNr($TelNr)
+    public function setTelNr(string $TelNr): static
     {
         $this->TelNr = $TelNr;
+
         return $this;
     }
 }

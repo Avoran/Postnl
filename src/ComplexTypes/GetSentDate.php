@@ -1,81 +1,40 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class GetSentDate extends BaseType
 {
+    protected string $AllowSundaySorting;
 
-    /**
-     * @var string
-     */
-    protected $AllowSundaySorting = null;
+    protected string $City;
 
-    /**
-     * @var string
-     */
-    protected $City = null;
+    protected string $CountryCode;
 
-    /**
-     * @var string
-     */
-    protected $CountryCode = null;
+    protected string $DeliveryDate;
 
-    /**
-     * @var string
-     */
-    protected $DeliveryDate = null;
+    protected string $HouseNr;
 
-    /**
-     * @var string
-     */
-    protected $HouseNr = null;
+    protected string $HouseNrExt;
 
-    /**
-     * @var string
-     */
-    protected $HouseNrExt = null;
+    protected array $Options;
 
-    /**
-     * @var string[]
-     */
-    protected $Options = null;
+    protected string $PostalCode;
 
-    /**
-     * @var string
-     */
-    protected $PostalCode = null;
+    protected string $ShippingDuration;
 
-    /**
-     * @var string
-     */
-    protected $ShippingDuration = null;
+    protected string $Street;
 
-    /**
-     * @var string
-     */
-    protected $Street = null;
-
-    /**
-     * @param string $AllowSundaySorting
-     * @param string $City
-     * @param string $CountryCode
-     * @param string $DeliveryDate
-     * @param string $HouseNr
-     * @param string $HouseNrExt
-     * @param string[] $Options
-     * @param string $PostalCode
-     * @param string $ShippingDuration
-     * @param string $Street
-     */
     public function __construct(
-        $AllowSundaySorting,
-        $City,
-        $CountryCode,
-        $DeliveryDate,
-        $HouseNr,
-        $HouseNrExt,
+        string $AllowSundaySorting,
+        string $City,
+        string $CountryCode,
+        string $DeliveryDate,
+        string $HouseNr,
+        string $HouseNrExt,
         array $Options,
-        $PostalCode,
-        $ShippingDuration,
-        $Street
+        string $PostalCode,
+        string $ShippingDuration,
+        string $Street
     ) {
         $this->setAllowSundaySorting($AllowSundaySorting);
         $this->setCity($City);
@@ -89,183 +48,123 @@ class GetSentDate extends BaseType
         $this->setStreet($Street);
     }
 
-    /**
-     * @return string
-     */
-    public function getAllowSundaySorting()
+    public function getAllowSundaySorting(): string
     {
         return $this->AllowSundaySorting;
     }
 
-    /**
-     * @param string $AllowSundaySorting
-     * @return GetSentDate
-     */
-    public function setAllowSundaySorting($AllowSundaySorting)
+    public function setAllowSundaySorting(string $AllowSundaySorting): static
     {
         $this->AllowSundaySorting = $AllowSundaySorting;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCity()
+    public function getCity(): string
     {
         return $this->City;
     }
 
-    /**
-     * @param string $City
-     * @return GetSentDate
-     */
-    public function setCity($City)
+    public function setCity(string $City): static
     {
         $this->City = $City;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCountryCode()
+    public function getCountryCode(): string
     {
         return $this->CountryCode;
     }
 
-    /**
-     * @param string $CountryCode
-     * @return GetSentDate
-     */
-    public function setCountryCode($CountryCode)
+    public function setCountryCode(string $CountryCode): static
     {
         $this->CountryCode = $CountryCode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDeliveryDate()
+    public function getDeliveryDate(): string
     {
         return $this->DeliveryDate;
     }
 
-    /**
-     * @param string $DeliveryDate
-     * @return GetSentDate
-     */
-    public function setDeliveryDate($DeliveryDate)
+    public function setDeliveryDate(string $DeliveryDate): static
     {
         $this->DeliveryDate = $DeliveryDate;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getHouseNr()
+    public function getHouseNr(): string
     {
         return $this->HouseNr;
     }
 
-    /**
-     * @param string $HouseNr
-     * @return GetSentDate
-     */
-    public function setHouseNr($HouseNr)
+    public function setHouseNr(string $HouseNr): static
     {
         $this->HouseNr = $HouseNr;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getHouseNrExt()
+    public function getHouseNrExt(): string
     {
         return $this->HouseNrExt;
     }
 
-    /**
-     * @param string $HouseNrExt
-     * @return GetSentDate
-     */
-    public function setHouseNrExt($HouseNrExt)
+    public function setHouseNrExt(string $HouseNrExt): static
     {
         $this->HouseNrExt = $HouseNrExt;
+
         return $this;
     }
 
-    /**
-     * @return string[]
-     */
-    public function getOptions()
+    public function getOptions(): array
     {
         return $this->Options;
     }
 
-    /**
-     * @param string[] $Options
-     * @return GetSentDate
-     */
-    public function setOptions($Options)
+    public function setOptions(array $Options): static
     {
         $this->Options = $Options;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getPostalCode()
+    public function getPostalCode(): string
     {
         return $this->PostalCode;
     }
 
-    /**
-     * @param string $PostalCode
-     * @return GetSentDate
-     */
-    public function setPostalCode($PostalCode)
+    public function setPostalCode(string $PostalCode): static
     {
         $this->PostalCode = $PostalCode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getShippingDuration()
+    public function getShippingDuration(): string
     {
         return $this->ShippingDuration;
     }
 
-    /**
-     * @param string $ShippingDuration
-     * @return GetSentDate
-     */
-    public function setShippingDuration($ShippingDuration)
+    public function setShippingDuration(string $ShippingDuration): static
     {
         $this->ShippingDuration = $ShippingDuration;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getStreet()
+    public function getStreet(): string
     {
         return $this->Street;
     }
 
-    /**
-     * @param string $Street
-     * @return GetSentDate
-     */
-    public function setStreet($Street)
+    public function setStreet(string $Street): static
     {
         $this->Street = $Street;
+
         return $this;
     }
 }

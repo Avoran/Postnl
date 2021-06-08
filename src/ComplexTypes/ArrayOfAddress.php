@@ -1,41 +1,30 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ArrayOfAddress extends BaseArrayOfType
 {
-
     /**
-     * @var string The name of the array property this class is a wrapper of.
+     * The name of the array property this class is a wrapper of.
      */
-    const WRAPPED_PROPERTY = 'Address';
+    protected const WRAPPED_PROPERTY = 'Address';
 
-    /**
-     * @var Address[]
-     */
-    protected $Address = null;
+    protected array $Address;
 
-    /**
-     * @param Address[] $Address
-     */
     public function __construct(array $Address)
     {
         $this->setAddress($Address);
     }
 
-    /**
-     * @return Address[]
-     */
-    public function getAddress()
+    public function getAddress(): array
     {
         return $this->Address;
     }
 
-    /**
-     * @param Address[] $Address
-     * @return ArrayOfAddress
-     */
-    public function setAddress(array $Address)
+    public function setAddress(array $Address): static
     {
         $this->Address = $Address;
+
         return $this;
     }
 }

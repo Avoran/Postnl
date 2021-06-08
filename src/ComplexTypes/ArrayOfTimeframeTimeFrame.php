@@ -1,41 +1,30 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ArrayOfTimeframeTimeFrame extends BaseArrayOfType
 {
-
     /**
-     * @var string The name of the array property this class is a wrapper of.
+     * The name of the array property this class is a wrapper of.
      */
-    const WRAPPED_PROPERTY = 'TimeframeTimeFrame';
+    protected const WRAPPED_PROPERTY = 'TimeframeTimeFrame';
 
-    /**
-     * @var TimeframeTimeFrame[]
-     */
-    protected $TimeframeTimeFrame = null;
+    protected array $TimeframeTimeFrame;
 
-    /**
-     * @param TimeframeTimeFrame[] $TimeframeTimeframe
-     */
     public function __construct(array $TimeframeTimeframe)
     {
         $this->setTimeframeTimeFrame($TimeframeTimeframe);
     }
 
-    /**
-     * @return TimeframeTimeFrame[]
-     */
-    public function getTimeframeTimeFrame()
+    public function getTimeframeTimeFrame(): array
     {
         return $this->TimeframeTimeFrame;
     }
 
-    /**
-     * @param TimeframeTimeFrame[] $TimeframeTimeFrame
-     * @return ArrayOfTimeframeTimeFrame
-     */
-    public function setTimeframeTimeFrame(array $TimeframeTimeFrame)
+    public function setTimeframeTimeFrame(array $TimeframeTimeFrame): static
     {
         $this->TimeframeTimeFrame = $TimeframeTimeFrame;
+
         return $this;
     }
 }

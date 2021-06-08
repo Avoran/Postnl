@@ -1,31 +1,18 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 /**
  * XML namespace: http://postnl.nl/cif/domain/BarcodeWebService/
  */
 class GenerateBarcodeMessage extends BaseType
 {
+    protected Message $Message;
 
-    /**
-     * @var Message
-     */
-    protected $Message = null;
+    protected GenerateBarcodeCustomer $Customer;
 
-    /**
-     * @var GenerateBarcodeCustomer
-     */
-    protected $Customer = null;
+    protected Barcode $Barcode;
 
-    /**
-     * @var Barcode
-     */
-    protected $Barcode = null;
-
-    /**
-     * @param Message $Message
-     * @param GenerateBarcodeCustomer $Customer
-     * @param Barcode $Barcode
-     */
     public function __construct(Message $Message, GenerateBarcodeCustomer $Customer, Barcode $Barcode)
     {
         $this->setMessage($Message);
@@ -33,57 +20,39 @@ class GenerateBarcodeMessage extends BaseType
         $this->setBarcode($Barcode);
     }
 
-    /**
-     * @return Message
-     */
-    public function getMessage()
+    public function getMessage(): Message
     {
         return $this->Message;
     }
 
-    /**
-     * @param Message $Message
-     * @return GenerateBarcodeMessage
-     */
-    public function setMessage($Message)
+    public function setMessage(Message $Message): static
     {
         $this->Message = $Message;
+
         return $this;
     }
 
-    /**
-     * @return GenerateBarcodeCustomer
-     */
-    public function getCustomer()
+    public function getCustomer(): GenerateBarcodeCustomer
     {
         return $this->Customer;
     }
 
-    /**
-     * @param GenerateBarcodeCustomer $Customer
-     * @return GenerateBarcodeMessage
-     */
-    public function setCustomer($Customer)
+    public function setCustomer(GenerateBarcodeCustomer $Customer): static
     {
         $this->Customer = $Customer;
+
         return $this;
     }
 
-    /**
-     * @return Barcode
-     */
-    public function getBarcode()
+    public function getBarcode(): Barcode
     {
         return $this->Barcode;
     }
 
-    /**
-     * @param Barcode $Barcode
-     * @return GenerateBarcodeMessage
-     */
-    public function setBarcode($Barcode)
+    public function setBarcode(Barcode $Barcode): static
     {
         $this->Barcode = $Barcode;
+
         return $this;
     }
 }

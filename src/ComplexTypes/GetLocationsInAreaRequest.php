@@ -1,86 +1,55 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class GetLocationsInAreaRequest extends BaseType
 {
+    protected string $Countrycode;
 
-    /**
-     * @var string
-     */
-    protected $Countrycode = null;
+    protected LocationArea $Location;
 
-    /**
-     * @var LocationArea
-     */
-    protected $Location = null;
+    protected Message $Message;
 
-    /**
-     * @var Message
-     */
-    protected $Message = null;
-
-    /**
-     * @param string $Countrycode
-     * @param LocationArea $Location
-     * @param Message $Message
-     */
-    public function __construct($Countrycode, LocationArea $Location, Message $Message)
+    public function __construct(string $Countrycode, LocationArea $Location, Message $Message)
     {
         $this->Countrycode = $Countrycode;
         $this->Location = $Location;
         $this->Message = $Message;
     }
 
-    /**
-     * @return string
-     */
-    public function getCountrycode()
+    public function getCountrycode(): string
     {
         return $this->Countrycode;
     }
 
-    /**
-     * @param string $Countrycode
-     * @return GetLocationsInAreaRequest
-     */
-    public function setCountrycode($Countrycode)
+    public function setCountrycode(string $Countrycode): static
     {
         $this->Countrycode = $Countrycode;
+
         return $this;
     }
 
-    /**
-     * @return LocationArea
-     */
-    public function getLocation()
+    public function getLocation(): LocationArea
     {
         return $this->Location;
     }
 
-    /**
-     * @param LocationArea $Location
-     * @return GetLocationsInAreaRequest
-     */
-    public function setLocation($Location)
+    public function setLocation(LocationArea $Location): static
     {
         $this->Location = $Location;
+
         return $this;
     }
 
-    /**
-     * @return Message
-     */
-    public function getMessage()
+    public function getMessage(): Message
     {
         return $this->Message;
     }
 
-    /**
-     * @param Message $Message
-     * @return GetLocationsInAreaRequest
-     */
-    public function setMessage($Message)
+    public function setMessage(Message $Message): static
     {
         $this->Message = $Message;
+
         return $this;
     }
 }

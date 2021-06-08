@@ -1,36 +1,25 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class GetSentDateResponse extends BaseType
 {
+    protected string $SentDate;
 
-    /**
-     * @var string
-     */
-    protected $SentDate = null;
-
-    /**
-     * @param string $SentDate
-     */
-    public function __construct($SentDate)
+    public function __construct(string $SentDate)
     {
         $this->setSentDate($SentDate);
     }
 
-    /**
-     * @return string
-     */
-    public function getSentDate()
+    public function getSentDate(): string
     {
         return $this->SentDate;
     }
 
-    /**
-     * @param string $SentDate
-     * @return GetSentDateResponse
-     */
-    public function setSentDate($SentDate)
+    public function setSentDate(string $SentDate): static
     {
         $this->SentDate = $SentDate;
+
         return $this;
     }
 }

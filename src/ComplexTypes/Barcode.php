@@ -1,89 +1,58 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 /**
  * XML namespace: http://postnl.nl/cif/domain/BarcodeWebService/
  */
 class Barcode extends BaseType
 {
+    protected string $Type;
 
-    /**
-     * @var string
-     */
-    protected $Type = null;
+    protected string $Range;
 
-    /**
-     * @var string
-     */
-    protected $Range = null;
+    protected string $Serie;
 
-    /**
-     * @var string
-     */
-    protected $Serie = null;
-
-    /**
-     * @param string $Type
-     * @param string $Range
-     * @param string $Serie
-     */
-    public function __construct($Type, $Range, $Serie)
+    public function __construct(string $Type, string $Range, string $Serie)
     {
         $this->setType($Type);
         $this->setRange($Range);
         $this->setSerie($Serie);
     }
 
-    /**
-     * @return string
-     */
-    public function getType()
+    public function getType(): string
     {
         return $this->Type;
     }
 
-    /**
-     * @param string $Type
-     * @return Barcode
-     */
-    public function setType($Type)
+    public function setType(string $Type): static
     {
         $this->Type = $Type;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getRange()
+    public function getRange(): string
     {
         return $this->Range;
     }
 
-    /**
-     * @param string $Range
-     * @return Barcode
-     */
-    public function setRange($Range)
+    public function setRange(string $Range): static
     {
         $this->Range = $Range;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getSerie()
+    public function getSerie(): string
     {
         return $this->Serie;
     }
 
-    /**
-     * @param string $Serie
-     * @return Barcode
-     */
-    public function setSerie($Serie)
+    public function setSerie(string $Serie): static
     {
         $this->Serie = $Serie;
+
         return $this;
     }
 }

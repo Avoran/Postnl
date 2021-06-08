@@ -1,36 +1,25 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class RequestSignature extends BaseType
 {
+    protected string $Barcode;
 
-    /**
-     * @var string
-     */
-    protected $Barcode = null;
-
-    /**
-     * @param string $Barcode
-     */
-    public function __construct($Barcode)
+    public function __construct(string $Barcode)
     {
         $this->setBarcode($Barcode);
     }
 
-    /**
-     * @return string
-     */
-    public function getBarcode()
+    public function getBarcode(): string
     {
         return $this->Barcode;
     }
 
-    /**
-     * @param string $Barcode
-     * @return RequestSignature
-     */
-    public function setBarcode($Barcode)
+    public function setBarcode(string $Barcode): static
     {
         $this->Barcode = $Barcode;
+
         return $this;
     }
 }

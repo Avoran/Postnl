@@ -1,28 +1,15 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ConfirmingMessage extends BaseType
 {
+    protected Customer $Customer;
 
-    /**
-     * @var Customer
-     */
-    protected $Customer = null;
+    protected Message $Message;
 
-    /**
-     * @var Message
-     */
-    protected $Message = null;
+    protected ArrayOfShipment $Shipments;
 
-    /**
-     * @var ArrayOfShipment
-     */
-    protected $Shipments = null;
-
-    /**
-     * @param Customer $Customer
-     * @param Message $Message
-     * @param ArrayOfShipment $Shipments
-     */
     public function __construct(Customer $Customer, Message $Message, ArrayOfShipment $Shipments)
     {
         $this->setCustomer($Customer);
@@ -30,57 +17,39 @@ class ConfirmingMessage extends BaseType
         $this->setShipments($Shipments);
     }
 
-    /**
-     * @return Customer
-     */
-    public function getCustomer()
+    public function getCustomer(): Customer
     {
         return $this->Customer;
     }
 
-    /**
-     * @param Customer $Customer
-     * @return ConfirmingMessage
-     */
-    public function setCustomer($Customer)
+    public function setCustomer(Customer $Customer): static
     {
         $this->Customer = $Customer;
+
         return $this;
     }
 
-    /**
-     * @return Message
-     */
-    public function getMessage()
+    public function getMessage(): Message
     {
         return $this->Message;
     }
 
-    /**
-     * @param Message $Message
-     * @return ConfirmingMessage
-     */
-    public function setMessage($Message)
+    public function setMessage(Message $Message): static
     {
         $this->Message = $Message;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfShipment
-     */
-    public function getShipments()
+    public function getShipments(): ArrayOfShipment
     {
         return $this->Shipments;
     }
 
-    /**
-     * @param ArrayOfShipment $Shipments
-     * @return ConfirmingMessage
-     */
-    public function setShipments($Shipments)
+    public function setShipments(ArrayOfShipment $Shipments): static
     {
         $this->Shipments = $Shipments;
+
         return $this;
     }
 }

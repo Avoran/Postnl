@@ -1,86 +1,55 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class Label extends BaseType
 {
+    protected string $Content;
 
-    /**
-     * @var string In base64 encoding.
-     */
-    protected $Content = null;
+    protected string $Contenttype;
 
-    /**
-     * @var string
-     */
-    protected $Contenttype = null;
+    protected string $Labeltype;
 
-    /**
-     * @var string
-     */
-    protected $Labeltype = null;
-
-    /**
-     * @param string $Content In base64 encoding.
-     * @param string $Contenttype
-     * @param string $Labeltype
-     */
-    public function __construct($Content, $Contenttype, $Labeltype)
+    public function __construct(string $Content, string $Contenttype, string $Labeltype)
     {
         $this->setContent($Content);
         $this->setContenttype($Contenttype);
         $this->setLabeltype($Labeltype);
     }
 
-    /**
-     * @return string In base64 encoding.
-     */
-    public function getContent()
+    public function getContent(): string
     {
         return $this->Content;
     }
 
-    /**
-     * @param string $Content In base64 encoding.
-     * @return Label
-     */
-    public function setContent($Content)
+    public function setContent(string $Content): static
     {
         $this->Content = $Content;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getContenttype()
+    public function getContenttype(): string
     {
         return $this->Contenttype;
     }
 
-    /**
-     * @param string $Contenttype
-     * @return Label
-     */
-    public function setContenttype($Contenttype)
+    public function setContenttype(string $Contenttype): static
     {
         $this->Contenttype = $Contenttype;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getLabeltype()
+    public function getLabeltype(): string
     {
         return $this->Labeltype;
     }
 
-    /**
-     * @param string $Labeltype
-     * @return Label
-     */
-    public function setLabeltype($Labeltype)
+    public function setLabeltype(string $Labeltype): static
     {
         $this->Labeltype = $Labeltype;
+
         return $this;
     }
 }

@@ -1,86 +1,55 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ResponseCustomer extends BaseType
 {
+    protected string $CustomerCode;
 
-    /**
-     * @var string
-     */
-    protected $CustomerCode = null;
+    protected string $CustomerNumber;
 
-    /**
-     * @var string
-     */
-    protected $CustomerNumber = null;
+    protected string $Name;
 
-    /**
-     * @var string
-     */
-    protected $Name = null;
-
-    /**
-     * @param string $CustomerCode
-     * @param string $CustomerNumber
-     * @param string $Name
-     */
-    public function __construct($CustomerCode, $CustomerNumber, $Name)
+    public function __construct(string $CustomerCode, string $CustomerNumber, string $Name)
     {
         $this->setCustomerCode($CustomerCode);
         $this->setCustomerNumber($CustomerNumber);
         $this->setName($Name);
     }
 
-    /**
-     * @return string
-     */
-    public function getCustomerCode()
+    public function getCustomerCode(): string
     {
         return $this->CustomerCode;
     }
 
-    /**
-     * @param string $CustomerCode
-     * @return ResponseCustomer
-     */
-    public function setCustomerCode($CustomerCode)
+    public function setCustomerCode(string $CustomerCode): static
     {
         $this->CustomerCode = $CustomerCode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCustomerNumber()
+    public function getCustomerNumber(): string
     {
         return $this->CustomerNumber;
     }
 
-    /**
-     * @param string $CustomerNumber
-     * @return ResponseCustomer
-     */
-    public function setCustomerNumber($CustomerNumber)
+    public function setCustomerNumber(string $CustomerNumber): static
     {
         $this->CustomerNumber = $CustomerNumber;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->Name;
     }
 
-    /**
-     * @param string $Name
-     * @return ResponseCustomer
-     */
-    public function setName($Name)
+    public function setName(string $Name): static
     {
         $this->Name = $Name;
+
         return $this;
     }
 }

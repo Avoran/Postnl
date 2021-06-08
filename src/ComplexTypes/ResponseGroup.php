@@ -1,39 +1,22 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ResponseGroup extends BaseType
 {
+    protected string $GroupType;
 
-    /**
-     * @var string
-     */
-    protected $GroupType = null;
+    protected string $MainBarcode;
 
-    /**
-     * @var string
-     */
-    protected $MainBarcode = null;
+    protected string $ShipmentAmount;
 
-    /**
-     * @var string
-     */
-    protected $ShipmentAmount = null;
+    protected string $ShipmentCounter;
 
-    /**
-     * @var string
-     */
-    protected $ShipmentCounter = null;
-
-    /**
-     * @param string $GroupType
-     * @param string $MainBarcode
-     * @param string $ShipmentAmount
-     * @param string $ShipmentCounter
-     */
     public function __construct(
-        $GroupType,
-        $MainBarcode,
-        $ShipmentAmount,
-        $ShipmentCounter
+        string $GroupType,
+        string $MainBarcode,
+        string $ShipmentAmount,
+        string $ShipmentCounter
     ) {
         $this->setGroupType($GroupType);
         $this->setMainBarcode($MainBarcode);
@@ -41,75 +24,51 @@ class ResponseGroup extends BaseType
         $this->setShipmentCounter($ShipmentCounter);
     }
 
-    /**
-     * @return string
-     */
-    public function getGroupType()
+    public function getGroupType(): string
     {
         return $this->GroupType;
     }
 
-    /**
-     * @param string $GroupType
-     * @return ResponseGroup
-     */
-    public function setGroupType($GroupType)
+    public function setGroupType(string $GroupType): static
     {
         $this->GroupType = $GroupType;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getMainBarcode()
+    public function getMainBarcode(): string
     {
         return $this->MainBarcode;
     }
 
-    /**
-     * @param string $MainBarcode
-     * @return ResponseGroup
-     */
-    public function setMainBarcode($MainBarcode)
+    public function setMainBarcode(string $MainBarcode): static
     {
         $this->MainBarcode = $MainBarcode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getShipmentAmount()
+    public function getShipmentAmount(): string
     {
         return $this->ShipmentAmount;
     }
 
-    /**
-     * @param string $ShipmentAmount
-     * @return ResponseGroup
-     */
-    public function setShipmentAmount($ShipmentAmount)
+    public function setShipmentAmount(string $ShipmentAmount): static
     {
         $this->ShipmentAmount = $ShipmentAmount;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getShipmentCounter()
+    public function getShipmentCounter(): string
     {
         return $this->ShipmentCounter;
     }
 
-    /**
-     * @param string $ShipmentCounter
-     * @return ResponseGroup
-     */
-    public function setShipmentCounter($ShipmentCounter)
+    public function setShipmentCounter(string $ShipmentCounter): static
     {
         $this->ShipmentCounter = $ShipmentCounter;
+
         return $this;
     }
 }

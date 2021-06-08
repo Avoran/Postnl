@@ -1,60 +1,31 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class Customer extends BaseType
 {
+    protected string $CustomerNumber;
 
-    /**
-     * @var string
-     */
-    protected $CustomerNumber = null;
+    protected string $CustomerCode;
 
-    /**
-     * @var string
-     */
-    protected $CustomerCode = null;
+    protected string $CollectionLocation;
 
-    /**
-     * @var string
-     */
-    protected $CollectionLocation = null;
+    protected ?string $ContactPerson = null;
 
-    /**
-     * @var string
-     */
-    protected $ContactPerson = null;
+    protected ?string $Email = null;
 
-    /**
-     * @var string
-     */
-    protected $Email = null;
+    protected ?string $Name = null;
 
-    /**
-     * @var string
-     */
-    protected $Name = null;
+    protected ?Address $Address = null;
 
-    /**
-     * @var Address
-     */
-    protected $Address = null;
-
-    /**
-     * @param string $CustomerNumber
-     * @param string $CustomerCode
-     * @param string $CollectionLocation
-     * @param string $ContactPerson
-     * @param string $Email
-     * @param string $Name
-     * @param Address|null $Address
-     */
     public function __construct(
-        $CustomerNumber,
-        $CustomerCode,
-        $CollectionLocation,
-        $ContactPerson = null,
-        $Email = null,
-        $Name = null,
-        Address $Address = null
+        string $CustomerNumber,
+        string $CustomerCode,
+        string $CollectionLocation,
+        ?string $ContactPerson = null,
+        ?string $Email = null,
+        ?string $Name = null,
+        ?Address $Address = null
     ) {
         $this->setCustomerNumber($CustomerNumber);
         $this->setCustomerCode($CustomerCode);
@@ -65,129 +36,87 @@ class Customer extends BaseType
         $this->setAddress($Address);
     }
 
-    /**
-     * @return Address
-     */
-    public function getAddress()
+    public function getAddress(): ?Address
     {
         return $this->Address;
     }
 
-    /**
-     * @param Address $Address
-     * @return Customer
-     */
-    public function setAddress($Address)
+    public function setAddress(?Address $Address): static
     {
         $this->Address = $Address;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCollectionLocation()
+    public function getCollectionLocation(): string
     {
         return $this->CollectionLocation;
     }
 
-    /**
-     * @param string $CollectionLocation
-     * @return Customer
-     */
-    public function setCollectionLocation($CollectionLocation)
+    public function setCollectionLocation(string $CollectionLocation): static
     {
         $this->CollectionLocation = $CollectionLocation;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getContactPerson()
+    public function getContactPerson(): ?string
     {
         return $this->ContactPerson;
     }
 
-    /**
-     * @param string $ContactPerson
-     * @return Customer
-     */
-    public function setContactPerson($ContactPerson)
+    public function setContactPerson(?string $ContactPerson): static
     {
         $this->ContactPerson = $ContactPerson;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCustomerCode()
+    public function getCustomerCode(): string
     {
         return $this->CustomerCode;
     }
 
-    /**
-     * @param string $CustomerCode
-     * @return Customer
-     */
-    public function setCustomerCode($CustomerCode)
+    public function setCustomerCode(string $CustomerCode): static
     {
         $this->CustomerCode = $CustomerCode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCustomerNumber()
+    public function getCustomerNumber(): string
     {
         return $this->CustomerNumber;
     }
 
-    /**
-     * @param string $CustomerNumber
-     * @return Customer
-     */
-    public function setCustomerNumber($CustomerNumber)
+    public function setCustomerNumber(string $CustomerNumber): static
     {
         $this->CustomerNumber = $CustomerNumber;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getEmail()
+    public function getEmail(): ?string
     {
         return $this->Email;
     }
 
-    /**
-     * @param string $Email
-     * @return Customer
-     */
-    public function setEmail($Email)
+    public function setEmail(?string $Email): static
     {
         $this->Email = $Email;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getName()
+    public function getName(): ?string
     {
         return $this->Name;
     }
 
-    /**
-     * @param string $Name
-     * @return Customer
-     */
-    public function setName($Name)
+    public function setName(?string $Name): static
     {
         $this->Name = $Name;
+
         return $this;
     }
 }

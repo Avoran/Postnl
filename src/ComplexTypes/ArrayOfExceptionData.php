@@ -1,37 +1,25 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ArrayOfExceptionData extends BaseType
 {
+    protected array $ExceptionData;
 
-    /**
-     * @var ExceptionData[]
-     */
-    protected $ExceptionData = null;
-
-    /**
-     * @param ExceptionData[] $ExceptionData
-     * @return ArrayOfExceptionData
-     */
     public function __construct(array $ExceptionData)
     {
         $this->setExceptionData($ExceptionData);
     }
 
-    /**
-     * @return ExceptionData[]
-     */
-    public function getExceptionData()
+    public function getExceptionData(): array
     {
         return $this->ExceptionData;
     }
 
-    /**
-     * @param ExceptionData[] $ExceptionData
-     * @return ArrayOfExceptionData
-     */
-    public function setExceptionData(array $ExceptionData)
+    public function setExceptionData(array $ExceptionData): static
     {
         $this->ExceptionData = $ExceptionData;
+
         return $this;
     }
 }

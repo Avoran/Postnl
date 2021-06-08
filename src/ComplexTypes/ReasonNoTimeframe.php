@@ -1,35 +1,18 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ReasonNoTimeframe extends BaseType
 {
+    protected string $Code;
 
-    /**
-     * @var string
-     */
-    protected $Code = null;
+    protected string $Date;
 
-    /**
-     * @var string
-     */
-    protected $Date = null;
+    protected string $Description;
 
-    /**
-     * @var string
-     */
-    protected $Description = null;
+    protected array $Options;
 
-    /**
-     * @var string[]
-     */
-    protected $Options = null;
-
-    /**
-     * @param string $Code
-     * @param string $Date
-     * @param string $Description
-     * @param string[] $Options
-     */
-    public function __construct($Code, $Date, $Description, array $Options)
+    public function __construct(string $Code, string $Date, string $Description, array $Options)
     {
         $this->setCode($Code);
         $this->setDate($Date);
@@ -37,75 +20,51 @@ class ReasonNoTimeframe extends BaseType
         $this->setOptions($Options);
     }
 
-    /**
-     * @return string
-     */
-    public function getCode()
+    public function getCode(): string
     {
         return $this->Code;
     }
 
-    /**
-     * @param string $Code
-     * @return ReasonNoTimeframe
-     */
-    public function setCode($Code)
+    public function setCode(string $Code): static
     {
         $this->Code = $Code;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDate()
+    public function getDate(): string
     {
         return $this->Date;
     }
 
-    /**
-     * @param string $Date
-     * @return ReasonNoTimeframe
-     */
-    public function setDate($Date)
+    public function setDate(string $Date): static
     {
         $this->Date = $Date;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->Description;
     }
 
-    /**
-     * @param string $Description
-     * @return ReasonNoTimeframe
-     */
-    public function setDescription($Description)
+    public function setDescription(string $Description): static
     {
         $this->Description = $Description;
+
         return $this;
     }
 
-    /**
-     * @return string[]
-     */
-    public function getOptions()
+    public function getOptions(): array
     {
         return $this->Options;
     }
 
-    /**
-     * @param string[] $Options
-     * @return ReasonNoTimeframe
-     */
-    public function setOptions($Options)
+    public function setOptions(array $Options): static
     {
         $this->Options = $Options;
+
         return $this;
     }
 }

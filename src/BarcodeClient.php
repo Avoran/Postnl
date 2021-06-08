@@ -1,4 +1,6 @@
-<?php namespace DivideBV\Postnl;
+<?php
+
+namespace DivideBV\Postnl;
 
 /**
  * Client class for CIF's barcode service.
@@ -9,21 +11,20 @@
  */
 class BarcodeClient extends BaseClient
 {
+    /**
+     * The URL of the production WSDL.
+     */
+    protected const PRODUCTION_WSDL = 'https://api.postnl.nl/shipment/v1_1/barcode/soap.wsdl';
 
     /**
-     * @var string The URL of the production WSDL.
+     * The URL of the sandbox WSDL.
      */
-    const PRODUCTION_WSDL = 'https://api.postnl.nl/shipment/v1_1/barcode/soap.wsdl';
+    protected const SANDBOX_WSDL = 'https://api-sandbox.postnl.nl/shipment/v1_1/barcode/soap.wsdl';
 
     /**
-     * @var string The URL of the sandbox WSDL.
+     * The complex types used by this client.
      */
-    const SANDBOX_WSDL = 'https://api-sandbox.postnl.nl/shipment/v1_1/barcode/soap.wsdl';
-
-    /**
-     * @var array The complex types used by this client.
-     */
-    protected $classes = [
+    protected array $classes = [
         'GenerateBarcodeMessage',
         'Message',
         'GenerateBarcodeCustomer',
@@ -31,12 +32,8 @@ class BarcodeClient extends BaseClient
         'GenerateBarcodeResponse',
     ];
 
-    /**
-     * @param ComplexTypes\GenerateBarcodeMessage $GenerateBarcodeMessage
-     * @return ComplexTypes\GenerateBarcodeResponse
-     */
-    public function generateBarcode(ComplexTypes\GenerateBarcodeMessage $GenerateBarcodeMessage)
+    public function generateBarcode(ComplexTypes\GenerateBarcodeMessage $message): ComplexTypes\GenerateBarcodeResponse
     {
-        return $this->__soapCall('GenerateBarcode', [$GenerateBarcodeMessage]);
+        return $this->__soapCall('GenerateBarcode', [$message]);
     }
 }

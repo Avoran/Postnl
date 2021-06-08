@@ -1,4 +1,6 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 use IteratorAggregate;
 use ArrayIterator;
@@ -7,20 +9,17 @@ use Exception;
 
 abstract class BaseArrayOfType extends BaseType implements IteratorAggregate, ArrayAccess
 {
-
     /**
-     * @var string The name of the array property to use for iterating.
-     *
-     * Actual wrapper classes must define this.
+     * The name of the array property to use for iterating. Actual wrapper classes must define this.
      */
-    const WRAPPED_PROPERTY = '';
+    protected const WRAPPED_PROPERTY = '';
 
-    public function getIterator()
+    public function getIterator(): ArrayIterator
     {
         return new ArrayIterator($this->getWrappedProperty());
     }
 
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->getWrappedProperty()[$offset]);
     }

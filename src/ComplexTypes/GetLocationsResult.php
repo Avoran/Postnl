@@ -1,61 +1,40 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class GetLocationsResult extends BaseType
 {
+    protected ArrayOfResponseLocation $ResponseLocation;
 
-    /**
-     * @var ArrayOfResponseLocation
-     */
-    protected $ResponseLocation = null;
+    protected ArrayOfWarning $Warnings;
 
-    /**
-     * @var ArrayOfWarning
-     */
-    protected $Warnings = null;
-
-    /**
-     * @param ArrayOfResponseLocation $ResponseLocation
-     * @param ArrayOfWarning $Warnings
-     */
     public function __construct(ArrayOfResponseLocation $ResponseLocation, ArrayOfWarning $Warnings)
     {
         $this->setResponseLocation($ResponseLocation);
         $this->setWarnings($Warnings);
     }
 
-    /**
-     * @return ArrayOfResponseLocation
-     */
-    public function getResponseLocation()
+    public function getResponseLocation(): ArrayOfResponseLocation
     {
         return $this->ResponseLocation;
     }
 
-    /**
-     * @param ArrayOfResponseLocation $ResponseLocation
-     * @return GetLocationsResult
-     */
-    public function setResponseLocation($ResponseLocation)
+    public function setResponseLocation(ArrayOfResponseLocation $ResponseLocation): static
     {
         $this->ResponseLocation = $ResponseLocation;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfWarning
-     */
-    public function getWarnings()
+    public function getWarnings(): ArrayOfWarning
     {
         return $this->Warnings;
     }
 
-    /**
-     * @param ArrayOfWarning $Warnings
-     * @return GetLocationsResult
-     */
-    public function setWarnings($Warnings)
+    public function setWarnings(ArrayOfWarning $Warnings): static
     {
         $this->Warnings = $Warnings;
+
         return $this;
     }
 }

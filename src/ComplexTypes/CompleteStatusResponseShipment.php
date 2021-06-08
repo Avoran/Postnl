@@ -1,112 +1,47 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 use DateTime;
 
 class CompleteStatusResponseShipment extends BaseType
 {
+    protected ArrayOfResponseAddress $Addresses;
 
-    /**
-     * @var ArrayOfResponseAddress
-     */
-    protected $Addresses = null;
+    protected ArrayOfResponseAmount $Amounts;
 
-    /**
-     * @var ArrayOfResponseAmount
-     */
-    protected $Amounts = null;
+    protected string $Barcode;
 
-    /**
-     * @var string
-     */
-    protected $Barcode = null;
+    protected ResponseCustomer $Customer;
 
-    /**
-     * @var ResponseCustomer
-     */
-    protected $Customer = null;
+    protected DateTime $DeliveryDate;
 
-    /**
-     * @var DateTime
-     */
-    protected $DeliveryDate = null;
+    protected ResponseDimension $Dimension;
 
-    /**
-     * @var ResponseDimension
-     */
-    protected $Dimension = null;
+    protected ArrayOfCompleteStatusResponseEvent $Events;
 
-    /**
-     * @var ArrayOfCompleteStatusResponseEvent
-     */
-    protected $Events = null;
+    protected ResponseExpectation $Expectation;
 
-    /**
-     * @var ResponseExpectation
-     */
-    protected $Expectation = null;
+    protected ArrayOfResponseGroup $Groups;
 
-    /**
-     * @var ArrayOfResponseGroup
-     */
-    protected $Groups = null;
+    protected ArrayOfCompleteStatusResponseOldStatus $OldStatuses;
 
-    /**
-     * @var ArrayOfCompleteStatusResponseOldStatus
-     */
-    protected $OldStatuses = null;
+    protected string $ProductCode;
 
-    /**
-     * @var string
-     */
-    protected $ProductCode = null;
+    protected string $ProductDescription;
 
-    /**
-     * @var string
-     */
-    protected $ProductDescription = null;
+    protected ArrayOfResponseProductOption $ProductOptions;
 
-    /**
-     * @var ArrayOfResponseProductOption
-     */
-    protected $ProductOptions = null;
+    protected string $Reference;
 
-    /**
-     * @var string
-     */
-    protected $Reference = null;
+    protected ResponseStatus $Status;
 
-    /**
-     * @var ResponseStatus
-     */
-    protected $Status = null;
+    protected ArrayOfWarning $Warnings;
 
-    /**
-     * @var ArrayOfWarning
-     */
-    protected $Warnings = null;
-
-    /**
-     * @param ArrayOfResponseAddress $Addresses
-     * @param ArrayOfResponseAmount $Amounts
-     * @param string $Barcode
-     * @param ResponseCustomer $Customer
-     * @param DateTime $DeliveryDate
-     * @param ResponseDimension $Dimension
-     * @param ArrayOfCompleteStatusResponseEvent $Events
-     * @param ResponseExpectation $Expectation
-     * @param ArrayOfResponseGroup $Groups
-     * @param ArrayOfCompleteStatusResponseOldStatus $OldStatuses
-     * @param string $ProductCode
-     * @param string $ProductDescription
-     * @param ArrayOfResponseProductOption $ProductOptions
-     * @param string $Reference
-     * @param ResponseStatus $Status
-     * @param ArrayOfWarning $Warnings
-     */
     public function __construct(
         ArrayOfResponseAddress $Addresses,
         ArrayOfResponseAmount $Amounts,
-        $Barcode,
+        string $Barcode,
         ResponseCustomer $Customer,
         DateTime $DeliveryDate,
         ResponseDimension $Dimension,
@@ -114,10 +49,10 @@ class CompleteStatusResponseShipment extends BaseType
         ResponseExpectation $Expectation,
         ArrayOfResponseGroup $Groups,
         ArrayOfCompleteStatusResponseOldStatus $OldStatuses,
-        $ProductCode,
-        $ProductDescription,
+        string $ProductCode,
+        string $ProductDescription,
         ArrayOfResponseProductOption $ProductOptions,
-        $Reference,
+        string $Reference,
         ResponseStatus $Status,
         ArrayOfWarning $Warnings
     ) {
@@ -139,291 +74,195 @@ class CompleteStatusResponseShipment extends BaseType
         $this->setWarnings($Warnings);
     }
 
-    /**
-     * @return ArrayOfResponseAddress
-     */
-    public function getAddresses()
+    public function getAddresses(): ArrayOfResponseAddress
     {
         return $this->Addresses;
     }
 
-    /**
-     * @param ArrayOfResponseAddress $Addresses
-     * @return CompleteStatusResponseShipment
-     */
-    public function setAddresses($Addresses)
+    public function setAddresses(ArrayOfResponseAddress $Addresses): static
     {
         $this->Addresses = $Addresses;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfResponseAmount
-     */
-    public function getAmounts()
+    public function getAmounts(): ArrayOfResponseAmount
     {
         return $this->Amounts;
     }
 
-    /**
-     * @param ArrayOfResponseAmount $Amounts
-     * @return CompleteStatusResponseShipment
-     */
-    public function setAmounts($Amounts)
+    public function setAmounts(ArrayOfResponseAmount $Amounts): static
     {
         $this->Amounts = $Amounts;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getBarcode()
+    public function getBarcode(): string
     {
         return $this->Barcode;
     }
 
-    /**
-     * @param string $Barcode
-     * @return CompleteStatusResponseShipment
-     */
-    public function setBarcode($Barcode)
+    public function setBarcode(string $Barcode): static
     {
         $this->Barcode = $Barcode;
+
         return $this;
     }
 
-    /**
-     * @return ResponseCustomer
-     */
-    public function getCustomer()
+    public function getCustomer(): ResponseCustomer
     {
         return $this->Customer;
     }
 
-    /**
-     * @param ResponseCustomer $Customer
-     * @return CompleteStatusResponseShipment
-     */
-    public function setCustomer($Customer)
+    public function setCustomer(ResponseCustomer $Customer): static
     {
         $this->Customer = $Customer;
+
         return $this;
     }
 
-    /**
-     * @return DateTime
-     */
-    public function getDeliveryDate()
+    public function getDeliveryDate(): DateTime
     {
         return $this->DeliveryDate;
     }
 
-    /**
-     * @param DateTime $DeliveryDate
-     * @return CompleteStatusResponseShipment
-     */
-    public function setDeliveryDate(DateTime $DeliveryDate)
+    public function setDeliveryDate(DateTime $DeliveryDate): static
     {
         $this->DeliveryDate = $DeliveryDate;
+
         return $this;
     }
 
-    /**
-     * @return ResponseDimension
-     */
-    public function getDimension()
+    public function getDimension(): ResponseDimension
     {
         return $this->Dimension;
     }
 
-    /**
-     * @param ResponseDimension $Dimension
-     * @return CompleteStatusResponseShipment
-     */
-    public function setDimension($Dimension)
+    public function setDimension(ResponseDimension $Dimension): static
     {
         $this->Dimension = $Dimension;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfCompleteStatusResponseEvent
-     */
-    public function getEvents()
+    public function getEvents(): ArrayOfCompleteStatusResponseEvent
     {
         return $this->Events;
     }
 
-    /**
-     * @param ArrayOfCompleteStatusResponseEvent $Events
-     * @return CompleteStatusResponseShipment
-     */
-    public function setEvents($Events)
+    public function setEvents(ArrayOfCompleteStatusResponseEvent $Events): static
     {
         $this->Events = $Events;
+
         return $this;
     }
 
-    /**
-     * @return ResponseExpectation
-     */
-    public function getExpectation()
+    public function getExpectation(): ResponseExpectation
     {
         return $this->Expectation;
     }
 
-    /**
-     * @param ResponseExpectation $Expectation
-     * @return CompleteStatusResponseShipment
-     */
-    public function setExpectation($Expectation)
+    public function setExpectation(ResponseExpectation $Expectation): static
     {
         $this->Expectation = $Expectation;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfResponseGroup
-     */
-    public function getGroups()
+    public function getGroups(): ArrayOfResponseGroup
     {
         return $this->Groups;
     }
 
-    /**
-     * @param ArrayOfResponseGroup $Groups
-     * @return CompleteStatusResponseShipment
-     */
-    public function setGroups($Groups)
+    public function setGroups(ArrayOfResponseGroup $Groups): static
     {
         $this->Groups = $Groups;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfCompleteStatusResponseOldStatus
-     */
-    public function getOldStatuses()
+    public function getOldStatuses(): ArrayOfCompleteStatusResponseOldStatus
     {
         return $this->OldStatuses;
     }
 
-    /**
-     * @param ArrayOfCompleteStatusResponseOldStatus $OldStatuses
-     * @return CompleteStatusResponseShipment
-     */
-    public function setOldStatuses($OldStatuses)
+    public function setOldStatuses(ArrayOfCompleteStatusResponseOldStatus $OldStatuses): static
     {
         $this->OldStatuses = $OldStatuses;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getProductCode()
+    public function getProductCode(): string
     {
         return $this->ProductCode;
     }
 
-    /**
-     * @param string $ProductCode
-     * @return CompleteStatusResponseShipment
-     */
-    public function setProductCode($ProductCode)
+    public function setProductCode(string $ProductCode): static
     {
         $this->ProductCode = $ProductCode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getProductDescription()
+    public function getProductDescription(): string
     {
         return $this->ProductDescription;
     }
 
-    /**
-     * @param string $ProductDescription
-     * @return CompleteStatusResponseShipment
-     */
-    public function setProductDescription($ProductDescription)
+    public function setProductDescription(string $ProductDescription): static
     {
         $this->ProductDescription = $ProductDescription;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfResponseProductOption
-     */
-    public function getProductOptions()
+    public function getProductOptions(): ArrayOfResponseProductOption
     {
         return $this->ProductOptions;
     }
 
-    /**
-     * @param ArrayOfResponseProductOption $ProductOptions
-     * @return CompleteStatusResponseShipment
-     */
-    public function setProductOptions($ProductOptions)
+    public function setProductOptions(ArrayOfResponseProductOption $ProductOptions): static
     {
         $this->ProductOptions = $ProductOptions;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getReference()
+    public function getReference(): string
     {
         return $this->Reference;
     }
 
-    /**
-     * @param string $Reference
-     * @return CompleteStatusResponseShipment
-     */
-    public function setReference($Reference)
+    public function setReference(string $Reference): static
     {
         $this->Reference = $Reference;
+
         return $this;
     }
 
-    /**
-     * @return ResponseStatus
-     */
-    public function getStatus()
+    protected function getStatus(): ResponseStatus
     {
         return $this->Status;
     }
 
-    /**
-     * @param ResponseStatus $Status
-     * @return CompleteStatusResponseShipment
-     */
-    public function setStatus($Status)
+    public function setStatus(ResponseStatus $Status): static
     {
         $this->Status = $Status;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfWarning
-     */
-    public function getWarnings()
+    protected function getWarnings(): ArrayOfWarning
     {
         return $this->Warnings;
     }
 
-    /**
-     * @param ArrayOfWarning $Warnings
-     * @return CompleteStatusResponseShipment
-     */
-    public function setWarnings($Warnings)
+    public function setWarnings(ArrayOfWarning $Warnings): static
     {
         $this->Warnings = $Warnings;
+
         return $this;
     }
 }

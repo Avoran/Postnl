@@ -1,61 +1,40 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class GetSentDateRequest extends BaseType
 {
+    protected GetSentDate $GetSentDate;
 
-    /**
-     * @var GetSentDate
-     */
-    protected $GetSentDate = null;
+    protected Message $Message;
 
-    /**
-     * @var Message
-     */
-    protected $Message = null;
-
-    /**
-     * @param Message $Message
-     * @param GetSentDate $GetSentDate
-     */
     public function __construct(Message $Message, GetSentDate $GetSentDate)
     {
         $this->setMessage($Message);
         $this->setGetSentDate($GetSentDate);
     }
 
-    /**
-     * @return GetSentDate
-     */
-    public function getGetSentDate()
+    public function getGetSentDate(): GetSentDate
     {
         return $this->GetSentDate;
     }
 
-    /**
-     * @param GetSentDate $GetSentDate
-     * @return GetSentDateRequest
-     */
-    public function setGetSentDate($GetSentDate)
+    public function setGetSentDate(GetSentDate $GetSentDate): static
     {
         $this->GetSentDate = $GetSentDate;
+
         return $this;
     }
 
-    /**
-     * @return Message
-     */
-    public function getMessage()
+    public function getMessage(): Message
     {
         return $this->Message;
     }
 
-    /**
-     * @param Message $Message
-     * @return GetSentDateRequest
-     */
-    public function setMessage($Message)
+    public function setMessage(Message $Message): static
     {
         $this->Message = $Message;
+
         return $this;
     }
 }

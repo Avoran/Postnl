@@ -1,41 +1,30 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ArrayOfLabel extends BaseArrayOfType
 {
-
     /**
-     * @var string The name of the array property this class is a wrapper of.
+     * The name of the array property this class is a wrapper of.
      */
-    const WRAPPED_PROPERTY = 'Label';
+    protected const WRAPPED_PROPERTY = 'Label';
 
-    /**
-     * @var Label[]
-     */
-    protected $Label = null;
+    protected array $Label;
 
-    /**
-     * @param Label[] $Label
-     */
     public function __construct(array $Label)
     {
         $this->setLabel($Label);
     }
 
-    /**
-     * @return Label[]
-     */
-    public function getLabel()
+    public function getLabel(): array
     {
         return $this->Label;
     }
 
-    /**
-     * @param Label[] $Label
-     * @return ArrayOfLabel
-     */
-    public function setLabel(array $Label)
+    public function setLabel(array $Label): static
     {
         $this->Label = $Label;
+
         return $this;
     }
 }

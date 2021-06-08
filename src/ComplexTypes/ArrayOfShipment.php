@@ -1,41 +1,30 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ArrayOfShipment extends BaseArrayOfType
 {
-
     /**
-     * @var string The name of the array property this class is a wrapper of.
+     * The name of the array property this class is a wrapper of.
      */
-    const WRAPPED_PROPERTY = 'Shipment';
+    protected const WRAPPED_PROPERTY = 'Shipment';
 
-    /**
-     * @var Shipment[]
-     */
-    protected $Shipment = null;
+    protected array $Shipment;
 
-    /**
-     * @param Shipment[] $Shipment
-     */
     public function __construct(array $Shipment)
     {
         $this->setShipment($Shipment);
     }
 
-    /**
-     * @return Shipment[]
-     */
-    public function getShipment()
+    public function getShipment(): array
     {
         return $this->Shipment;
     }
 
-    /**
-     * @param Shipment[] $Shipment
-     * @return ArrayOfShipment
-     */
-    public function setShipment(array $Shipment)
+    public function setShipment(array $Shipment): static
     {
         $this->Shipment = $Shipment;
+
         return $this;
     }
 }

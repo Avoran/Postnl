@@ -1,25 +1,26 @@
-<?php namespace DivideBV\Postnl;
+<?php
+
+namespace DivideBV\Postnl;
 
 /**
  * Client class for CIF's location service.
  */
 class TimeframeClient extends BaseClient
 {
+    /**
+     * The URL of the production WSDL.
+     */
+    protected const PRODUCTION_WSDL = 'https://api.postnl.nl/shipment/v2_0/calculate/timeframes/soap.wsdl';
 
     /**
-     * @var string The URL of the production WSDL.
+     * The URL of the sandbox WSDL.
      */
-    const PRODUCTION_WSDL = 'https://api.postnl.nl/shipment/v2_0/calculate/timeframes/soap.wsdl';
+    protected const SANDBOX_WSDL = 'https://api-sandbox.postnl.nl/shipment/v2_0/calculate/timeframes/soap.wsdl';
 
     /**
-     * @var string The URL of the sandbox WSDL.
+     * The complex types used by this client.
      */
-    const SANDBOX_WSDL = 'https://api-sandbox.postnl.nl/shipment/v2_0/calculate/timeframes/soap.wsdl';
-
-    /**
-     * @var array The complex types used by this client.
-     */
-    protected $classes = [
+    protected array $classes = [
         'GetTimeframes',
         'ArrayOfReasonNoTimeframe',
         'ArrayOfTimeframe',
@@ -33,12 +34,8 @@ class TimeframeClient extends BaseClient
         'TimeframeTimeFrame',
     ];
 
-    /**
-     * @param ComplexTypes\GetTimeframesRequest $getTimeframes
-     * @return mixed
-     */
-    public function getTimeframes(ComplexTypes\GetTimeframesRequest $getTimeframes)
+    public function getTimeframes(ComplexTypes\GetTimeframesRequest $request): mixed
     {
-        return $this->__soapCall('GetTimeframes', [$getTimeframes]);
+        return $this->__soapCall('GetTimeframes', [$request]);
     }
 }

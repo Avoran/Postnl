@@ -1,78 +1,42 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
+
+use DateTime;
 
 class TimeframeRequest extends BaseType
 {
+    protected string $City;
 
-    /**
-     * @var string
-     */
-    protected $City = null;
+    protected string $CountryCode;
 
-    /**
-     * @var string
-     */
-    protected $CountryCode = null;
+    protected string $EndDate;
 
-    /**
-     * @var string
-     */
-    protected $EndDate = null;
+    protected string $HouseNr;
 
-    /**
-     * @var string
-     */
-    protected $HouseNr = null;
+    protected string $HouseNrExt;
 
-    /**
-     * @var string
-     */
-    protected $HouseNrExt = null;
+    protected array $Options;
 
-    /**
-     * @var string[]
-     */
-    protected $Options = null;
+    protected string $PostalCode;
 
-    /**
-     * @var string
-     */
-    protected $PostalCode = null;
+    protected string $StartDate;
 
-    /**
-     * @var string
-     */
-    protected $StartDate = null;
+    protected string $Street;
 
-    /**
-     * @var string
-     */
-    protected $Street = null;
+    protected string $SundaySorting;
 
-    /**
-     * @var string
-     */
-    protected $SundaySorting = null;
-
-    /**
-     * @param string $Postalcode
-     * @param string $HouseNr
-     * @param string[] $Options
-     * @param string $StartDate
-     * @param string $EndDate
-     * @param string $CountryCode
-     * @param string $SundaySorting
-     */
     public function __construct(
-        $Postalcode,
-        $HouseNr,
-        $Options,
-        $StartDate,
-        $EndDate,
-        $CountryCode,
-        $SundaySorting
+        string $Postalcode,
+        string $HouseNr,
+        array $Options,
+        ?string $StartDate,
+        ?string $EndDate,
+        string $CountryCode,
+        string $SundaySorting
     ) {
-        $this->setStartDate($StartDate ?: (new \DateTime)->format('d-m-Y'));
-        $this->setEndDate($EndDate ?: (new \DateTime('+1 week'))->format('d-m-Y'));
+        $this->setStartDate($StartDate ?: (new DateTime())->format('d-m-Y'));
+        $this->setEndDate($EndDate ?: (new DateTime('+1 week'))->format('d-m-Y'));
         $this->setPostalCode($Postalcode);
         $this->setOptions($Options);
         $this->setHouseNr($HouseNr);
@@ -80,183 +44,123 @@ class TimeframeRequest extends BaseType
         $this->setSundaySorting($SundaySorting);
     }
 
-    /**
-     * @return string
-     */
-    public function getCity()
+    public function getCity(): string
     {
         return $this->City;
     }
 
-    /**
-     * @param string $City
-     * @return TimeframeRequest
-     */
-    public function setCity($City)
+    public function setCity(string $City): static
     {
         $this->City = $City;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getCountryCode()
+    public function getCountryCode(): string
     {
         return $this->CountryCode;
     }
 
-    /**
-     * @param string $CountryCode
-     * @return TimeframeRequest
-     */
-    public function setCountryCode($CountryCode)
+    public function setCountryCode(string $CountryCode): static
     {
         $this->CountryCode = $CountryCode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getEndDate()
+    public function getEndDate(): string
     {
         return $this->EndDate;
     }
 
-    /**
-     * @param string $EndDate
-     * @return TimeframeRequest
-     */
-    public function setEndDate($EndDate)
+    public function setEndDate(string $EndDate): static
     {
         $this->EndDate = $EndDate;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getHouseNr()
+    public function getHouseNr(): string
     {
         return $this->HouseNr;
     }
 
-    /**
-     * @param string $HouseNr
-     * @return TimeframeRequest
-     */
-    public function setHouseNr($HouseNr)
+    public function setHouseNr(string $HouseNr): static
     {
         $this->HouseNr = $HouseNr;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getHouseNrExt()
+    public function getHouseNrExt(): string
     {
         return $this->HouseNrExt;
     }
 
-    /**
-     * @param string $HouseNrExt
-     * @return TimeframeRequest
-     */
-    public function setHouseNrExt($HouseNrExt)
+    public function setHouseNrExt(string $HouseNrExt): static
     {
         $this->HouseNrExt = $HouseNrExt;
+
         return $this;
     }
 
-    /**
-     * @return string[]
-     */
-    public function getOptions()
+    public function getOptions(): array
     {
         return $this->Options;
     }
 
-    /**
-     * @param string[] $Options
-     * @return TimeframeRequest
-     */
-    public function setOptions($Options)
+    public function setOptions(array $Options): static
     {
         $this->Options = $Options;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getPostalCode()
+    public function getPostalCode(): string
     {
         return $this->PostalCode;
     }
 
-    /**
-     * @param string $PostalCode
-     * @return TimeframeRequest
-     */
-    public function setPostalCode($PostalCode)
+    public function setPostalCode(string $PostalCode): static
     {
         $this->PostalCode = $PostalCode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getStartDate()
+    public function getStartDate(): string
     {
         return $this->StartDate;
     }
 
-    /**
-     * @param string $StartDate
-     * @return TimeframeRequest
-     */
-    public function setStartDate($StartDate)
+    public function setStartDate(string $StartDate): static
     {
         $this->StartDate = $StartDate;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getStreet()
+    public function getStreet(): string
     {
         return $this->Street;
     }
 
-    /**
-     * @param string $Street
-     * @return TimeframeRequest
-     */
-    public function setStreet($Street)
+    public function setStreet(string $Street): static
     {
         $this->Street = $Street;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getSundaySorting()
+    public function getSundaySorting(): string
     {
         return $this->SundaySorting;
     }
 
-    /**
-     * @param string $SundaySorting
-     * @return TimeframeRequest
-     */
-    public function setSundaySorting($SundaySorting)
+    public function setSundaySorting(string $SundaySorting): static
     {
         $this->SundaySorting = $SundaySorting;
+
         return $this;
     }
 }

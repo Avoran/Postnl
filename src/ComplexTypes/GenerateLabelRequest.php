@@ -1,39 +1,22 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class GenerateLabelRequest extends BaseType
 {
+    protected LabellingMessage $Message;
 
-    /**
-     * @var LabellingMessage
-     */
-    protected $Message = null;
+    protected Customer $Customer;
 
-    /**
-     * @var Customer
-     */
-    protected $Customer = null;
+    protected ArrayOfShipment $Shipments;
 
-    /**
-     * @var ArrayOfShipment
-     */
-    protected $Shipments = null;
+    protected ?string $LabelSignature = null;
 
-    /**
-     * @var string In base64 encoding.
-     */
-    protected $LabelSignature;
-
-    /**
-     * @param LabellingMessage $Message
-     * @param Customer $Customer
-     * @param ArrayOfShipment $Shipments
-     * @param string $LabelSignature In base64 encoding.
-     */
     public function __construct(
         LabellingMessage $Message,
         Customer $Customer,
         ArrayOfShipment $Shipments,
-        $LabelSignature = null
+        ?string $LabelSignature = null
     ) {
         $this->setMessage($Message);
         $this->setCustomer($Customer);
@@ -41,75 +24,51 @@ class GenerateLabelRequest extends BaseType
         $this->setLabelSignature($LabelSignature);
     }
 
-    /**
-     * @return Message
-     */
-    public function getMessage()
+    public function getMessage(): LabellingMessage
     {
         return $this->Message;
     }
 
-    /**
-     * @param LabellingMessage $Message
-     * @return GenerateLabelRequest
-     */
-    public function setMessage(LabellingMessage $Message)
+    public function setMessage(LabellingMessage $Message): static
     {
         $this->Message = $Message;
+
         return $this;
     }
 
-    /**
-     * @return Customer
-     */
-    public function getCustomer()
+    public function getCustomer(): Customer
     {
         return $this->Customer;
     }
 
-    /**
-     * @param Customer $Customer
-     * @return GenerateLabelRequest
-     */
-    public function setCustomer(Customer $Customer)
+    public function setCustomer(Customer $Customer): static
     {
         $this->Customer = $Customer;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfShipment
-     */
-    public function getShipments()
+    public function getShipments(): ArrayOfShipment
     {
         return $this->Shipments;
     }
 
-    /**
-     * @param ArrayOfShipment $Shipments
-     * @return GenerateLabelRequest
-     */
-    public function setShipments(ArrayOfShipment $Shipments)
+    public function setShipments(ArrayOfShipment $Shipments): static
     {
         $this->Shipments = $Shipments;
+
         return $this;
     }
 
-    /**
-     * @return string In base64 encoding.
-     */
-    public function getLabelSignature()
+    public function getLabelSignature(): ?string
     {
         return $this->LabelSignature;
     }
 
-    /**
-     * @param string $LabelSignature In base64 encoding.
-     * @return GenerateLabelRequest
-     */
-    public function setLabelSignature($LabelSignature)
+    public function setLabelSignature(?string $LabelSignature): static
     {
         $this->LabelSignature = $LabelSignature;
+
         return $this;
     }
 }

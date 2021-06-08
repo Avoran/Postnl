@@ -1,86 +1,55 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class GetNearestLocationsRequest extends BaseType
 {
+    protected string $Countrycode;
 
-    /**
-     * @var string
-     */
-    protected $Countrycode = null;
+    protected Location $Location;
 
-    /**
-     * @var Location
-     */
-    protected $Location = null;
+    protected Message $Message;
 
-    /**
-     * @var Message
-     */
-    protected $Message = null;
-
-    /**
-     * @param Message $Message
-     * @param Location $Location
-     * @param string $Countrycode
-     */
-    public function __construct(Message $Message, Location $Location, $Countrycode)
+    public function __construct(Message $Message, Location $Location, string $Countrycode)
     {
         $this->setMessage($Message);
         $this->setLocation($Location);
         $this->setCountrycode($Countrycode);
     }
 
-    /**
-     * @return string
-     */
-    public function getCountrycode()
+    public function getCountrycode(): string
     {
         return $this->Countrycode;
     }
 
-    /**
-     * @param string $Countrycode
-     * @return GetNearestLocationsRequest
-     */
-    public function setCountrycode($Countrycode)
+    public function setCountrycode(string $Countrycode): static
     {
         $this->Countrycode = $Countrycode;
+
         return $this;
     }
 
-    /**
-     * @return Location
-     */
-    public function getLocation()
+    public function getLocation(): Location
     {
         return $this->Location;
     }
 
-    /**
-     * @param Location $Location
-     * @return GetNearestLocationsRequest
-     */
-    public function setLocation($Location)
+    public function setLocation(Location $Location): static
     {
         $this->Location = $Location;
+
         return $this;
     }
 
-    /**
-     * @return Message
-     */
-    public function getMessage()
+    public function getMessage(): Message
     {
         return $this->Message;
     }
 
-    /**
-     * @param Message $Message
-     * @return GetNearestLocationsRequest
-     */
-    public function setMessage($Message)
+    public function setMessage(Message $Message): static
     {
         $this->Message = $Message;
+
         return $this;
     }
 }

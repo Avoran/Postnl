@@ -1,61 +1,40 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class CutOffTime extends BaseType
 {
+    protected string $Day;
 
-    /**
-     * @var string
-     */
-    protected $Day = null;
+    protected string $Time;
 
-    /**
-     * @var string
-     */
-    protected $Time = null;
-
-    /**
-     * @param string $Day
-     * @param string $Time
-     */
-    public function __construct($Day, $Time)
+    public function __construct(string $Day, string $Time)
     {
         $this->setDay($Day);
         $this->setTime($Time);
     }
 
-    /**
-     * @return string
-     */
-    public function getDay()
+    public function getDay(): string
     {
         return $this->Day;
     }
 
-    /**
-     * @param string $Day
-     * @return CutOffTime
-     */
-    public function setDay($Day)
+    public function setDay(string $Day): static
     {
         $this->Day = $Day;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getTime()
+    public function getTime(): string
     {
         return $this->Time;
     }
 
-    /**
-     * @param string $Time
-     * @return CutOffTime
-     */
-    public function setTime($Time)
+    public function setTime(string $Time): static
     {
         $this->Time = $Time;
+
         return $this;
     }
 }

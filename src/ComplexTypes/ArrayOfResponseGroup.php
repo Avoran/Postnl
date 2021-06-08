@@ -1,41 +1,30 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ArrayOfResponseGroup extends BaseArrayOfType
 {
-
     /**
-     * @var string The name of the array property this class is a wrapper of.
+     * The name of the array property this class is a wrapper of.
      */
-    const WRAPPED_PROPERTY = 'ResponseGroup';
+    protected const WRAPPED_PROPERTY = 'ResponseGroup';
 
-    /**
-     * @var ResponseGroup[]
-     */
-    protected $ResponseGroup = null;
+    protected array $ResponseGroup;
 
-    /**
-     * @param ResponseGroup[] $ResponseGroup
-     */
     public function __construct(array $ResponseGroup)
     {
         $this->setResponseGroup($ResponseGroup);
     }
 
-    /**
-     * @return ResponseGroup[]
-     */
-    public function getResponseGroup()
+    public function getResponseGroup(): array
     {
         return $this->ResponseGroup;
     }
 
-    /**
-     * @param ResponseGroup[] $ResponseGroup
-     * @return ArrayOfResponseGroup
-     */
-    public function setResponseGroup(array $ResponseGroup)
+    public function setResponseGroup(array $ResponseGroup): static
     {
         $this->ResponseGroup = $ResponseGroup;
+
         return $this;
     }
 }

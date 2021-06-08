@@ -1,37 +1,29 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
 
-class CifException extends \Exception
+namespace DivideBV\Postnl\ComplexTypes;
+
+use Exception;
+
+class CifException extends Exception
 {
+    protected ArrayOfExceptionData $Errors;
 
-    /**
-     * @var ArrayOfExceptionData
-     */
-    protected $Errors = null;
-
-    /**
-     * @param ArrayOfExceptionData $Errors
-     * @return CifException
-     */
     public function __construct(ArrayOfExceptionData $Errors)
     {
         $this->setErrors($Errors);
+
+        parent::__construct();
     }
 
-    /**
-     * @return ArrayOfExceptionData
-     */
-    public function getErrors()
+    public function getErrors(): ArrayOfExceptionData
     {
         return $this->Errors;
     }
 
-    /**
-     * @param ArrayOfExceptionData $Errors
-     * @return CifException
-     */
-    public function setErrors(ArrayOfExceptionData $Errors)
+    public function setErrors(ArrayOfExceptionData $Errors): static
     {
         $this->Errors = $Errors;
+
         return $this;
     }
 }

@@ -1,59 +1,30 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class ResponseShipment extends BaseType
 {
+    protected string $Barcode;
 
-    /**
-     * @var string
-     */
-    protected $Barcode = null;
+    protected string $DownPartnerBarcode;
 
-    /**
-     * @var string
-     */
-    protected $DownPartnerBarcode = null;
+    protected string $DownPartnerID;
 
-    /**
-     * @var string
-     */
-    protected $DownPartnerID = null;
+    protected string $DownPartnerLocation;
 
-    /**
-     * @var string
-     */
-    protected $DownPartnerLocation = null;
+    protected ArrayOfLabel $Labels;
 
-    /**
-     * @var ArrayOfLabel
-     */
-    protected $Labels = null;
+    protected string $ProductCodeDelivery;
 
-    /**
-     * @var string
-     */
-    protected $ProductCodeDelivery = null;
+    protected ArrayOfWarning $Warnings;
 
-    /**
-     * @var ArrayOfWarning
-     */
-    protected $Warnings = null;
-
-    /**
-    * @param string $Barcode
-    * @param string $DownPartnerBarcode
-    * @param string $DownPartnerID
-    * @param string $DownPartnerLocation
-    * @param ArrayOfLabel $Labels
-    * @param string $ProductCodeDelivery
-    * @param ArrayOfWarning $Warnings
-     */
     public function __construct(
-        $Barcode,
-        $DownPartnerBarcode,
-        $DownPartnerID,
-        $DownPartnerLocation,
+        string $Barcode,
+        string $DownPartnerBarcode,
+        string $DownPartnerID,
+        string $DownPartnerLocation,
         ArrayOfLabel $Labels,
-        $ProductCodeDelivery,
+        string $ProductCodeDelivery,
         ArrayOfWarning $Warnings
     ) {
         $this->setBarcode($Barcode);
@@ -65,129 +36,87 @@ class ResponseShipment extends BaseType
         $this->setWarnings($Warnings);
     }
 
-    /**
-     * @return string
-     */
-    public function getBarcode()
+    public function getBarcode(): string
     {
         return $this->Barcode;
     }
 
-    /**
-     * @param string $Barcode
-     * @return ResponseShipment
-     */
-    public function setBarcode($Barcode)
+    public function setBarcode(string $Barcode): static
     {
         $this->Barcode = $Barcode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDownPartnerBarcode()
+    public function getDownPartnerBarcode(): string
     {
         return $this->DownPartnerBarcode;
     }
 
-    /**
-     * @param string $DownPartnerBarcode
-     * @return ResponseShipment
-     */
-    public function setDownPartnerBarcode($DownPartnerBarcode)
+    public function setDownPartnerBarcode(string $DownPartnerBarcode): static
     {
         $this->DownPartnerBarcode = $DownPartnerBarcode;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDownPartnerID()
+    public function getDownPartnerID(): string
     {
         return $this->DownPartnerID;
     }
 
-    /**
-     * @param string $DownPartnerID
-     * @return ResponseShipment
-     */
-    public function setDownPartnerID($DownPartnerID)
+    public function setDownPartnerID(string $DownPartnerID): static
     {
         $this->DownPartnerID = $DownPartnerID;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getDownPartnerLocation()
+    public function getDownPartnerLocation(): string
     {
         return $this->DownPartnerLocation;
     }
 
-    /**
-     * @param string $DownPartnerLocation
-     * @return ResponseShipment
-     */
-    public function setDownPartnerLocation($DownPartnerLocation)
+    public function setDownPartnerLocation(string $DownPartnerLocation): static
     {
         $this->DownPartnerLocation = $DownPartnerLocation;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfLabel
-     */
-    public function getLabels()
+    public function getLabels(): ArrayOfLabel
     {
         return $this->Labels;
     }
 
-    /**
-     * @param ArrayOfLabel $Labels
-     * @return ResponseShipment
-     */
-    public function setLabels($Labels)
+    public function setLabels(ArrayOfLabel $Labels): static
     {
         $this->Labels = $Labels;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getProductCodeDelivery()
+    public function getProductCodeDelivery(): string
     {
         return $this->ProductCodeDelivery;
     }
 
-    /**
-     * @param string $ProductCodeDelivery
-     * @return ResponseShipment
-     */
-    public function setProductCodeDelivery($ProductCodeDelivery)
+    public function setProductCodeDelivery(string $ProductCodeDelivery): static
     {
         $this->ProductCodeDelivery = $ProductCodeDelivery;
+
         return $this;
     }
 
-    /**
-     * @return ArrayOfWarning
-     */
-    public function getWarnings()
+    public function getWarnings(): ArrayOfWarning
     {
         return $this->Warnings;
     }
 
-    /**
-     * @param ArrayOfWarning $Warnings
-     * @return ResponseShipment
-     */
-    public function setWarnings($Warnings)
+    public function setWarnings(ArrayOfWarning $Warnings): static
     {
         $this->Warnings = $Warnings;
+
         return $this;
     }
 }

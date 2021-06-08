@@ -1,39 +1,26 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class LabellingMessage extends Message
 {
+    protected string $Printertype;
 
-    /**
-     * @var string
-     */
-    protected $Printertype = null;
-
-    /**
-     * @param string $Printertype
-     *     The file type used to generate the label. Defaults to PDF.
-     * @param string $MessageID
-     *     Defaults to 1.
-     * @param string $MessageTimeStamp
-     *     Defaults to the current time.
-     */
-    public function __construct($Printertype = 'GraphicFile|PDF', $MessageID = 1, $MessageTimeStamp = null)
-    {
+    public function __construct(
+        string $Printertype = 'GraphicFile|PDF',
+        string $MessageID = '1',
+        ?string $MessageTimeStamp = null
+    ) {
         parent::__construct($MessageID, $MessageTimeStamp);
         $this->setPrintertype($Printertype);
     }
 
-    /**
-     * @return string
-     */
-    public function getPrintertype()
+    public function getPrintertype(): string
     {
         return $this->Printertype;
     }
 
-    /**
-     * @param string $Printertype
-     */
-    public function setPrintertype($Printertype)
+    public function setPrintertype(string $Printertype)
     {
         $this->Printertype = $Printertype;
     }

@@ -1,51 +1,34 @@
-<?php namespace DivideBV\Postnl\ComplexTypes;
+<?php
+
+namespace DivideBV\Postnl\ComplexTypes;
 
 class LocationArea extends BaseLocation
 {
+    protected ?Coordinate $CoordinatesNorthWest = null;
 
-    /**
-     * @var Coordinate
-     */
-    protected $CoordinatesNorthWest = null;
+    protected ?Coordinate $CoordinatesSouthEast = null;
 
-    /**
-     * @var Coordinate
-     */
-    protected $CoordinatesSouthEast = null;
-
-    /**
-     * @return Coordinate
-     */
-    public function getCoordinatesNorthWest()
+    public function getCoordinatesNorthWest(): ?Coordinate
     {
         return $this->CoordinatesNorthWest;
     }
 
-    /**
-     * @param Coordinate $CoordinatesNorthWest
-     * @return LocationArea
-     */
-    public function setCoordinatesNorthWest($CoordinatesNorthWest)
+    public function setCoordinatesNorthWest(Coordinate $CoordinatesNorthWest): static
     {
         $this->CoordinatesNorthWest = $CoordinatesNorthWest;
+
         return $this;
     }
 
-    /**
-     * @return Coordinate
-     */
-    public function getCoordinatesSouthEast()
+    public function getCoordinatesSouthEast(): ?Coordinate
     {
         return $this->CoordinatesSouthEast;
     }
 
-    /**
-     * @param Coordinate $CoordinatesSouthEast
-     * @return LocationArea
-     */
-    public function setCoordinatesSouthEast($CoordinatesSouthEast)
+    public function setCoordinatesSouthEast(Coordinate $CoordinatesSouthEast): static
     {
         $this->CoordinatesSouthEast = $CoordinatesSouthEast;
+
         return $this;
     }
 }
