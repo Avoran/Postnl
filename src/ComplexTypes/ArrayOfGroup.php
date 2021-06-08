@@ -9,19 +9,19 @@ class ArrayOfGroup extends BaseArrayOfType
      */
     protected const WRAPPED_PROPERTY = 'Group';
 
-    protected array $Group;
+    protected ?array $Group = null;
 
-    public function __construct(array $Group)
+    public function __construct(?array $Group)
     {
         $this->setGroup($Group);
     }
 
-    public function getGroup(): array
+    public function getGroup(): ?array
     {
         return $this->Group;
     }
 
-    public function setGroup(array $Group): static
+    public function setGroup(?array $Group): static
     {
         $this->Group = $Group;
 
